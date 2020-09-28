@@ -5,6 +5,14 @@
     <title>个人主页</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <style>
+
+    </style>
+    <style>
+        .my_menu{
+            width: 100px;
+            height: 20px;
+            overflow: hidden;
+        }
         .loginout {
             width: 50px;
             height: 30px;
@@ -20,27 +28,6 @@
     </style>
 </head>
 <body>
-<%--<div class="container">--%>
-    <%--<div class="row clearfix">--%>
-        <%--<div class="col-md-12 column">--%>
-            <%--<div style="margin-top: 20px;" class="page-header">--%>
-                <%--<h3 style="width: 800px">&lt;%&ndash;正常设为1000px&ndash;%&gt;--%>
-                    <%--<small>软件工程课设管理系统</small>--%>
-                    <%--<div class="pull-right">--%>
-                        <%--<h3>--%>
-                            <%--<small>--%>
-                                <%--<%User user = (User) session.getAttribute("UserSession");%>--%>
-                                <%--<%=user.getUserID()%>--%>
-                                <%--<a style="text-decoration: none;" class="loginout">注销</a>--%>
-                            <%--</small>--%>
-                        <%--</h3>--%>
-                    <%--</div>--%>
-                <%--</h3>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
-<%--</div>--%>
-
 <div class="container">
     <div style="background: cornflowerblue;" class="row clearfix">
         <div class="col-md-10 column">
@@ -59,32 +46,110 @@
         </div>
     </div>
     <div class="row clearfix">
-        <div class="col-md-4 column">
-            <div class="panel-group" id="panel-847596">
+        <div class="col-md-3 column">
+            <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-847596" href="#panel-element-312295">个人信息管理</a>
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseOne">
+                                个人信息管理 </a>
+                        </h4>
                     </div>
-                    <div id="panel-element-312295" class="panel-collapse collapse">
+                    <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
-                            更多
+                            <a>基本信息管理</a>
+                        </div>
+                        <div class="panel-body">
+                            <a>修改密码</a>
                         </div>
                     </div>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-847596" href="#panel-element-760259">Collapsible Group Item #2</a>
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseTwo">
+                                资料中心</a>
+                        </h4>
                     </div>
-                    <div id="panel-element-760259" class="panel-collapse collapse">
+                    <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
-                            Anim pariatur cliche...
+                            <a>公共资料</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseThree">
+                                报告管理
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <a>团队报告</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseFour">
+                                问答中心
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <a>我要提问</a>
+                        </div>
+                        <div class="panel-body">
+                            <a>我的问题</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseFive">
+                                项目管理
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <a>我的项目</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
+        <div class="col-md-9 column"></div>
     </div>
 </div>
+
+
+<script>
+    window.onload = function () {
+        var menuspan = document.querySelectorAll(".menuSpan");
+        // alert(menuspan.length);
+        for (var i = 0; i < menuspan.length; i++) {
+            menuspan[i].onclick=function () {
+                var parentDiv = this.parentNode;
+                addClass(parentDiv,"collapsed");//关闭
+                parentDiv.style.cssText ="height:60px";
+            }
+        }
+    }
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
