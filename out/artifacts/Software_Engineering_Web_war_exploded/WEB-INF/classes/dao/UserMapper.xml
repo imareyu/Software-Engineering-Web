@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserMapper">
+    <!--增加一名学生用户-->
+    <insert id="addStudentUser" parameterType="User">
+        insert into sedesign.students(UserID, UserPassword, UserType)
+        values (#{UserID},#{UserPassword},#{UserType})
+    </insert>
+    <!--删除一个学生用户-->
+    <delete id="deleteStudentUserByID" parameterType="int">
+        delete from sedesign.students
+        where UserID = #{UserID}
+    </delete>
+    <!--修改一个学生用户的信息（除了姓名之外的信息）,其实只有改密码-->
+    <update id="updateStudentUser" parameterType="User">
+        update sedesign.students
+        set UserPassword = #{UserPassword}
+        where UserID = #{UserID}
+    </update>
+    <!--查询一个学生的信息（根据用户的用户id，即userID,不是数据库id）-->
+    <select id="queryStudentById" resultType="User">
+        select * from sedesign.students
+        where UserID = #{UserID}
+    </select>
+    <!--查询所有学生的信息-->
+    <select id="queryAllStudentUser" resultType="User">
+        select * from sedesign.students;
+    </select>
+</mapper>
