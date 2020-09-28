@@ -60,28 +60,29 @@
     </div>
     <div class="row clearfix">
         <div class="col-md-4 column">
-            <div id="card-968636">
-                <div class="card">
-                    <div class="card-header">
-                        <a class="card-link" data-toggle="collapse" data-parent="#card-968636" href="#card-element-251997">Collapsible Group Item #1</a>
+            <div class="panel-group" id="panel-847596">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-847596" href="#panel-element-312295">个人信息管理</a>
                     </div>
-                    <div id="card-element-251997" class="collapse show">
-                        <div class="card-body">
-                            Anim pariatur cliche...
+                    <div id="panel-element-312295" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            更多
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        <a class="collapsed card-link" data-toggle="collapse" data-parent="#card-968636" href="#card-element-671066">Collapsible Group Item #2</a>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-847596" href="#panel-element-760259">Collapsible Group Item #2</a>
                     </div>
-                    <div id="card-element-671066" class="collapse">
-                        <div class="card-body">
+                    <div id="panel-element-760259" class="panel-collapse collapse">
+                        <div class="panel-body">
                             Anim pariatur cliche...
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </div>
