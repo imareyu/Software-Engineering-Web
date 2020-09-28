@@ -67,7 +67,7 @@
                     </div>
                     <div id="panel-element-312295" class="panel-collapse collapse">
                         <div class="panel-body">
-                            更多管理
+                            更多
                         </div>
                     </div>
                 </div>
