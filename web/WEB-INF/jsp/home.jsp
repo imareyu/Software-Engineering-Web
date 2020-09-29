@@ -58,7 +58,7 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
-                            <a href="#">基本信息管理</a>
+                            <a href="#" onclick="return basicInforManage();">基本信息管理</a>
                         </div>
                         <div class="panel-body">
                             <a href="#">修改密码</a>
@@ -137,6 +137,11 @@
     </div>
 </div>
 
+<script>
+    function basicInforManage() {
+        document.getElementById("rightframe").src="${pageContext.request.contextPath}/user/Basic_Infor_Manage";
+    }
+</script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>

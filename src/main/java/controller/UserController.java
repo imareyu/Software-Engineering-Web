@@ -43,4 +43,10 @@ public class UserController {
         }
         return "home";
     }
+
+    //基本信息管理
+    @RequestMapping("Basic_Infor_Manage")
+    public String Basic_Infor_Manage(){
+        return "InforManage";
+    }
 }
