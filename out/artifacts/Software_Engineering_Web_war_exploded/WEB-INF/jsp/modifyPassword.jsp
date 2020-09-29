@@ -26,7 +26,6 @@
                 </div>
                 <div class="form-group">
                     <label>输入原密码</label>
-                    <input  id="userPassword" value="<%=user.getUserPassword()%>" hidden>
                     <input name="oldPassword" id="oldPassword" style="width: 200px" minlength="6" maxlength="26" class="form-control" type="password" placeholder="请输入原密码" required onkeydown="return checkNumberOrLetter(event);">
                 </div>
                 <div class="form-group">
@@ -79,8 +78,9 @@
             alert("新旧密码相同，请使用新密码");
             return false;
         }
-        var userPassword = document.getElementById("userPassword");
-        if(userPassword.value !== oldPassword.value) {
+        var userPassword = "<%=user.getUserPassword()%>";
+        // alert(userPassword);
+        if(userPassword !== oldPassword.value) {
             alert("原密码错误");
             return false;//输入的旧密码错误
         }
