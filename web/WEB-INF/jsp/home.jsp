@@ -57,10 +57,10 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
-                            <a>基本信息管理</a>
+                            <a href="#">基本信息管理</a>
                         </div>
                         <div class="panel-body">
-                            <a>修改密码</a>
+                            <a href="#">修改密码</a>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a>公共资料</a>
+                            <a href="#">公共资料</a>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a>团队报告</a>
+                            <a href="#">团队报告</a>
                         </div>
                     </div>
                 </div>
@@ -105,10 +105,10 @@
                     </div>
                     <div id="collapseFour" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a>我要提问</a>
+                            <a href="#">我要提问</a>
                         </div>
                         <div class="panel-body">
-                            <a>我的问题</a>
+                            <a href="#">我的问题</a>
                         </div>
                     </div>
                 </div>
@@ -124,30 +124,18 @@
                     </div>
                     <div id="collapseFive" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a>我的项目</a>
+                            <a href="#">我的项目</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-9 column"></div>
+        <div class="col-md-9 column">
+            <iframe id="rightframe" src="${pageContext.request.contextPath}/index.jsp"></iframe>
+        </div>
     </div>
 </div>
 
-
-<script>
-    window.onload = function () {
-        var menuspan = document.querySelectorAll(".menuSpan");
-        // alert(menuspan.length);
-        for (var i = 0; i < menuspan.length; i++) {
-            menuspan[i].onclick=function () {
-                var parentDiv = this.parentNode;
-                addClass(parentDiv,"collapsed");//关闭
-                parentDiv.style.cssText ="height:60px";
-            }
-        }
-    }
-</script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
