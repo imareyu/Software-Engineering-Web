@@ -143,6 +143,8 @@
     }
     function modifyPassword() {
         document.getElementById("rightframe").src = "${pageContext.request.contextPath}/user/toModifyPassword";
+        // if(top.location !== self.location)
+        //     top.location = "../index.jsp";
     }
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

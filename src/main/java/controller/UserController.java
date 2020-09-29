@@ -52,7 +52,23 @@ public class UserController {
 
     //到修改密码页面
     @RequestMapping("toModifyPassword")
-    public String modifyPassword(){
+    public String toModifyPassword(){
         return "modifyPassword";
+    }
+
+    //修改密码并且注销要求重新登录
+    @RequestMapping("modifyPassword")
+    public String modifyPassword(String oldPassword,String newPassword,HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(!user.getUserPassword().equals(oldPassword)){
+            //原密码输错了,返回首页
+            System.out.println("密码未修改，返回home");
+            return "forward:/user/home";
+        }
+        user.setUserPassword(newPassword);//否则，修改密码,写入数据库，注销，返回登录页
+        userService.updateStudentUser(user);//写入数据库
+        request.getSession().invalidate();//这一步还需要修改
+        System.out.println("密码已修改，返回login");
+        return "redirect:/user/login";
     }
 }
