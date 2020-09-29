@@ -135,20 +135,6 @@
     </div>
 </div>
 
-
-<script>
-    window.onload = function () {
-        var menuspan = document.querySelectorAll(".menuSpan");
-        // alert(menuspan.length);
-        for (var i = 0; i < menuspan.length; i++) {
-            menuspan[i].onclick=function () {
-                var parentDiv = this.parentNode;
-                addClass(parentDiv,"collapsed");//关闭
-                parentDiv.style.cssText ="height:60px";
-            }
-        }
-    }
-</script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
