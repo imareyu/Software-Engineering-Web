@@ -7,10 +7,10 @@
     <style>
     </style>
     <style>
-        .my_menu{
-            width: 100px;
-            height: 20px;
-            overflow: hidden;
+        #rightframe{
+            width: 800px;
+            height: 800px;
+            border: 0;
         }
         .loginout {
             width: 50px;
@@ -44,6 +44,7 @@
             <a style="background: gainsboro;text-decoration: none" class="loginout" href="#">注 销</a>
         </div>
     </div>
+    <br/>
     <div class="row clearfix">
         <div class="col-md-3 column">
             <div class="panel-group" id="accordion">
