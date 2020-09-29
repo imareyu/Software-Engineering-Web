@@ -9,6 +9,7 @@ import pojo.User;
 import service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Controller
@@ -45,24 +46,25 @@ public class UserController {
     }
 
     //基本信息管理
-    @RequestMapping("Basic_Infor_Manage")
+    @RequestMapping("/Basic_Infor_Manage")
     public String Basic_Infor_Manage(){
         return "InforManage";
     }
 
     //到修改密码页面
-    @RequestMapping("toModifyPassword")
+    @RequestMapping("/toModifyPassword")
     public String toModifyPassword(){
         return "modifyPassword";
     }
 
     //修改密码并且注销要求重新登录
-    @RequestMapping("modifyPassword")
-    public String modifyPassword(String oldPassword,String newPassword,HttpServletRequest request){
+    @RequestMapping("/modifyPassword")
+    public String modifyPassword(String oldPassword, String newPassword, HttpServletRequest request, HttpServletResponse response){
         User user = (User) request.getSession().getAttribute("UserSession");
         if(!user.getUserPassword().equals(oldPassword)){
             //原密码输错了,返回首页
             System.out.println("密码未修改，返回home");
+
             return "forward:/user/home";
         }
         user.setUserPassword(newPassword);//否则，修改密码,写入数据库，注销，返回登录页
