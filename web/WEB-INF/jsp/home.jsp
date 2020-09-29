@@ -28,7 +28,7 @@
 </head>
 <body>
 <div class="container">
-    <div style="background: cornflowerblue;" class="row clearfix">
+    <div style="background: cornflowerblue;border-radius: 25px;" class="row clearfix">
         <div class="col-md-10 column">
             <h3>
                 <small style="color: black">软件工程课设管理系统</small>
@@ -148,7 +148,7 @@
         }
     }
 </script>
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
