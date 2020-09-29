@@ -5,7 +5,6 @@
     <title>个人主页</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <style>
-
     </style>
     <style>
         .my_menu{
@@ -31,9 +30,9 @@
 <div class="container">
     <div style="background: cornflowerblue;" class="row clearfix">
         <div class="col-md-10 column">
-                <h3>
-                    <small style="color: black">软件工程课设管理系统</small>
-                </h3>
+            <h3>
+                <small style="color: black">软件工程课设管理系统</small>
+            </h3>
         </div>
         <div class="col-md-1 column">
             <h3>
@@ -135,6 +134,20 @@
     </div>
 </div>
 
+
+<script>
+    window.onload = function () {
+        var menuspan = document.querySelectorAll(".menuSpan");
+        // alert(menuspan.length);
+        for (var i = 0; i < menuspan.length; i++) {
+            menuspan[i].onclick=function () {
+                var parentDiv = this.parentNode;
+                addClass(parentDiv,"collapsed");//关闭
+                parentDiv.style.cssText ="height:60px";
+            }
+        }
+    }
+</script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
