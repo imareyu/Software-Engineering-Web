@@ -61,7 +61,7 @@
                             <a href="#" onclick="return basicInforManage();">基本信息管理</a>
                         </div>
                         <div class="panel-body">
-                            <a href="#">修改密码</a>
+                            <a href="#" onclick="return modifyPassword();">修改密码</a>
                         </div>
                     </div>
                 </div>
@@ -140,6 +140,9 @@
 <script>
     function basicInforManage() {
         document.getElementById("rightframe").src="${pageContext.request.contextPath}/user/Basic_Infor_Manage";
+    }
+    function modifyPassword() {
+        document.getElementById("rightframe").src = "${pageContext.request.contextPath}/user/toModifyPassword";
     }
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

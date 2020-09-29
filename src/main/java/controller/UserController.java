@@ -49,4 +49,10 @@ public class UserController {
     public String Basic_Infor_Manage(){
         return "InforManage";
     }
+
+    //到修改密码页面
+    @RequestMapping("toModifyPassword")
+    public String modifyPassword(){
+        return "modifyPassword";
+    }
 }
