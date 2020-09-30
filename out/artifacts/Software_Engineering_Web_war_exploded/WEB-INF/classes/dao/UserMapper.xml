@@ -28,4 +28,15 @@
     <select id="queryAllStudentUser" resultType="User">
         select * from sedesign.students;
     </select>
+
+    <select id="queryTeacherById" resultType="User">
+        select * from sedesign.teacher
+        where UserID = #{id}
+    </select>
+
+    <select id="queryAdministratorById" resultType="User">
+        select *
+        from sedesign.administrator
+        where UserID = #{id}
+    </select>
 </mapper>
