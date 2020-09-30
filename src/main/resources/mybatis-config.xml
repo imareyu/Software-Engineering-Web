@@ -9,5 +9,8 @@
 
     <mappers>
         <mapper class="dao.UserMapper"/>
+        <mapper class="dao.MaterialMapper"/>
     </mappers>
+
+
 </configuration>

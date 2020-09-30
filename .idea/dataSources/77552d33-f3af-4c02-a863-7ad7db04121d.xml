@@ -1264,7 +1264,7 @@ QuestionID</ColNames>
       <ColNames>QuestionID</ColNames>
       <UnderlyingIndexName>QuestionID_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="313" parent="289" name="Material">
+    <column id="313" parent="289" name="MaterialID">
       <Position>1</Position>
       <Comment>资料的编号</Comment>
       <DataType>int(5)|0s</DataType>
@@ -1294,17 +1294,17 @@ QuestionID</ColNames>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="317" parent="289" name="Material_UNIQUE">
-      <ColNames>Material</ColNames>
+      <ColNames>MaterialID</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
     <key id="318" parent="289" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>Material</ColNames>
+      <ColNames>MaterialID</ColNames>
       <Primary>1</Primary>
     </key>
     <key id="319" parent="289" name="Material_UNIQUE">
-      <ColNames>Material</ColNames>
+      <ColNames>MaterialID</ColNames>
       <UnderlyingIndexName>Material_UNIQUE</UnderlyingIndexName>
     </key>
     <column id="320" parent="290" name="QuestionID">
