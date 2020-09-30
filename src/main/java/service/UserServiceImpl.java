@@ -30,4 +30,14 @@ public class UserServiceImpl implements UserService{
     public List<User> queryAllStudentUser() {
         return userMapper.queryAllStudentUser();
     }
+
+    public User queryTeacherById(int id) {
+        return userMapper.queryTeacherById(id);
+    }
+
+    public User queryAdministratorById(int id) {
+        return userMapper.queryAdministratorById(id);
+    }
+
+
 }

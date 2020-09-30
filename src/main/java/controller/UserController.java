@@ -34,13 +34,47 @@ public class UserController {
         System.out.println("用户id:"+userID);
         System.out.println("用户密码:"+userPassword);
 
-        if(user == null || !userPassword.equals(user.getUserPassword())){//不相等
-            model.addAttribute("error","用户名或密码错误");
-            System.out.println("用户名或密码错误");
-            return "login";
+        if(user == null){//没有此学生,查询老师，原则上来说，老师和学生的用户名不同
+            user = userService.queryTeacherById(Integer.parseInt(userID));//查询老师用户
+            if(user == null)//不是老师，查询管理员
+            {
+                user = userService.queryAdministratorById(Integer.parseInt(userID));
+                if(user == null){//不是学生，老师和管理员
+                    model.addAttribute("error","用户名或密码错误");
+                    System.out.println("不是学生、老师和管理员");
+                    return "login";
+                }else{//管理员用户
+                    if(user.getUserPassword().equals(userPassword)){
+                        //密码正确
+                        request.getSession().setAttribute("UserSession",user);
+                        System.out.println("管理员用户"+userID+"：成功登录");
+                        return "administratorHome";//返回到教师首页
+                    }else{//密码错误
+                        model.addAttribute("error","用户名或密码错误");
+                        System.out.println("管理员用户：用户名或密码错误");
+                        return "login";
+                    }
+                }
+            }else{//是老师
+                if(user.getUserPassword().equals(userPassword)){//密码正确
+                    request.getSession().setAttribute("UserSession",user);
+                    System.out.println("教师用户"+userID+"：成功登录");
+                    return "TeacherHome";//返回到教师首页
+                }else{//密码错误
+                    model.addAttribute("error","用户名或密码错误");
+                    System.out.println("教师用户：用户名或密码错误");
+                    return "login";
+                }
+            }
         }
         else{
-            request.getSession().setAttribute("UserSession",user);//把对象存下来
+            if(user.getUserPassword().equals(userPassword))
+                request.getSession().setAttribute("UserSession",user);//把对象存下来
+            else{
+                model.addAttribute("error","用户名或密码错误");
+                System.out.println("用户名或密码错误");
+                return "login";
+            }
         }
         return "home";
     }
@@ -65,12 +99,12 @@ public class UserController {
             //原密码输错了,返回首页
             System.out.println("密码未修改，返回home");
 
-            return "forward:/user/home";
+            return "forward:/user/home";//实际并不会执行
         }
         user.setUserPassword(newPassword);//否则，修改密码,写入数据库，注销，返回登录页
         userService.updateStudentUser(user);//写入数据库
         request.getSession().invalidate();//这一步还需要修改
         System.out.println("密码已修改，返回login");
-        return "redirect:/user/login";
+        return "redirect:/user/goToLogin";
     }
 }
