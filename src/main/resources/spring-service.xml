@@ -5,12 +5,17 @@
 
     <!--1.扫描service下的包-->
     <context:component-scan base-package="service"/>
-    <!--2.将所有的业务类，注入道spring,可以通过配置，或者注解实现-->
+    <!--2.将所有的业务类，注入到spring,可以通过配置，或者注解实现-->
     <bean id="userServiceImpl" class="service.UserServiceImpl">
         <property name="userMapper" ref="userMapper"/>
     </bean>
+
     <bean id="materialServiceImpl" class="service.MaterialServiceImpl">
         <property name="materialMapper" ref="materialMapper"/>
+    </bean>
+
+    <bean id="reportServiceImpl" class="service.ReportServiceImpl">
+        <property name="reportMapper" ref="reportMapper"/>
     </bean>
     <!--3.声明式事务配置-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
