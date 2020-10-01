@@ -4,31 +4,37 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="dao.ReportMapper">
     <!--查询所有的报告-->
-    <select id="queryAllMaterials" resultType="Report">
+    <select id="queryAllReports" resultType="Report">
         select * from sedesign.report;
     </select>
 
     <!--上传一份报告-->
-    <insert id="UploadAMaterial" parameterType="Report">
+    <insert id="UploadAReport" parameterType="Report">
         insert into sedesign.report(TeamID,PublishTime,Title,Path)
         values (#{TeamID},#{PublishTime},#{Title},#{Path})
     </insert>
 
     <!--删除一份报告,根据报告id删除-->
-    <delete id="deleteMaterial" parameterType="int">
+    <delete id="deleteReport" parameterType="int">
         delete from sedesign.report
         where ReportID = #{ReportId}
     </delete>
 
     <!--根据文件名进行一次模糊查询,Title就是文件名-->
-    <select id="queryMaterialByWord" resultType="Report">
+    <select id="queryReportByWord" resultType="Report">
         select * from sedesign.report
         where Title like CONCAT('%',#{word},'%')
     </select>
 
     <!--根据队伍的id查询报告-->
-    <select id="queryMaterialsByTeamID" resultType="Report">
+    <select id="queryReportsByTeamID" resultType="Report">
         select * from sedesign.report
         where TeamID = #{TeamID}
+    </select>
+
+    <!--根据报告id进行查询，主要用于下载时侯-->
+    <select id="queryReportByID" resultType="Report">
+        select * from sedesign.report
+        where ReportID = #{ReportID}
     </select>
 </mapper>
