@@ -35,6 +35,7 @@ public class FileController {//对所有文件操作相关的进行管理
             return "redirect:/file/goToUploadMaterial";//返回到上传文件页面
         }
         System.out.println("uploadFileName:"+uploadFileName);
+        //需要查询是否有同名文件，如果有同名文件，则需要覆盖，而不是上传
 
         String path = request.getServletContext().getRealPath("/upload");
 
@@ -57,7 +58,7 @@ public class FileController {//对所有文件操作相关的进行管理
         os.close();
         is.close();
         System.out.println("上传成功");
-        model.addAttribute("uploadsuccess","上传成功");
-        return "forward:allBook";//继续解析
+        model.addAttribute("uploadStatus","上传成功");
+        return "forward:goToUploadMaterial";//继续解析
     }
 }

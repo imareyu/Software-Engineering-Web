@@ -18,9 +18,13 @@
     <div class="row clearfix">
         <div class="col-md-5"></div>
         <div class="col-md-2 column">
+            <h4><span style="color: green;font-weight: bold">${uploadsuccess}</span></h4>
             <form action="${pageContext.request.contextPath}/file/uploadMaterial" enctype="multipart/form-data" method="post">
                 <input type="file" name="file">
-                <input type="submit" value="上传" onclick="return uploadConfirm();">
+                <br/>
+                <div  style="text-align: center;vertical-align: middle;">
+                    <input type="submit" value="上传" onclick="return uploadConfirm();">
+                </div>
             </form>
         </div>
         <div class="col-md-5"></div>
