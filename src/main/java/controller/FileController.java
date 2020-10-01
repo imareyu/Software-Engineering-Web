@@ -16,6 +16,9 @@ public class FileController {//对所有文件操作相关的进行管理
     private MaterialService materialService;//对资料的管理
     @Qualifier("reportServiceImpl")
     private ReportService reportService;//对报告管理
-    
 
+    @RequestMapping("/goToUploadMaterial")
+    public String goToUpload(){
+        return "uploadMaterial";
+    }
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.MaterialMapper">
+    <!--查询所有的资料-->
+    <select id="queryAllMaterials" resultType="Material">
+        select *
+        from sedesign.material
+    </select>
+
+    <!--上传一份资料,记录下信息-->
+    <!--int UploadAMaterial(Material material);-->
+    <insert id="UploadAMaterial" parameterType="Material">
+        insert into
+        sedesign.material(MaterialName,UploadTime,Path)
+        values (#{MaterialName},#{UploadTime},#{Path})
+    </insert>
+    <!--//删除一份资料,根据id删除-->
+    <!--int deleteMaterial(int id);-->
+    <delete id="deleteMaterial" parameterType="int">
+        delete from sedesign.material
+        where MaterialID = #{MaterialID}
+    </delete>
+    <!--//根据文件名进行一次模糊查询-->
+    <!--List<Material> queryMaterialByWord(String word);-->
+    <select id="queryMaterialByWord" resultType="Material">
+        select * from sedesign.material
+        where MaterialName like CONCAT('%',#{word},'%')<!--concat进行拼接-->
+    </select>
+</mapper>

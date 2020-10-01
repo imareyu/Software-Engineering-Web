@@ -75,7 +75,7 @@
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a href="${pageContext.request.contextPath}">上传资料</a>
+                            <a href="${pageContext.request.contextPath}/file/goToUploadMaterial">上传资料</a>
                         </div>
                         <div class="panel-body">
                             <a href="#">资料查看</a>
