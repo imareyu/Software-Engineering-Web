@@ -26,4 +26,7 @@ public interface MaterialMapper {
 
     //查询前十五条记录,后来改成了查询若干了，，
     List<Material> query15Materials(@Param("start") int start,@Param("len") int len);
+
+    //根据id查询记录
+    Material queryMaterialByID(int id);
 }
