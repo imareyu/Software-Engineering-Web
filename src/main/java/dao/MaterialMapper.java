@@ -23,6 +23,6 @@ public interface MaterialMapper {
     //修改一个记录，其实只需要修改时间
     int updateMaterial(Material material);
 
-    //查询前十五条记录
+    //查询前十五条记录,后来改成了查询若干了，，
     List<Material> query15Materials(int start,int len);
 }

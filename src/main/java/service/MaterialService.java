@@ -22,4 +22,6 @@ public interface MaterialService {
 
     //修改记录的时间
     int updateMaterial(Material material);
+
+    List<Material> query15Materials(int start,int len);
 }
