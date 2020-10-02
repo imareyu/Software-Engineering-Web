@@ -83,6 +83,8 @@
             if("teacher" === "<%=user.getUserType()%>"){
                 if(confirm("确认删除？"))
                     return true;
+                else
+                    return false;
             }
         }
         alert("不具有删除权限！");
