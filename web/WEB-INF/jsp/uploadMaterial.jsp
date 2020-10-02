@@ -20,7 +20,7 @@
         <div class="col-md-2 column">
             <h4><span style="color: green;font-weight: bold">${uploadStatus}</span></h4>
             <form action="${pageContext.request.contextPath}/file/uploadMaterial" enctype="multipart/form-data" method="post">
-                <input type="file" name="file">
+                <input type="file" name="file" id="file1">
                 <br/>
                 <div  style="text-align: center;vertical-align: middle;">
                     <input type="submit" value="上传" onclick="return uploadConfirm();">
@@ -32,6 +32,12 @@
 </div>
 <script>
     function uploadConfirm(){
+        //首先判断文件是否为空
+        var thefile = document.getElementById("file1");
+        if(thefile.value.length === 0){
+            alert("未选择文件！请选择！");
+            return false;
+        }
         if(confirm("确认上传"))
             return true;
         return false;
