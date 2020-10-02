@@ -42,4 +42,9 @@
         where MaterialID = #{MaterialID}
     </update>
 
+    <!--查询若干个记录-->
+    <select id="query15Materials" resultType="Material" parameterType="int">
+        select * from sedesign.material
+        order by MaterialID limit #{start},#{len}
+    </select>
 </mapper>
