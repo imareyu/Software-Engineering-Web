@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface MaterialService {
     //老师上传参考资料
-    int teacherUploadMaterial(Material material);
+    int uploadMaterial(Material material);
 
     //老师删除一个参考资料（根据id
     int deleteMaterial(int id);
@@ -16,4 +16,10 @@ public interface MaterialService {
 
     //查询所有资料
     List<Material> queryAllMaterials();
+
+    //根据路径和文件名查询
+    Material queryMaterialByPathAndName(Material material);
+
+    //修改记录的时间
+    int updateMaterial(Material material);
 }

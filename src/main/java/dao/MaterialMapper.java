@@ -16,4 +16,10 @@ public interface MaterialMapper {
     
     //根据文件名进行一次模糊查询
     List<Material> queryMaterialByWord(String word);
+
+    //根据路径和文件名查询
+    Material queryMaterialByPathAndName(Material material);
+
+    //修改一个记录，其实只需要修改时间
+    int updateMaterial(Material material);
 }

@@ -69,8 +69,22 @@ public class FileController {//对所有文件操作相关的进行管理
         System.out.println("materialName："+ material.getMaterialName());
         System.out.println("materialUploadTime："+ material.getUploadTime());
         System.out.println("Path："+ material.getPath());
-//        materialService.teacherUploadMaterial(material);
-        model.addAttribute("uploadStatus","上传成功");
+        //根据路径和文件名在数据库中查询，如果有，则修改时间
+        //如果没有，则添加新的记录
+        Material resultMaterial = materialService.queryMaterialByPathAndName(material);
+        if(resultMaterial == null)//为空说明没有这个文件
+        {//添加文件记录
+            materialService.uploadMaterial(material);
+            System.out.println("上传成功");
+            model.addAttribute("uploadStatus","上传成功");
+            return "forward:goToUploadMaterial";
+        }else{//有文件，修改记录的时间
+            material.setMaterialID(resultMaterial.getMaterialID());//获得id
+            materialService.updateMaterial(material);
+            System.out.println("文件重名，已覆盖");
+            model.addAttribute("uploadStatus","文件重名，已覆盖");
+        }
+        //        materialService.teacherUploadMaterial(material);
         return "forward:goToUploadMaterial";//继续解析
     }
 }

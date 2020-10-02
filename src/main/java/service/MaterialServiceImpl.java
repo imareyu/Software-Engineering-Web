@@ -10,7 +10,7 @@ public class MaterialServiceImpl implements MaterialService {
     public void setMaterialMapper(MaterialMapper materialMapper){
         this.materialMapper = materialMapper;
     }
-    public int teacherUploadMaterial(Material material) {
+    public int uploadMaterial(Material material) {
         return materialMapper.UploadAMaterial(material);
     }
 
@@ -26,5 +26,11 @@ public class MaterialServiceImpl implements MaterialService {
         return materialMapper.queryAllMaterials();
     }
 
+    public Material queryMaterialByPathAndName(Material material) {
+        return materialMapper.queryMaterialByPathAndName(material);
+    }
 
+    public int updateMaterial(Material material) {
+        return materialMapper.updateMaterial(material);
+    }
 }

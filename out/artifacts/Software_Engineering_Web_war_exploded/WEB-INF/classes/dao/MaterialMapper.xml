@@ -28,4 +28,18 @@
         select * from sedesign.material
         where MaterialName like CONCAT('%',#{word},'%')<!--concat进行拼接-->
     </select>
+
+    <!--根据路径和文件名查询-->
+    <select id="queryMaterialByPathAndName" resultType="Material" parameterType="Material">
+        select * from sedesign.material
+        where MaterialName = #{MaterialName} and Path = #{Path}
+    </select>
+
+    <!--修改记录的时间-->
+    <update id="updateMaterial" parameterType="Material">
+        update sedesign.material
+        set UploadTime = #{UploadTime}
+        where MaterialID = #{MaterialID}
+    </update>
+
 </mapper>
