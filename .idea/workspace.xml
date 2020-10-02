@@ -7,21 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7deda246-a9a8-4b46-a350-d59f4a064c81" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/controller/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/MaterialMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/MaterialMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/MaterialMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/MaterialMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/MaterialService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/MaterialService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/MaterialServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/MaterialServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/MaterialInfor.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/MaterialInfor.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MaterialMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MaterialMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MaterialMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MaterialMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/MaterialMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/MaterialMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/MaterialMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/MaterialMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/MaterialService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/MaterialService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/MaterialServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/MaterialServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/MaterialInfor.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/MaterialInfor.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -77,11 +62,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/MaterialInfor.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="27" column="85" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
+            <state relative-caret-position="213">
+              <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
               <folding>
                 <element signature="e#2354#2360#0#HTML" expanded="true" />
               </folding>
@@ -89,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/FileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-167">
-              <caret line="95" column="55" lean-forward="true" selection-start-line="95" selection-start-column="55" selection-end-line="95" selection-end-column="55" />
+            <state relative-caret-position="308">
+              <caret line="120" column="18" lean-forward="true" selection-start-line="120" selection-start-column="18" selection-end-line="120" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4138#4139#0" expanded="true" />
@@ -101,33 +86,6 @@
                 <element signature="e#4247#4248#0" expanded="true" />
                 <element signature="e#4271#4272#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/TeacherHome.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="81" column="30" lean-forward="true" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dao/MaterialMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dao/MaterialMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="27" column="85" lean-forward="true" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
             </state>
           </provider>
         </entry>
@@ -239,8 +197,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="23" />
-    <option name="y" value="120" />
+    <option name="x" value="92" />
+    <option name="y" value="94" />
     <option name="width" value="1321" />
     <option name="height" value="687" />
   </component>
@@ -585,15 +543,16 @@
       <workItem from="1601515012315" duration="4372000" />
       <workItem from="1601540427695" duration="9278000" />
       <workItem from="1601602474016" duration="3874000" />
-      <workItem from="1601625834650" duration="4224000" />
+      <workItem from="1601625834650" duration="5721000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97736000" />
+    <option name="totallyTimeSpent" value="99233000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="132" y="158" width="1321" height="687" extended-state="0" />
+    <frame x="92" y="94" width="1321" height="687" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.494863" visible="true" weight="0.19904837" />
       <window_info id="Structure" order="1" sideWeight="0.50513697" side_tool="true" weight="0.2502099" />
@@ -921,13 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/TeacherHome.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="81" column="30" lean-forward="true" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/MaterialMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -942,26 +894,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/MaterialInfor.jsp">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/TeacherHome.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="27" column="85" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
-          <folding>
-            <element signature="e#2354#2360#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="81" column="30" lean-forward="true" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/FileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-167">
-          <caret line="95" column="55" lean-forward="true" selection-start-line="95" selection-start-column="55" selection-end-line="95" selection-end-column="55" />
+        <state relative-caret-position="308">
+          <caret line="120" column="18" lean-forward="true" selection-start-line="120" selection-start-column="18" selection-end-line="120" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4138#4139#0" expanded="true" />
             <element signature="e#4162#4163#0" expanded="true" />
             <element signature="e#4247#4248#0" expanded="true" />
             <element signature="e#4271#4272#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/MaterialInfor.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+          <folding>
+            <element signature="e#2354#2360#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
