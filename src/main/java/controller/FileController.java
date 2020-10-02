@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.*;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Controller
 @RequestMapping("/file")
@@ -90,6 +91,31 @@ public class FileController {//对所有文件操作相关的进行管理
 
     @RequestMapping("/goToMaterialInfor")
     public String goToMaterialInfor(){
+        //需要先查询15条信息，以便不是一个空页面
         return "MaterialInfor";
+    }
+
+    @RequestMapping("/queryMaterialByName")
+    public String queryMaterialByName(String queryBookName,Model model){//根据资料名称查询资料，模糊查询
+        List<Material> materials = materialService.queryMaterialByWord(queryBookName);
+        if(materials.size() == 0){//没有查询到相关的资料
+            model.addAttribute("error","没有查询到相关的文件");
+            return "MaterialInfor";
+        }
+        //查询到了
+        model.addAttribute("materials",materials);
+        return "MaterialInfor";
+    }
+
+    //下载一个材料
+    @RequestMapping("/downloadMaterial")
+    public String downloadMaterial(int id){
+        return "";
+    }
+
+    //删除一个材料
+    @RequestMapping("/deleteAMaterial")
+    public String deleteAMaterial(int id){
+        return "";
     }
 }
