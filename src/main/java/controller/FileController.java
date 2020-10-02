@@ -13,7 +13,9 @@ import service.MaterialService;
 import service.ReportService;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.net.URLEncoder;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
@@ -117,8 +119,33 @@ public class FileController {//对所有文件操作相关的进行管理
 
     //下载一个材料
     @RequestMapping("/downloadMaterial")
-    public String downloadMaterial(int id){
-        return "";
+    public String downloadMaterial(int id,Model model,HttpServletRequest request, HttpServletResponse response) throws IOException {
+        //
+        String path = request.getServletContext().getRealPath("upload");
+        String fileName = "新建文本文档.txt";
+
+        //设置response响应头
+        response.reset();//设置页面不缓存，清空buffer
+        response.setCharacterEncoding("utf-8");//字符编码
+        response.setContentType("multipart/form-data");//二进制传输数据
+        response.setHeader("Content-Disposition","attachment;fileName="+ URLEncoder.encode(fileName,"UTF-8"));
+        File file = new File(path,fileName);
+        //读取文件-输入流
+        InputStream input = new FileInputStream(file);
+        //写出文件--输出流
+        OutputStream out = response.getOutputStream();
+        byte[] buffer = new byte[1024];
+        int index = 0;
+        //执行写出操作
+        while((index = input.read(buffer)) != -1){
+            out.write(buffer,0,index);
+            out.flush();
+        }
+        out.close();
+        input.close();
+        model.addAttribute("downloadSuccess","下载成功");
+        return "MaterialInfor";
+        //return "";
     }
 
     //删除一个材料
