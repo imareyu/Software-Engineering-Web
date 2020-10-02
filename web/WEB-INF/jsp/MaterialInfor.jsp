@@ -10,13 +10,19 @@
         <div class="col-md-12 column">
             <div class="page-header">
                 <h1>
-                    <small>文件列表————显示所有文件</small>
+                    <small>文件列表————显示文件信息</small>
                 </h1>
             </div>
         </div>
     </div>
     <div class="row clearfix">
-        
+        <div class="col-md-4 column">
+            <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/goToUploadMaterial">上传文件</a>
+            <a class="btn btn-primary" href="${pageContext.request.contextPath}">显示全部书籍</a>
+            <input type="text" id="username" onblur="ajaxtest();" hidden>
+            <a class="btn btn-primary" href="${pageContext.request.contextPath}" type="file" >上传文件</a>
+            <a class="btn btn-primary" href="${pageContext.request.contextPath}" type="file" >管理文件</a>
+        </div>
     </div>
 </div>
 </body>
