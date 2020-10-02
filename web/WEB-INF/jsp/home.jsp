@@ -75,7 +75,7 @@
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a href="#">公共资料</a>
+                            <a href="${pageContext.request.contextPath}/file/goToMaterialInfor" target="_blank">公共资料</a>
                         </div>
                     </div>
                 </div>

@@ -48,7 +48,7 @@
                 <br/>
                 <br/>
                 <br/>
-                <a style="text-decoration: none;" class="login" href="${pageContext.request.contextPath}/file">下载文件</a><%--没有提示，解决方法--%>
+                <a style="text-decoration: none;" class="login" href="${pageContext.request.contextPath}/file/goToMaterialInfor">下载文件</a><%--没有提示，解决方法--%>
             </div>
             <div class="col-md-5 column"></div>
     </div>

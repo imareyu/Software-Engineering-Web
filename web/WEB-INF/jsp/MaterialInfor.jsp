@@ -1,3 +1,4 @@
+<%@ page import="pojo.User" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -35,6 +36,7 @@
         </div>
     </div>
 
+    <%User user = (User) request.getSession().getAttribute("UserSession");%>
     <div class="row clearfix">
         <div class="col-md-12 column">
             <table class="table table-hover table-striped"><%--table-hover是隔行变色,table-striped表示--%>
@@ -71,8 +73,19 @@
         return false;
     }
     function myconfirm(){
-        if(confirm("确认删除？"))
-            return true;
+        //先判断是否为老师，如果不是，直接false
+        var user = "<%=user%>";
+        if(user === null) {
+            alert("未登录，不具有删除权限！");
+            return false;
+        }
+        else{
+            if("teacher" === "<%=user.getUserType()%>"){
+                if(confirm("确认删除？"))
+                    return true;
+            }
+        }
+        alert("不具有删除权限！");
         return false;
     }
 </script>
