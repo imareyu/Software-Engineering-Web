@@ -50,7 +50,7 @@
                         <td>${material.materialName}</td>
                         <td>${material.uploadTime}</td>
                         <td>
-                            <a id="download1" href="${pageContext.request.contextPath}/file/downloadMaterial?id=${material.materialID}" onclick="return confirmDownload();">下载</a> <%--携带id进行跳转--%>
+                            <a id="download1" target="_blank" href="${pageContext.request.contextPath}/file/downloadMaterial?id=${material.materialID}" onclick="return confirmDownload();">下载</a> <%--携带id进行跳转--%>
                             &nbsp;|
                             <a id="delete1" href="${pageContext.request.contextPath}/file/deleteAMaterial?id=${material.materialID}" onclick="return myconfirm();">删除</a>
                         </td>

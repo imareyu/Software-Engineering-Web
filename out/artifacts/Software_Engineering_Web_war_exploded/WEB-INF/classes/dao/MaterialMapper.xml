@@ -47,4 +47,9 @@
         select * from sedesign.material
         order by MaterialID limit #{param1},#{param2}
     </select>
+
+    <select id="queryMaterialByID" resultType="Material" parameterType="int">
+        select * from sedesign.material
+        where MaterialID = #{id}
+    </select>
 </mapper>

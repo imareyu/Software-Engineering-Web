@@ -1,6 +1,5 @@
 package controller;
 
-import dao.ReportMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -9,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import pojo.Material;
+import pojo.User;
 import service.MaterialService;
 import service.ReportService;
 
@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.URLEncoder;
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -36,6 +35,19 @@ public class FileController {//对所有文件操作相关的进行管理
 
     @RequestMapping("/uploadMaterial")
     public String uploadMaterial(@RequestParam("file") CommonsMultipartFile file, HttpServletRequest request, Model model) throws IOException {
+        //首先要判断是老师
+        Object userSession1 = request.getSession().getAttribute("UserSession");
+        if(userSession1 == null)
+            return "login";//为空，说明没登录，直接跳回到登录
+        //登录了，判断是不是老师，管理员也不能上传
+        User user = (User)userSession1;
+        if(!"teacher".equals(user.getUserType())) {//不为老师
+            if("student".equals(user.getUserType())){
+                return "home";//学生，返回到学生主页
+            }else{
+                return "administratorHome";//管理员，返回到管理员主页
+            }
+        }
         String uploadFileName = file.getOriginalFilename();
         if("".equals(uploadFileName)){
             return "redirect:/file/goToUploadMaterial";//返回到上传文件页面
@@ -117,13 +129,17 @@ public class FileController {//对所有文件操作相关的进行管理
         return "MaterialInfor";
     }
 
-    //下载一个材料
+    //下载一个材料,设定为不登录也可以下载
     @RequestMapping("/downloadMaterial")
-    public String downloadMaterial(int id,Model model,HttpServletRequest request, HttpServletResponse response) throws IOException {
-        //
-        String path = request.getServletContext().getRealPath("upload");
-        String fileName = "新建文本文档.txt";
+    public String downloadMaterial(int id,Model model,HttpServletRequest request,HttpServletResponse response) throws Exception {
+        Material material = materialService.queryMaterialByID(id);
+        String path = material.getPath();
+        String fileName = material.getMaterialName();
 
+//        if(request.getSession().getAttribute("UserSession") == null)
+//            return "login";
+        System.out.println("下载文件的path:"+path);
+        System.out.println("下载文件的filename:"+fileName);
         //设置response响应头
         response.reset();//设置页面不缓存，清空buffer
         response.setCharacterEncoding("utf-8");//字符编码
@@ -143,12 +159,13 @@ public class FileController {//对所有文件操作相关的进行管理
         }
         out.close();
         input.close();
+        System.out.println("下载成功");
         model.addAttribute("downloadSuccess","下载成功");
         return "MaterialInfor";
         //return "";
     }
 
-    //删除一个材料
+    //删除一个材料，只有老师可以删除，管理员和学生都不行，未登录也不行
     @RequestMapping("/deleteAMaterial")
     public String deleteAMaterial(int id){
         return "";
