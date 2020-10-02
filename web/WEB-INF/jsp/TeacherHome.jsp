@@ -78,7 +78,7 @@
                             <a href="${pageContext.request.contextPath}/file/goToUploadMaterial" target="_blank">上传资料</a>
                         </div>
                         <div class="panel-body">
-                            <a href="#" onclick="return MaterialInfor();">资料查看</a>
+                            <a href="${pageContext.request.contextPath}/file/goToMaterialInfor" target="_blank">资料查看</a>
                         </div>
                     </div>
                 </div>
@@ -145,9 +145,6 @@
         document.getElementById("rightframe").src = "${pageContext.request.contextPath}/user/toModifyPassword";
         // if(top.location !== self.location)
         //     top.location = "../index.jsp";
-    }
-    function MaterialInfor(){
-        document.getElementById("rightframe").src = "${pageContext.request.contextPath}/file/goToMaterialInfor";
     }
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
