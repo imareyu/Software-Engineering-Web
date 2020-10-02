@@ -23,5 +23,9 @@ public interface MaterialService {
     //修改记录的时间
     int updateMaterial(Material material);
 
+    //查询若干的记录
     List<Material> query15Materials(int start,int len);
+
+    //根据id查询记录
+    Material queryMaterialByID(int id);
 }

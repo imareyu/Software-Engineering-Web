@@ -37,4 +37,9 @@ public class MaterialServiceImpl implements MaterialService {
     public List<Material> query15Materials(int start, int len) {
         return materialMapper.query15Materials(start,len);
     }
+
+    public Material queryMaterialByID(int id) {
+        return materialMapper.queryMaterialByID(id);
+    }
+
 }
