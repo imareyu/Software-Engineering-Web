@@ -22,7 +22,10 @@
             <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/goToMaterialInfor">显示前15条数据</a>
             <%--<input type="text" id="username" onblur="ajaxtest();" hidden>--%>
         </div>
-        <div class="col-md-4 column"></div>
+        <div class="col-md-4 column">
+            <span style="color: green;font-weight: bold">${downloadSuccess}</span>
+            <span style="color: green;font-weight: bold">${deleteSuccess}</span>
+        </div>
         <div class="col-md-4 column">
             <span style="color: red;font-weight: bold">${error}</span>
             <form action="${pageContext.request.contextPath}/file/queryMaterialByName" method="post">

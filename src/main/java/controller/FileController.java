@@ -14,6 +14,7 @@ import service.ReportService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.net.URLEncoder;
 import java.sql.Timestamp;
@@ -167,7 +168,41 @@ public class FileController {//对所有文件操作相关的进行管理
 
     //删除一个材料，只有老师可以删除，管理员和学生都不行，未登录也不行
     @RequestMapping("/deleteAMaterial")
-    public String deleteAMaterial(int id){
-        return "";
+    synchronized public String deleteAMaterial(int id,Model model,HttpServletRequest request){
+        System.out.println("要删除的文件id："+id);
+        Object userSession = request.getSession().getAttribute("UserSession");
+        if(userSession == null){
+            //未登录
+            return "login";
+        }
+        else{
+            User user = (User)userSession ;
+            if("student".equals(user.getUserType()) ||"teamleader".equals(user.getUserType())||"teammate".equals(user.getUserType()) ){
+                return "home";//学生用户
+            }
+            if("admini".equals(user.getUserType())){
+                return "administratorHome";//管理员
+            }
+        }
+        Material material = materialService.queryMaterialByID(id);
+        List<Material> materials = null;
+        if(material == null) {
+            model.addAttribute("deleteSuccess", "文件已删除");
+            materials = materialService.query15Materials(0, 15);
+            model.addAttribute("materials",materials);//显示15条，如果有的话
+            return "MaterialInfor";
+        }
+        String path = material.getPath();
+        String materialName = material.getMaterialName();
+        File file = new File(path,materialName);
+        if(file.delete()){
+            materialService.deleteMaterial(id);
+            model.addAttribute("deleteSuccess", "文件已删除");
+        }else{
+            model.addAttribute("error","文件删除失败");
+        }
+        materials = materialService.query15Materials(0, 15);
+        model.addAttribute("materials",materials);//显示15条，如果有的话
+        return "MaterialInfor";
     }
 }

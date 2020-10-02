@@ -7,7 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7deda246-a9a8-4b46-a350-d59f4a064c81" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/controller/FileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/MaterialInfor.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/MaterialInfor.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/upload/101 I 基于Java的软件工程课设管理系统 需求获取报告 3.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/upload/101 I 基于Python的网吧管理系统 开题报告.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/FileController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/MaterialInfor.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/MaterialInfor.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -51,13 +57,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="sedesign: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="sedesign: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="material: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -66,10 +65,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/MaterialInfor.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
+            <state relative-caret-position="27">
+              <caret line="49" column="60" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="60" />
               <folding>
-                <element signature="e#2354#2360#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -78,12 +79,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/FileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="43" column="57" lean-forward="true" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
+            <state relative-caret-position="288">
+              <caret line="206" column="5" lean-forward="true" selection-start-line="206" selection-start-column="5" selection-end-line="206" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6362#6363#0" expanded="true" />
-                <element signature="e#6387#6388#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -207,9 +206,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="35" />
-    <option name="y" value="17" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="36" />
+    <option name="y" value="56" />
     <option name="width" value="1321" />
     <option name="height" value="687" />
   </component>
@@ -352,13 +351,38 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Software-Engineering-Web" type="b2602c69:ProjectViewProjectNode" />
               <item name="Software-Engineering-Web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Software-Engineering-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Software-Engineering-Web" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Software-Engineering-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Software-Engineering-Web" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Software-Engineering-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Software-Engineering-Web" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="Software_Engineering_Web_war_exploded" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Software-Engineering-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Software-Engineering-Web" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="Software_Engineering_Web_war_exploded" type="462c0819:PsiDirectoryNode" />
+              <item name="upload" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Software-Engineering-Web" type="b2602c69:ProjectViewProjectNode" />
@@ -397,14 +421,6 @@
             <path>
               <item name="Software-Engineering-Web" type="b2602c69:ProjectViewProjectNode" />
               <item name="Software-Engineering-Web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Software-Engineering-Web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Software-Engineering-Web" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -425,13 +441,14 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1601642415833" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1601642830473" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -569,18 +586,19 @@
       <workItem from="1601515012315" duration="4372000" />
       <workItem from="1601540427695" duration="9278000" />
       <workItem from="1601602474016" duration="3874000" />
-      <workItem from="1601625834650" duration="9274000" />
+      <workItem from="1601625834650" duration="9877000" />
+      <workItem from="1601654048330" duration="1938000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102786000" />
+    <option name="totallyTimeSpent" value="105327000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="58" y="45" width="1321" height="687" extended-state="0" />
+    <frame x="36" y="56" width="1321" height="687" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.494863" visible="true" weight="0.19904837" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.494863" visible="true" weight="0.20222045" />
       <window_info id="Structure" order="1" sideWeight="0.50513697" side_tool="true" weight="0.2502099" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -610,7 +628,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.18080889" />
+      <window_info active="true" anchor="right" id="Database" order="6" visible="true" weight="0.18080889" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
@@ -770,12 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
           <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
-          <folding>
-            <element signature="e#752#768#0" expanded="true" />
-            <element signature="e#810#823#0" expanded="true" />
-            <element signature="e#862#880#0" expanded="true" />
-            <element signature="e#923#941#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -849,21 +861,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://77552d33-f3af-4c02-a863-7ad7db04121d/schema/sedesign/table/material">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/uploadMaterial.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#h4#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -906,12 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="e#1104#1105#0" expanded="true" />
-            <element signature="e#1169#1170#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1245#1246#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -924,10 +919,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/MaterialInfor.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
+        <state relative-caret-position="27">
+          <caret line="49" column="60" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="60" />
           <folding>
-            <element signature="e#2354#2360#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -942,14 +939,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://77552d33-f3af-4c02-a863-7ad7db04121d/schema/sedesign/table/material">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/FileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="43" column="57" lean-forward="true" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
+        <state relative-caret-position="288">
+          <caret line="206" column="5" lean-forward="true" selection-start-line="206" selection-start-column="5" selection-end-line="206" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6362#6363#0" expanded="true" />
-            <element signature="e#6387#6388#0" expanded="true" />
           </folding>
         </state>
       </provider>
