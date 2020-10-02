@@ -16,6 +16,9 @@
         </div>
     </div>
     <div class="row clearfix">
+
+    </div>
+    <div class="row clearfix">
         <div class="col-md-5"></div>
         <div class="col-md-2 column">
             <h4><span style="color: green;font-weight: bold">${uploadStatus}</span></h4>

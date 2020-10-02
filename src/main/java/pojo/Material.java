@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 @Data
 @AllArgsConstructor
@@ -12,6 +12,6 @@ import java.sql.Date;
 public class Material {
     private int MaterialID;
     private String MaterialName;
-    private Date UploadTime;
+    private Timestamp UploadTime;
     private String Path;
 }

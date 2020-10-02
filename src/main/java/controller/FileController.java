@@ -8,11 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
+import pojo.Material;
 import service.MaterialService;
 import service.ReportService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 @Controller
 @RequestMapping("/file")
@@ -43,8 +46,8 @@ public class FileController {//对所有文件操作相关的进行管理
         if(!realPath.exists()){
             realPath.mkdir();
         }
-        System.out.println("保存地址："+realPath);
-
+        System.out.println("保存地址realPath："+realPath);
+        System.out.println("保存地址path："+path);
         InputStream is = file.getInputStream();//文件输入流
         OutputStream os = new FileOutputStream(new File(realPath,uploadFileName));//文件输出流
 
@@ -58,6 +61,15 @@ public class FileController {//对所有文件操作相关的进行管理
         os.close();
         is.close();
         System.out.println("上传成功");
+        //接下来写入数据库记录
+        Material material = new Material();
+        material.setMaterialName(uploadFileName);
+        material.setUploadTime(new Timestamp(System.currentTimeMillis()));
+        material.setPath(path);
+        System.out.println("materialName："+ material.getMaterialName());
+        System.out.println("materialUploadTime："+ material.getUploadTime());
+        System.out.println("Path："+ material.getPath());
+//        materialService.teacherUploadMaterial(material);
         model.addAttribute("uploadStatus","上传成功");
         return "forward:goToUploadMaterial";//继续解析
     }
