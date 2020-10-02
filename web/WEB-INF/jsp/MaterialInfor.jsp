@@ -41,7 +41,6 @@
                     <th>资料名称</th>
                     <th>资料修改时间</th>
                     <th>操作</th>
-                    <th hidden>路径</th>
                 </tr>
                 </thead>
                 <tbody>
