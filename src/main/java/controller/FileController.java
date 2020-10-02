@@ -87,4 +87,9 @@ public class FileController {//对所有文件操作相关的进行管理
         //        materialService.teacherUploadMaterial(material);
         return "forward:goToUploadMaterial";//继续解析
     }
+
+    @RequestMapping("/goToMaterialInfor")
+    public String goToMaterialInfor(){
+        return "MaterialInfor";
+    }
 }
