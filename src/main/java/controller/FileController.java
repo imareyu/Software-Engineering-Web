@@ -92,7 +92,9 @@ public class FileController {//对所有文件操作相关的进行管理
     @RequestMapping("/goToMaterialInfor")
     public String goToMaterialInfor(Model model){
         //需要先查询15条信息，以便不是一个空页面
+        System.out.println("进入跳转资料页面流程");
         List<Material> materials = materialService.query15Materials(0, 15);//查询15条
+        System.out.println("完成15条资料查询");
         if(materials.size() == 0){//没有查询到相关的资料
             model.addAttribute("error","没有查询到相关的文件");
             return "MaterialInfor";

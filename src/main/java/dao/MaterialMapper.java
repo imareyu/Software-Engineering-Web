@@ -1,5 +1,6 @@
 package dao;
 
+import org.apache.ibatis.annotations.Param;
 import pojo.Material;
 
 import java.util.List;
@@ -24,5 +25,5 @@ public interface MaterialMapper {
     int updateMaterial(Material material);
 
     //查询前十五条记录,后来改成了查询若干了，，
-    List<Material> query15Materials(int start,int len);
+    List<Material> query15Materials(@Param("start") int start,@Param("len") int len);
 }

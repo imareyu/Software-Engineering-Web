@@ -18,14 +18,14 @@
     </div>
     <div class="row clearfix">
         <div class="col-md-4 column">
-            <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/goToUploadMaterial">上传文件</a>
-            <a class="btn btn-primary" href="${pageContext.request.contextPath}">显示前20条数据</a>
+            <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/goToUploadMaterial" target="_blank">上传文件</a>
+            <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/goToMaterialInfor">显示前15条数据</a>
             <%--<input type="text" id="username" onblur="ajaxtest();" hidden>--%>
         </div>
         <div class="col-md-4 column"></div>
         <div class="col-md-4 column">
             <span style="color: red;font-weight: bold">${error}</span>
-            <form action="${pageContext.request.contextPath}/file/" method="post">
+            <form action="${pageContext.request.contextPath}/file/queryMaterialByName" method="post">
                 <input style="display: inline-block;width: 300px" type="text" name="queryBookName" class="form-control" placeholder="请输入要查询的资料名称" required>
                 <input type="submit" value="查询">
             </form>
