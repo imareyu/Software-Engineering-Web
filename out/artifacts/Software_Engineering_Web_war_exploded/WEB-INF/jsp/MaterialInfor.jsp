@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    <%User user = (User) request.getSession().getAttribute("UserSession");%>
+    <%Object userSession = request.getSession().getAttribute("UserSession");%>
     <div class="row clearfix">
         <div class="col-md-12 column">
             <table class="table table-hover table-striped"><%--table-hover是隔行变色,table-striped表示--%>
@@ -74,21 +74,23 @@
     }
     function myconfirm(){
         //先判断是否为老师，如果不是，直接false
-        var user = "<%=user%>";
-        if(user === null) {
+        var user = "<%=userSession%>";
+        // alert(user);
+        <%--alert("<%=userSession%>");--%>
+        if(user === "null"){
             alert("未登录，不具有删除权限！");
             return false;
         }
         else{
-            if("teacher" === "<%=user.getUserType()%>"){
+            // if("teacher" === userType){
                 if(confirm("确认删除？"))
                     return true;
                 else
                     return false;
-            }
+            // }
         }
-        alert("不具有删除权限！");
-        return false;
+        // alert("不具有删除权限！");
+        // return false;
     }
 </script>
 </body>

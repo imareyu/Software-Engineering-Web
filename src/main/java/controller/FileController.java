@@ -160,8 +160,8 @@ public class FileController {//对所有文件操作相关的进行管理
         }
         out.close();
         input.close();
-        System.out.println("下载成功");
-        model.addAttribute("downloadSuccess","下载成功");
+//        System.out.println("下载成功");
+//        model.addAttribute("downloadSuccess","下载成功");
         return "MaterialInfor";
         //return "";
     }
@@ -178,10 +178,12 @@ public class FileController {//对所有文件操作相关的进行管理
         else{
             User user = (User)userSession ;
             if("student".equals(user.getUserType()) ||"teamleader".equals(user.getUserType())||"teammate".equals(user.getUserType()) ){
-                return "home";//学生用户
+                model.addAttribute("error","学生用户不具有删除权限");
+                return "MaterialInfor";//学生用户
             }
             if("admini".equals(user.getUserType())){
-                return "administratorHome";//管理员
+                model.addAttribute("error","管理员用户不具有删除权限");
+                return "MaterialInfor";//管理员
             }
         }
         Material material = materialService.queryMaterialByID(id);

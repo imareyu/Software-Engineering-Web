@@ -106,4 +106,11 @@ public class UserController {
         System.out.println("密码已修改，返回login");
         return "redirect:/user/goToLogin";
     }
+
+    //注销
+    @RequestMapping("/logout")
+    public String logout(HttpServletRequest request){
+        request.getSession().invalidate();
+        return "redirect:/user/goToLogin";
+    }
 }
