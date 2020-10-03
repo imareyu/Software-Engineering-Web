@@ -38,14 +38,18 @@ public class FileController {//对所有文件操作相关的进行管理
     public String uploadMaterial(@RequestParam("file") CommonsMultipartFile file, HttpServletRequest request, Model model) throws IOException {
         //首先要判断是老师
         Object userSession1 = request.getSession().getAttribute("UserSession");
-        if(userSession1 == null)
+        if(userSession1 == null) {
+            model.addAttribute("alertmess","未登录，不能上传文件");
             return "login";//为空，说明没登录，直接跳回到登录
+        }
         //登录了，判断是不是老师，管理员也不能上传
         User user = (User)userSession1;
         if(!"teacher".equals(user.getUserType())) {//不为老师
             if("student".equals(user.getUserType())){
+                model.addAttribute("alertmess","学生用户不能上传文件");
                 return "home";//学生，返回到学生主页
             }else{
+                model.addAttribute("alertmess","管理员用户不能上传文件");
                 return "administratorHome";//管理员，返回到管理员主页
             }
         }

@@ -135,6 +135,7 @@
             <iframe style="width: 1000px;" id="rightframe" src="${pageContext.request.contextPath}/file/goToMaterialInfor"></iframe>
         </div>
     </div>
+    <span id="alertmess" hidden>${alertmess}</span>
 </div>
 
 <script>
@@ -146,6 +147,15 @@
         // if(top.location !== self.location)
         //     top.location = "../index.jsp";
     }
+    function alertmess() {
+        var alertmess = document.getElementById("alertmess").innerText;
+        if(alertmess === ""){
+            return false;
+        }
+        alert(alertmess);
+        return true;
+    }
+    window.onload = alertmess;
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
