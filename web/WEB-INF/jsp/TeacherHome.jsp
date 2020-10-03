@@ -41,7 +41,7 @@
             </h3>
         </div>
         <div class="col-md-1 column">
-            <a style="background: gainsboro;text-decoration: none" class="loginout" href="#">退 出</a>
+            <a style="background: gainsboro;text-decoration: none" class="loginout" href="${pageContext.request.contextPath}/user/logout">退 出</a>
         </div>
     </div>
     <br/>
