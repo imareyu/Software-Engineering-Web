@@ -144,8 +144,6 @@
     }
     function modifyPassword() {
         document.getElementById("rightframe").src = "${pageContext.request.contextPath}/user/toModifyPassword";
-        // if(top.location !== self.location)
-        //     top.location = "../index.jsp";
     }
     function alertmess() {
         var alertmess = document.getElementById("alertmess").innerText;
