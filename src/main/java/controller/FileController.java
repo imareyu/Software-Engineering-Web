@@ -212,9 +212,12 @@ public class FileController {//对所有文件操作相关的进行管理
         return "MaterialInfor";
     }
 
-    //到报告管理页面
-    @RequestMapping("/toReportManage")
-    public String toReportManage(){
+    //学生到报告管理页面
+    @RequestMapping("/stuToReportManage")
+    public String toReportManage(int id){
+        System.out.println("学生id："+id);
+        //根据userID查询用户所在的队伍的teamID
+//        reportService.queryReportsByTeamID();
         return "ReportManage";
     }
 }

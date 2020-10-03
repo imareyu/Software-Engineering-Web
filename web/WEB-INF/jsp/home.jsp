@@ -90,7 +90,7 @@
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a href="#">团队报告</a><%--等到老师上传文件的功能实现之后再完成--%>
+                            <a href="#" target="_blank" onclick="return toReportManage();">团队报告</a><%--等到老师上传文件的功能实现之后再完成--%>
                         </div>
                     </div>
                 </div>
@@ -155,6 +155,9 @@
         return true;
     }
     window.onload = alertmess;
+    function toReportManage() {
+        document.getElementById("rightframe").src="${pageContext.request.contextPath}/file/stuToReportManage?id=<%=user.getUserID()%>";
+    }
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>

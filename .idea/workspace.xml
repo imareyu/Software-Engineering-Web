@@ -7,10 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7deda246-a9a8-4b46-a350-d59f4a064c81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/ReportManage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/软件工程课设过程记录.docx" beforeDir="false" afterPath="$PROJECT_DIR$/软件工程课设过程记录.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -68,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="92" column="54" selection-start-line="92" selection-start-column="54" selection-end-line="92" selection-end-column="54" />
+            <state relative-caret-position="163">
+              <caret line="159" selection-start-line="159" selection-end-line="159" />
             </state>
           </provider>
         </entry>
@@ -77,8 +75,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/FileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="217" column="30" lean-forward="true" selection-start-line="217" selection-start-column="30" selection-end-line="217" selection-end-column="30" />
+            <state relative-caret-position="99">
+              <caret line="218" column="34" lean-forward="true" selection-start-line="218" selection-start-column="34" selection-end-line="218" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#uploadMaterial#0;class#FileController#0" />
@@ -86,8 +84,6 @@
                 <element signature="method#queryMaterialByName#0;class#FileController#0" />
                 <element signature="method#downloadMaterial#0;class#FileController#0" />
                 <element signature="method#deleteAMaterial#0;class#FileController#0" />
-                <element signature="e#8575#8576#0" expanded="true" />
-                <element signature="e#8600#8601#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -167,9 +163,9 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/MaterialInfor.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/UserController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/TeacherHome.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/ReportManage.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/FileController.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/ReportManage.jsp" />
       </list>
     </option>
   </component>
@@ -211,8 +207,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="54" />
-    <option name="y" value="190" />
+    <option name="x" value="-17" />
+    <option name="y" value="365" />
     <option name="width" value="1321" />
     <option name="height" value="687" />
   </component>
@@ -426,7 +422,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1601719958421" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1601726283156" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -567,15 +563,15 @@
       <workItem from="1601625834650" duration="9877000" />
       <workItem from="1601654048330" duration="3341000" />
       <workItem from="1601689292505" duration="6465000" />
-      <workItem from="1601714958010" duration="4150000" />
+      <workItem from="1601714958010" duration="5185000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117345000" />
+    <option name="totallyTimeSpent" value="118380000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="190" width="1321" height="687" extended-state="0" />
+    <frame x="-46" y="372" width="1321" height="687" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.494863" visible="true" weight="0.20856462" />
@@ -894,6 +890,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1653">
           <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -915,13 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="92" column="54" selection-start-line="92" selection-start-column="54" selection-end-line="92" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -949,10 +941,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/FileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="217" column="30" lean-forward="true" selection-start-line="217" selection-start-column="30" selection-end-line="217" selection-end-column="30" />
+        <state relative-caret-position="99">
+          <caret line="218" column="34" lean-forward="true" selection-start-line="218" selection-start-column="34" selection-end-line="218" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#uploadMaterial#0;class#FileController#0" />
@@ -960,8 +959,6 @@
             <element signature="method#queryMaterialByName#0;class#FileController#0" />
             <element signature="method#downloadMaterial#0;class#FileController#0" />
             <element signature="method#deleteAMaterial#0;class#FileController#0" />
-            <element signature="e#8575#8576#0" expanded="true" />
-            <element signature="e#8600#8601#0" expanded="true" />
           </folding>
         </state>
       </provider>
