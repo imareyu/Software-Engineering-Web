@@ -211,4 +211,10 @@ public class FileController {//对所有文件操作相关的进行管理
         model.addAttribute("materials",materials);//显示15条，如果有的话
         return "MaterialInfor";
     }
+
+    //到报告管理页面
+    @RequestMapping("/toReportManage")
+    public String toReportManage(){
+        return "ReportManage";
+    }
 }
