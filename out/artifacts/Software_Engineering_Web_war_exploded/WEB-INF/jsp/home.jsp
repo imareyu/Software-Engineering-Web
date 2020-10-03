@@ -46,7 +46,7 @@
     </div>
     <br/>
     <div class="row clearfix">
-        <div class="col-md-3 column">
+        <div class="col-md-2 column">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -131,8 +131,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-9 column">
-            <iframe id="rightframe" src="${pageContext.request.contextPath}/index.jsp"></iframe>
+        <div class="col-md-10 column">
+            <iframe style="width: 1000px;" id="rightframe" src="${pageContext.request.contextPath}/file/goToMaterialInfor"></iframe>
         </div>
     </div>
 </div>
