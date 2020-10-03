@@ -153,6 +153,7 @@
             return false;
         }
         alert(alertmess);
+        document.getElementById("alertmess").innerText = "";//清空，防止之后再意外出现
         return true;
     }
     window.onload = alertmess;
