@@ -1,5 +1,6 @@
 <%@ page import="pojo.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="SessionCheckStu.jsp"%><%--进行学生身份验证--%>
 <html>
 <head>
     <title>个人主页</title>
@@ -125,7 +126,7 @@
                     </div>
                     <div id="collapseFive" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a href="#">我的项目</a>
+                            <a href="#" onclick="return stuToTeam();">我的项目</a>
                         </div>
                     </div>
                 </div>
@@ -157,6 +158,10 @@
     window.onload = alertmess;
     function toReportManage() {
         document.getElementById("rightframe").src="${pageContext.request.contextPath}/file/stuToReportManage?id=<%=user.getUserID()%>";
+    }
+
+    function stuToTeam(){
+        document.getElementById("rightframe").src="${pageContext.request.contextPath}/user/stuToTeam";
     }
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

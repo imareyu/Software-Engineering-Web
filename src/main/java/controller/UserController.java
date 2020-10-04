@@ -113,4 +113,27 @@ public class UserController {
         request.getSession().invalidate();
         return "redirect:/user/goToLogin";
     }
+
+    //学生跳转到队伍，项目页面
+    @RequestMapping("/stuToTeam")
+    public String stuToTeam(HttpServletRequest request,Model model){
+        Object userSession = request.getSession().getAttribute("UserSession");
+        if(userSession == null){
+            //未登录
+            return "login";
+        }
+        User user = (User) userSession;
+        if("student".equals(user.getUserType())){
+            //为普通学生用户，没有队伍
+            model.addAttribute("alertmess","暂时没有队伍");
+            return "stuTeam";
+        }
+        else{
+            if("teamleader".equals(user.getUserType())){
+                //为队长
+                
+            }
+        }
+        return "";
+    }
 }
