@@ -131,7 +131,7 @@ public class UserController {
         else{
             if("teamleader".equals(user.getUserType())){
                 //为队长
-                
+
             }
         }
         return "";
