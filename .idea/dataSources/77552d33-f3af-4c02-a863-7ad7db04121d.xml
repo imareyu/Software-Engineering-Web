@@ -1596,66 +1596,72 @@ UserID</ColNames>
       <DefaultExpression>&apos;nopass&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="367" parent="294" name="TeamID_UNIQUE">
+    <column id="367" parent="294" name="TeacherID">
+      <Position>11</Position>
+      <DataType>int(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="368" parent="294" name="TeamID_UNIQUE">
       <ColNames>TeamID</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="368" parent="294" name="ProjectID_UNIQUE">
+    <index id="369" parent="294" name="ProjectID_UNIQUE">
       <ColNames>ProjectID</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="369" parent="294" name="TeamleaderID_UNIQUE">
+    <index id="370" parent="294" name="TeamleaderID_UNIQUE">
       <ColNames>TeamleaderID</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="370" parent="294" name="TeamleaderID_idx">
+    <index id="371" parent="294" name="TeamleaderID_idx">
       <ColNames>TeamleaderID
 Teammate1ID
 Teammate2ID</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="371" parent="294" name="Teammate1ID_idx">
+    <index id="372" parent="294" name="Teammate1ID_idx">
       <ColNames>Teammate1ID</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="372" parent="294" name="Teammate2ID_idx">
+    <index id="373" parent="294" name="Teammate2ID_idx">
       <ColNames>Teammate2ID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="373" parent="294" name="PRIMARY">
+    <key id="374" parent="294" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>TeamID
 ProjectID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="374" parent="294" name="TeamID_UNIQUE">
+    <key id="375" parent="294" name="TeamID_UNIQUE">
       <ColNames>TeamID</ColNames>
       <UnderlyingIndexName>TeamID_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="375" parent="294" name="ProjectID_UNIQUE">
+    <key id="376" parent="294" name="ProjectID_UNIQUE">
       <ColNames>ProjectID</ColNames>
       <UnderlyingIndexName>ProjectID_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="376" parent="294" name="TeamleaderID_UNIQUE">
+    <key id="377" parent="294" name="TeamleaderID_UNIQUE">
       <ColNames>TeamleaderID</ColNames>
       <UnderlyingIndexName>TeamleaderID_UNIQUE</UnderlyingIndexName>
     </key>
-    <foreign-key id="377" parent="294" name="TeamleaderID">
+    <foreign-key id="378" parent="294" name="TeamleaderID">
       <ColNames>TeamleaderID</ColNames>
       <RefSchemaName>sedesign</RefSchemaName>
       <RefTableName>students</RefTableName>
       <RefColNames>UserID</RefColNames>
     </foreign-key>
-    <foreign-key id="378" parent="294" name="Teammate1ID">
+    <foreign-key id="379" parent="294" name="Teammate1ID">
       <ColNames>Teammate1ID</ColNames>
       <RefSchemaName>sedesign</RefSchemaName>
       <RefTableName>students</RefTableName>
       <RefColNames>UserID</RefColNames>
     </foreign-key>
-    <foreign-key id="379" parent="294" name="Teammate2ID">
+    <foreign-key id="380" parent="294" name="Teammate2ID">
       <ColNames>Teammate2ID</ColNames>
       <RefSchemaName>sedesign</RefSchemaName>
       <RefTableName>students</RefTableName>

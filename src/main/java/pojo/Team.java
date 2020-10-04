@@ -11,5 +11,5 @@ public class Team {
     private int Teammate2ID;
     private String Teammate2Name;
     private String State;//状态
-//应该还有一个指导老师的id
+    private int TeacherID;//指导老师的id
 }
