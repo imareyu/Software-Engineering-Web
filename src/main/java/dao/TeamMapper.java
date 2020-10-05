@@ -31,12 +31,15 @@ public interface TeamMapper {
     //根据队伍id查询
     Team queryMaterialByTeamID(int id);
 
-    //查询所有的没有通过的队伍
-    List<Team> queryTeamNopass();
+    //查询某个老师手下所有的没有通过的队伍
+    List<Team> queryTeamNopass(int id);
 
-    //查询所有的通过的队伍
-    List<Team> queryTeamPass();
+    //查询某个老师手下的所有的通过的队伍
+    List<Team> queryTeamPass(int id);
 
-    //查询前十五条记录,后来改成了查询若干了，，
+    //查询若干记录
     List<Team> query15Materials(@Param("start") int start, @Param("len") int len);
+
+    //根据教师的id查询
+    List<Team> queryTeamsByTeacherID(int id);
 }
