@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.MaterialMapper">
+    <!--添加一个队伍-->
+    <insert id="addTeam" parameterType="Team">
+        insert into sedesign.team(ProjectID, ProjectName, TeamleaderID, TeamleaderName, Teammate1ID, Teammate1Name, Teammate2ID, Teammate2Name, State, TeacherID)
+        values (#{ProjectID}, #{ProjectName}, #{TeamleaderID},#{TeamleaderName}, #{Teammate1ID}, #{Teammate1Name}, #{Teammate2ID}, #{Teammate2Name}, #{State}, #{TeacherID})
+    </insert>
+
+    <!--删除一个队伍，根据TeamID,TeamID是由数据库自动递增分配的-->
+    <!--ProjectID应该是101 I组这样的东西-->
+    <delete id="deleteTeam" parameterType="int">
+        delete from sedesign.team
+        where TeamID = #{TeamID}
+    </delete>
+
+    <!--修改一个记录-->
+    int updateTeam(Team team);
+
+    <!--查询所有的队伍-->
+    List<Team> queryAllTeams();
+
+    <!--根据成员的id进行查询-->
+    Team queryTeamByMemberID(int id);
+
+    <!--根据成员的姓名进行模糊查询，模糊！！！用like-->
+    List<Team> queryTeamByMemberName();
+
+    <!--根据项目名进行一次模糊查询，模糊！！！-->
+    List<Team> queryTeamByProjectName(String word);
+
+    <!--根据队伍id查询-->
+    Team queryMaterialByTeamID(int id);
+
+    <!--查询某个老师手下所有的没有通过的队伍-->
+    List<Team> queryTeamNopass(int id);
+
+    <!--查询某个老师手下的所有的通过的队伍-->
+    List<Team> queryTeamPass(int id);
+
+    <!--查询若干记录-->
+    List<Team> query15Materials(@Param("start") int start, @Param("len") int len);
+
+    <!--根据教师的id查询-->
+    List<Team> queryTeamsByTeacherID(int id);
+</mapper>

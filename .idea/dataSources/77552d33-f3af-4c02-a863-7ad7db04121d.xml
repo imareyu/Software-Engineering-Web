@@ -1573,7 +1573,7 @@ UserID</ColNames>
       <DataType>int(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="363" parent="294" name="Teammat1Name">
+    <column id="363" parent="294" name="Teammate1Name">
       <Position>7</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
