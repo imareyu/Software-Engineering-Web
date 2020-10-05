@@ -1543,7 +1543,7 @@ UserID</ColNames>
     <column id="358" parent="294" name="ProjectID">
       <Position>2</Position>
       <Comment>项目的id,用户可以得知</Comment>
-      <DataType>int(5)|0s</DataType>
+      <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
