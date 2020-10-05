@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.MaterialMapper">
+<mapper namespace="dao.TeamMapper">
     <!--添加一个队伍-->
     <insert id="addTeam" parameterType="Team">
         insert into sedesign.team(ProjectID, ProjectName, TeamleaderID, TeamleaderName, Teammate1ID, Teammate1Name, Teammate2ID, Teammate2Name, State, TeacherID)
@@ -17,32 +17,65 @@
     </delete>
 
     <!--修改一个记录-->
-    int updateTeam(Team team);
+    <update id="updateTeam" parameterType="Team">
+        update sedesign.team
+        set ProjectID = #{ProjectID},ProjectName = #{ProjectName},TeamleaderID = #{TeamleaderID},TeamleaderName = #{TeamleaderName},Teammate1ID = #{Teammate1ID},Teammate1Name = #{Teammate1Name},Teammate2ID = #{Teammate2ID},Teammate2Name = #{Teammate2Name},State = #{State},TeacherID = #{TeacherID}
+        where TeamID = #{TeamID}
+    </update>
 
     <!--查询所有的队伍-->
-    List<Team> queryAllTeams();
+    <select id="queryAllTeams" resultType="Team">
+        select * from sedesign.team
+    </select>
 
     <!--根据成员的id进行查询-->
-    Team queryTeamByMemberID(int id);
+    <select id="queryTeamByMemberID" parameterType="int" resultType="Team">
+        select * from sedesign.team
+        where Teammate1ID = #{id} or Teammate1ID = #{id} or Teammate2ID = #{id}
+    </select>
 
     <!--根据成员的姓名进行模糊查询，模糊！！！用like-->
-    List<Team> queryTeamByMemberName();
+    <select id="queryTeamByMemberName" resultType="Team" parameterType="String">
+        select * from sedesign.team
+        where TeamleaderName like CONCAT('%',#{word},'%') or Teammate1Name like CONCAT('%',#{word},'%') or Teammate2Name like CONCAT('%',#{word},'%')
+    </select>
 
     <!--根据项目名进行一次模糊查询，模糊！！！-->
-    List<Team> queryTeamByProjectName(String word);
+    <select id="queryTeamByProjectName" parameterType="String" resultType="Team">
+        select * from sedesign.team
+        where ProjectName like CONCAT('%',#{word},'%')
+    </select>
 
     <!--根据队伍id查询-->
-    Team queryMaterialByTeamID(int id);
+    <select id="queryMaterialByTeamID" resultType="Team" parameterType="int">
+        select * from sedesign.team
+        where TeamID = #{id}
+    </select>
 
     <!--查询某个老师手下所有的没有通过的队伍-->
-    List<Team> queryTeamNopass(int id);
+    <!--List<Team> queryTeamNopass(int id);-->
+    <select id="queryTeamNopass" parameterType="int" resultType="Team">
+        select * from sedesign.team
+        where TeacherID = #{id} and State = 'nopass'
+    </select>
 
     <!--查询某个老师手下的所有的通过的队伍-->
-    List<Team> queryTeamPass(int id);
+    <!--List<Team> queryTeamPass(int id);-->
+    <select id="queryTeamPass" parameterType="int" resultType="Team">
+        select * from sedesign.team
+        where TeacherID = #{id} and State = 'pass'
+    </select>
 
     <!--查询若干记录-->
-    List<Team> query15Materials(@Param("start") int start, @Param("len") int len);
+    <select id="queryAnyMaterials" resultType="Team" parameterType="int">
+        select * from sedesign.team
+        order by TeamID limit #{param1},#{param2}
+    </select>
 
     <!--根据教师的id查询-->
-    List<Team> queryTeamsByTeacherID(int id);
+    <!--List<Team> queryTeamsByTeacherID(int id);-->
+    <select id="queryTeamsByTeacherID" parameterType="int" resultType="Team">
+        select * from sedesign.team
+        where TeacherID = #{id}
+    </select>
 </mapper>

@@ -23,7 +23,7 @@ public interface TeamMapper {
     Team queryTeamByMemberID(int id);
 
     //根据成员的姓名进行模糊查询，模糊！！！用like
-    List<Team> queryTeamByMemberName();
+    List<Team> queryTeamByMemberName(String word);
 
     //根据项目名进行一次模糊查询，模糊！！！
     List<Team> queryTeamByProjectName(String word);
@@ -38,7 +38,7 @@ public interface TeamMapper {
     List<Team> queryTeamPass(int id);
 
     //查询若干记录
-    List<Team> query15Materials(@Param("start") int start, @Param("len") int len);
+    List<Team> queryAnyMaterials(@Param("start") int start, @Param("len") int len);
 
     //根据教师的id查询
     List<Team> queryTeamsByTeacherID(int id);
