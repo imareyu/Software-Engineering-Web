@@ -38,7 +38,7 @@ public interface TeamService {
     List<Team> queryTeamPass(int id);
 
     //查询若干记录
-    List<Team> queryAnyMaterials(int start,int len);
+    List<Team> queryAnyTeams(int start,int len);
 
     //根据教师的id查询
     List<Team> queryTeamsByTeacherID(int id);

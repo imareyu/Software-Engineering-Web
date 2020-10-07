@@ -67,7 +67,7 @@
     </select>
 
     <!--查询若干记录-->
-    <select id="queryAnyMaterials" resultType="Team" parameterType="int">
+    <select id="queryAnyTeams" resultType="Team" parameterType="int">
         select * from sedesign.team
         order by TeamID limit #{param1},#{param2}
     </select>

@@ -12,50 +12,50 @@ public class TeamServiceImpl implements TeamService {
     }
 
     public int addTeam(Team team) {
-        return 0;
+        return teamMapper.addTeam(team);
     }
 
     public int deleteTeam(int TeamID) {
-        return 0;
+        return teamMapper.deleteTeam(TeamID);
     }
 
     public int updateTeam(Team team) {
-        return 0;
+        return teamMapper.updateTeam(team);
     }
 
     public List<Team> queryAllTeams() {
-        return null;
+        return teamMapper.queryAllTeams();
     }
 
     public Team queryTeamByMemberID(int id) {
-        return null;
+        return teamMapper.queryTeamByMemberID(id);
     }
 
     public List<Team> queryTeamByMemberName(String word) {
-        return null;
+        return teamMapper.queryTeamByMemberName(word);
     }
 
     public List<Team> queryTeamByProjectName(String word) {
-        return null;
+        return teamMapper.queryTeamByProjectName(word);
     }
 
     public Team queryMaterialByTeamID(int id) {
-        return null;
+        return teamMapper.queryMaterialByTeamID(id);
     }
 
     public List<Team> queryTeamNopass(int id) {
-        return null;
+        return teamMapper.queryTeamNopass(id);
     }
 
     public List<Team> queryTeamPass(int id) {
-        return null;
+        return teamMapper.queryTeamPass(id);
     }
 
-    public List<Team> queryAnyMaterials(int start, int len) {
-        return null;
+    public List<Team> queryAnyTeams(int start, int len) {
+        return teamMapper.queryAnyTeams(start,len);
     }
 
     public List<Team> queryTeamsByTeacherID(int id) {
-        return null;
+        return teamMapper.queryTeamsByTeacherID(id);
     }
 }

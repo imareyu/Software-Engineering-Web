@@ -38,7 +38,7 @@ public interface TeamMapper {
     List<Team> queryTeamPass(int id);
 
     //查询若干记录
-    List<Team> queryAnyMaterials(@Param("start") int start, @Param("len") int len);
+    List<Team> queryAnyTeams(@Param("start") int start, @Param("len") int len);
 
     //根据教师的id查询
     List<Team> queryTeamsByTeacherID(int id);
