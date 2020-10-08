@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7deda246-a9a8-4b46-a350-d59f4a064c81" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/TeamApply.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/TeamApply.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/软件工程课设过程记录.docx" beforeDir="false" afterPath="$PROJECT_DIR$/软件工程课设过程记录.docx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,7 +55,7 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="sedesign: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="team: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="report: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -81,8 +81,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/TeamApply.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="182">
+              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
             </state>
           </provider>
         </entry>
@@ -259,9 +259,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="78" />
-    <option name="y" value="231" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="80" />
+    <option name="y" value="130" />
     <option name="width" value="1321" />
     <option name="height" value="649" />
   </component>
@@ -467,7 +467,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1602139069158" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1602141130730" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -612,18 +612,18 @@
       <workItem from="1601798445246" duration="5583000" />
       <workItem from="1601860537220" duration="8664000" />
       <workItem from="1602054949180" duration="5926000" />
-      <workItem from="1602122585533" duration="9221000" />
+      <workItem from="1602122585533" duration="10161000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148622000" />
+    <option name="totallyTimeSpent" value="149562000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="78" y="231" width="1321" height="649" extended-state="0" />
+    <frame x="80" y="130" width="1321" height="649" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4922179" visible="true" weight="0.22125298" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4922179" visible="true" weight="0.22125298" />
       <window_info id="Structure" order="1" sideWeight="0.5077821" side_tool="true" weight="0.21490881" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -653,7 +653,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.19429025" />
+      <window_info active="true" anchor="right" id="Database" order="6" visible="true" weight="0.26011103" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
@@ -1059,8 +1059,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/TeamApply.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="182">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
