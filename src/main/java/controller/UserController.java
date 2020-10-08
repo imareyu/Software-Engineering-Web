@@ -29,15 +29,15 @@ public class UserController {
     //登录
     @RequestMapping("/login")
     public String login(String userID, String userPassword, Model model, HttpServletRequest request){
-        User user = userService.queryStudentById(Integer.parseInt(userID));
+        User user = userService.queryStudentById(userID);
         System.out.println("用户id:"+userID);
         System.out.println("用户密码:"+userPassword);
 
         if(user == null){//没有此学生,查询老师，原则上来说，老师和学生的用户名不同
-            user = userService.queryTeacherById(Integer.parseInt(userID));//查询老师用户
+            user = userService.queryTeacherById(userID);//查询老师用户
             if(user == null)//不是老师，查询管理员
             {
-                user = userService.queryAdministratorById(Integer.parseInt(userID));
+                user = userService.queryAdministratorById(userID);
                 if(user == null){//不是学生，老师和管理员
                     model.addAttribute("error","用户名或密码错误");
                     System.out.println("不是学生、老师和管理员");

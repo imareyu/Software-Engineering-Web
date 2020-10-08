@@ -18,14 +18,14 @@ public interface UserMapper {
     int updateStudentUser(User user);
 
     //查询一个学生的信息（根据用户的用户id，即userID,不是数据库id）
-    User queryStudentById(int id);
+    User queryStudentById(String id);
     //查询所有学生的信息
     List<User> queryAllStudentUser();
 
-    //根据id查询老师用户
-    User queryTeacherById(int id);
+    //根据userid查询老师用户
+    User queryTeacherById(String id);
 
-    //根据id查询管理员用户
-    User queryAdministratorById(int id);
+    //根据userid查询管理员用户
+    User queryAdministratorById(String id);
 
 }

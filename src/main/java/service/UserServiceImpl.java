@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService{
         return userMapper.updateStudentUser(user);
     }
 
-    public User queryStudentById(int id) {
+    public User queryStudentById(String id) {
         return userMapper.queryStudentById(id);
     }
 
@@ -31,11 +31,11 @@ public class UserServiceImpl implements UserService{
         return userMapper.queryAllStudentUser();
     }
 
-    public User queryTeacherById(int id) {
+    public User queryTeacherById(String id) {
         return userMapper.queryTeacherById(id);
     }
 
-    public User queryAdministratorById(int id) {
+    public User queryAdministratorById(String id) {
         return userMapper.queryAdministratorById(id);
     }
 
