@@ -7,8 +7,10 @@
 <body>
 <div class="container">
     <div class="row clearfix">
-        <div class="col-md-6 column">
-            
+        <div class="col-md-10 column">
+            <div>
+
+            </div>
         </div>
     </div>
 </div>

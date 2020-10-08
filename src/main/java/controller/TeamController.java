@@ -42,6 +42,11 @@ public class TeamController {
             //学生用户
             System.out.println("team/goToTeamManage:学生用户"+user.getUserID());
             Team team = teamService.queryTeamByMemberID(user.getUserID());//根据用户id查询项目中是否存在
+            if(team == null){
+                //没有队伍
+
+                return "noTeam";
+            }
             model.addAttribute("teams",team);
         }
         else{
@@ -52,5 +57,11 @@ public class TeamController {
             return "adminiTeamManage";
         }
         return "stuTeamManage";
+    }
+
+    //前往申请项目界面
+    @RequestMapping("/goToTeamApply")
+    public String goToTeamApply(){
+        return "TeamApply";
     }
 }
