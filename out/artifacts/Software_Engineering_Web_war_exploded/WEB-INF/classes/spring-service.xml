@@ -17,6 +17,10 @@
     <bean id="reportServiceImpl" class="service.ReportServiceImpl">
         <property name="reportMapper" ref="reportMapper"/>
     </bean>
+
+    <bean id="teamServiceImpl" class="service.TeamServiceImpl">
+        <property name="teamMapper" ref="teamMapper"/>
+    </bean>
     <!--3.声明式事务配置-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>

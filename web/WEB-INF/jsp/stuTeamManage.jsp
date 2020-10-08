@@ -2,8 +2,15 @@
 <html>
 <head>
     <title>学生管理队伍页面</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<h1>学生队伍管理</h1>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-6 column">
+            
+        </div>
+    </div>
+</div>
 </body>
 </html>
