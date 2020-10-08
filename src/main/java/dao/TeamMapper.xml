@@ -28,7 +28,7 @@
         select * from sedesign.team
     </select>
 
-    <!--根据成员的id进行查询-->
+    <!--根据成员的userid进行查询-->
     <select id="queryTeamByMemberID" parameterType="int" resultType="Team">
         select * from sedesign.team
         where Teammate1ID = #{id} or Teammate1ID = #{id} or Teammate2ID = #{id}

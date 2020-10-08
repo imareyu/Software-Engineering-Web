@@ -20,7 +20,7 @@ public interface TeamMapper {
     List<Team> queryAllTeams();
 
     //根据成员的id进行查询
-    Team queryTeamByMemberID(int id);
+    Team queryTeamByMemberID(String id);
 
     //根据成员的姓名进行模糊查询，模糊！！！用like
     List<Team> queryTeamByMemberName(String word);
@@ -32,14 +32,14 @@ public interface TeamMapper {
     Team queryTeamByTeamID(int id);
 
     //查询某个老师手下所有的没有通过的队伍
-    List<Team> queryTeamNopass(int id);
+    List<Team> queryTeamNopass(String id);
 
     //查询某个老师手下的所有的通过的队伍
-    List<Team> queryTeamPass(int id);
+    List<Team> queryTeamPass(String id);
 
     //查询若干记录
     List<Team> queryAnyTeams(@Param("start") int start, @Param("len") int len);
 
     //根据教师的id查询
-    List<Team> queryTeamsByTeacherID(int id);
+    List<Team> queryTeamsByTeacherID(String id);
 }
