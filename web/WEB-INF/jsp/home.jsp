@@ -161,7 +161,7 @@
     }
 
     function stuToTeam(){
-        document.getElementById("rightframe").src="${pageContext.request.contextPath}/user/stuToTeam";
+        document.getElementById("rightframe").src="${pageContext.request.contextPath}/team/goToTeamManage";
     }
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

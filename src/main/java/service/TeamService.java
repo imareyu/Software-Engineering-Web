@@ -29,7 +29,7 @@ public interface TeamService {
     List<Team> queryTeamByProjectName(String word);
 
     //根据队伍id查询
-    Team queryMaterialByTeamID(int id);
+    Team queryTeamByTeamID(int id);
 
     //查询某个老师手下所有的没有通过的队伍
     List<Team> queryTeamNopass(int id);

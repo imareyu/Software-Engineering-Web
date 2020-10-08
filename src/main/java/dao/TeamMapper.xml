@@ -47,7 +47,7 @@
     </select>
 
     <!--根据队伍id查询-->
-    <select id="queryMaterialByTeamID" resultType="Team" parameterType="int">
+    <select id="queryTeamByTeamID" resultType="Team" parameterType="int">
         select * from sedesign.team
         where TeamID = #{id}
     </select>

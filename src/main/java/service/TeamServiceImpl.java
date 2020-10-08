@@ -39,8 +39,8 @@ public class TeamServiceImpl implements TeamService {
         return teamMapper.queryTeamByProjectName(word);
     }
 
-    public Team queryMaterialByTeamID(int id) {
-        return teamMapper.queryMaterialByTeamID(id);
+    public Team queryTeamByTeamID(int id) {
+        return teamMapper.queryTeamByTeamID(id);
     }
 
     public List<Team> queryTeamNopass(int id) {
