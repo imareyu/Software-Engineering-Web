@@ -48,13 +48,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="sedesign: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="sedesign: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="report: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -465,7 +458,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1602143643035" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1602143774228" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -610,16 +603,15 @@
       <workItem from="1601798445246" duration="5583000" />
       <workItem from="1601860537220" duration="8664000" />
       <workItem from="1602054949180" duration="5926000" />
-      <workItem from="1602122585533" duration="10161000" />
+      <workItem from="1602122585533" duration="10771000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149562000" />
+    <option name="totallyTimeSpent" value="150172000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="80" y="130" width="1321" height="649" extended-state="1" />
-    <editor active="true" />
+    <frame x="80" y="130" width="1321" height="649" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4922179" visible="true" weight="0.22125298" />
       <window_info id="Structure" order="1" sideWeight="0.5077821" side_tool="true" weight="0.21490881" />
