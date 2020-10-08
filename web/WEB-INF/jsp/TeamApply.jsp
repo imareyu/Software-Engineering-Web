@@ -14,6 +14,9 @@
     </div>
     <div class="row clearfix">
         <div class="col-md-10 column">
+            <form action="${pageContext.request.contextPath}/team/TeamApply" method="post">
+                
+            </form>
         </div>
     </div>
 </div>

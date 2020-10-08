@@ -64,4 +64,9 @@ public class TeamController {
     public String goToTeamApply(){
         return "TeamApply";
     }
+
+    @RequestMapping("/TeamApply")
+    public String TeamApply(HttpServletRequest request){
+        return "";
+    }
 }
