@@ -27,7 +27,7 @@ public class TeamServiceImpl implements TeamService {
         return teamMapper.queryAllTeams();
     }
 
-    public Team queryTeamByMemberID(int id) {
+    public Team queryTeamByMemberID(String id) {
         return teamMapper.queryTeamByMemberID(id);
     }
 
@@ -43,11 +43,11 @@ public class TeamServiceImpl implements TeamService {
         return teamMapper.queryTeamByTeamID(id);
     }
 
-    public List<Team> queryTeamNopass(int id) {
+    public List<Team> queryTeamNopass(String id) {
         return teamMapper.queryTeamNopass(id);
     }
 
-    public List<Team> queryTeamPass(int id) {
+    public List<Team> queryTeamPass(String id) {
         return teamMapper.queryTeamPass(id);
     }
 
@@ -55,7 +55,7 @@ public class TeamServiceImpl implements TeamService {
         return teamMapper.queryAnyTeams(start,len);
     }
 
-    public List<Team> queryTeamsByTeacherID(int id) {
+    public List<Team> queryTeamsByTeacherID(String id) {
         return teamMapper.queryTeamsByTeacherID(id);
     }
 }

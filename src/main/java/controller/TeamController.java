@@ -44,7 +44,7 @@ public class TeamController {
             Team team = teamService.queryTeamByMemberID(user.getUserID());//根据用户id查询项目中是否存在
             if(team == null){
                 //没有队伍
-
+                System.out.println("无队伍");
                 return "noTeam";
             }
             model.addAttribute("teams",team);
@@ -61,12 +61,34 @@ public class TeamController {
 
     //前往申请项目界面
     @RequestMapping("/goToTeamApply")
-    public String goToTeamApply(){
-        return "TeamApply";
+    public String goToTeamApply(HttpServletRequest request){
+        //验证是不是有项目了
+        User user = (User)request.getSession().getAttribute("UserSession");
+        if(user == null)
+            return "login";
+        Team team = teamService.queryTeamByMemberID(user.getUserID());
+        if(team == null){//没队伍，可以去申请页面
+            return "TeamApply";
+        }
+        return "failedApply";//有队伍，拦截
     }
 
+    //进行项目申请，只有学生可以调用
     @RequestMapping("/TeamApply")
     public String TeamApply(HttpServletRequest request){
-        return "";
+        System.out.println("/team/TeamApply");
+        User user = (User)request.getSession().getAttribute("UserSession");
+        if(user == null){
+            //未登录
+            System.out.println("未登录");
+            return "login";
+        }
+        if("student".equals(user.getUserType())){
+            //为学生，且不是老师、管理员、队员和队长
+            Team team = new Team();
+//            team.setProjectName();
+            return "";
+        }
+        return "failedApply";//为是老师或管理员或队员或队长
     }
 }

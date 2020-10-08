@@ -29,7 +29,7 @@
     </select>
 
     <!--根据成员的userid进行查询-->
-    <select id="queryTeamByMemberID" parameterType="int" resultType="Team">
+    <select id="queryTeamByMemberID" parameterType="String" resultType="Team">
         select * from sedesign.team
         where Teammate1ID = #{id} or Teammate1ID = #{id} or Teammate2ID = #{id}
     </select>
@@ -54,14 +54,14 @@
 
     <!--查询某个老师手下所有的没有通过的队伍-->
     <!--List<Team> queryTeamNopass(int id);-->
-    <select id="queryTeamNopass" parameterType="int" resultType="Team">
+    <select id="queryTeamNopass" parameterType="String" resultType="Team">
         select * from sedesign.team
         where TeacherID = #{id} and State = 'nopass'
     </select>
 
     <!--查询某个老师手下的所有的通过的队伍-->
     <!--List<Team> queryTeamPass(int id);-->
-    <select id="queryTeamPass" parameterType="int" resultType="Team">
+    <select id="queryTeamPass" parameterType="String" resultType="Team">
         select * from sedesign.team
         where TeacherID = #{id} and State = 'pass'
     </select>
@@ -74,7 +74,7 @@
 
     <!--根据教师的id查询-->
     <!--List<Team> queryTeamsByTeacherID(int id);-->
-    <select id="queryTeamsByTeacherID" parameterType="int" resultType="Team">
+    <select id="queryTeamsByTeacherID" parameterType="String" resultType="Team">
         select * from sedesign.team
         where TeacherID = #{id}
     </select>
