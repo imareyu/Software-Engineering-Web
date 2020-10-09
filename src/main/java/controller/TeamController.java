@@ -95,7 +95,29 @@ public class TeamController {
         if("student".equals(user.getUserType())){
             //为学生，且不是老师、管理员、队员和队长
             System.out.println(team);
+            //对数据进行处理，获得真正的teacherID
+            String teacherID = team.getTeacherID();
+            for(int i = 0;i < teacherID.length();i++){
+                if(teacherID.charAt(i) == ' '){
+                    teacherID = teacherID.substring(0,i);
+                    System.out.println(teacherID+"aaa");
+                    break;
+                }
+            }
+            team.setTeacherID(teacherID);
             team.setState("nopass");
+            if(teamService.addTeam(team) > 0){
+                //添加成功,修改每一个成员的类型
+                String teamleaderID = team.getTeamleaderID();
+                User teamleader = userService.queryStudentById(teamleaderID);
+                teamleader.setUserType("teamleader");
+                userService.updateStudentUser(teamleader);
+                //队长修改完成
+
+                if(!"".equals(team.getTeammate1ID())){//一号队员不为空
+                    ;
+                }
+            }
             return "";
         }
         return "failedApply";//为是老师或管理员或队员或队长
