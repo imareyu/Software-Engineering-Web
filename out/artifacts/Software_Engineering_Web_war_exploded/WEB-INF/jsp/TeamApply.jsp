@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="pojo.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="SessionCheckStu.jsp"%><%--进行学生身份验证--%>
@@ -18,7 +19,7 @@
     </div>
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <form action="${pageContext.request.contextPath}/team/TeamApply" method="post">
+            <form class="form-horizontal" role="form" action="${pageContext.request.contextPath}/team/TeamApply" method="post">
                 <div class="form-group">
                     <label >项目名称</label>
                     <label>
@@ -68,29 +69,15 @@
                     </label>
                 </div>
                 <%--下边需要一个选择框--%>
-                <div class="dropdown">
-                    <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
-                        主题<span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                        <li role="presentation" class="dropdown-header">下拉菜单标题</li>
-                        <li role="presentation" >
-                            <a role="menuitem" tabindex="-1" href="#">Java</a>
-                        </li>
-                        <li role="presentation">
-                            <a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
-                        </li>
-                        <li role="presentation">
-                            <a role="menuitem" tabindex="-1" href="#">
-                                数据通信/网络         </a>
-                        </li>
-                        <li role="presentation" class="divider"></li>
-                        <li role="presentation" class="dropdown-header">下拉菜单标题</li>
-                        <li role="presentation">
-                            <a role="menuitem" tabindex="-1" href="#">分离的链接</a>
-                        </li>
-                    </ul>
+                <div class="form-group">
+                    <label >指导老师</label>
+                    <select class="selectpicker">
+                        <c:forEach var="teacher" items="${teachers}">
+                            <option>${teacher.userID} ${teacher.userName}</option>
+                        </c:forEach>
+                    </select>
                 </div>
+
 
             </form>
         </div>

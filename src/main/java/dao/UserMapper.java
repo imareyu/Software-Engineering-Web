@@ -25,6 +25,9 @@ public interface UserMapper {
     //根据userid查询老师用户
     User queryTeacherById(String id);
 
+    //查询所有的老师用户
+    List<User> queryAllTeacher();
+
     //根据userid查询管理员用户
     User queryAdministratorById(String id);
 

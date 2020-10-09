@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pojo.Team;
 import pojo.User;
 import service.TeamService;
+import service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -19,6 +20,10 @@ public class TeamController {
     @Autowired
     @Qualifier("teamServiceImpl")
     private TeamService teamService;
+
+    @Autowired
+    @Qualifier("userServiceImpl")
+    private UserService userService;
 
     //前往队伍管理页面，根据用户类型进行分流
     @RequestMapping("/goToTeamManage")
@@ -61,13 +66,17 @@ public class TeamController {
 
     //前往申请项目界面
     @RequestMapping("/goToTeamApply")
-    public String goToTeamApply(HttpServletRequest request){
+    public String goToTeamApply(HttpServletRequest request,Model model){
         //验证是不是有项目了
         User user = (User)request.getSession().getAttribute("UserSession");
         if(user == null)
             return "login";
         Team team = teamService.queryTeamByMemberID(user.getUserID());
         if(team == null){//没队伍，可以去申请页面
+            //去页面之前要查询一下可以选择的老师
+            List<User> teachers = userService.queryAllTeacher();
+            System.out.println("查询到教师用户："+teachers.size()+"个");
+            model.addAttribute("teachers",teachers);
             return "TeamApply";
         }
         return "failedApply";//有队伍，拦截
@@ -75,7 +84,7 @@ public class TeamController {
 
     //进行项目申请，只有学生可以调用
     @RequestMapping("/TeamApply")
-    public String TeamApply(HttpServletRequest request){
+    public String TeamApply(Team team ,HttpServletRequest request){
         System.out.println("/team/TeamApply");
         User user = (User)request.getSession().getAttribute("UserSession");
         if(user == null){
@@ -85,8 +94,8 @@ public class TeamController {
         }
         if("student".equals(user.getUserType())){
             //为学生，且不是老师、管理员、队员和队长
-            Team team = new Team();
-//            team.setProjectName();
+            System.out.println(team);
+            team.setState("nopass");
             return "";
         }
         return "failedApply";//为是老师或管理员或队员或队长

@@ -34,6 +34,10 @@
         where UserID = #{id}
     </select>
 
+    <select id="queryAllTeacher" resultType="User">
+        select * from sedesign.teacher
+    </select>
+
     <select id="queryAdministratorById" resultType="User">
         select *
         from sedesign.administrator

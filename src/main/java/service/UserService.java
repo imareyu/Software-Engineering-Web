@@ -25,6 +25,9 @@ public interface UserService {
     //根据userid查询老师
     User queryTeacherById(String id);
 
+    //查询所有的教师用户
+    List<User> queryAllTeacher();
+
     //根据userid查询管理员
     User queryAdministratorById(String id);
 

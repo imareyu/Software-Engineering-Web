@@ -14,7 +14,6 @@ import service.ReportService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.net.URLEncoder;
 import java.sql.Timestamp;
@@ -26,6 +25,8 @@ public class FileController {//对所有文件操作相关的进行管理
     @Autowired
     @Qualifier("materialServiceImpl")
     private MaterialService materialService;//对资料的管理
+
+    @Autowired
     @Qualifier("reportServiceImpl")
     private ReportService reportService;//对报告管理
 
