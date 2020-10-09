@@ -71,13 +71,17 @@
                 <%--下边需要一个选择框--%>
                 <div class="form-group">
                     <label >指导老师</label>
-                    <select class="selectpicker">
-                        <c:forEach var="teacher" items="${teachers}">
-                            <option>${teacher.userID} ${teacher.userName}</option>
-                        </c:forEach>
-                    </select>
+                    <label>
+                        <select class="selectpicker" name="TeacherID">
+                            <c:forEach var="teacher" items="${teachers}">
+                                <option>${teacher.userID} ${teacher.userName}</option>
+                            </c:forEach>
+                        </select>
+                    </label>
                 </div>
-
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">提交</button>
+                </div>
 
             </form>
         </div>
