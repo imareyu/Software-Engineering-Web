@@ -87,8 +87,7 @@ public class TeamController {
     synchronized public String TeamApply(Team team ,HttpServletRequest request,Model model){
         System.out.println("/team/TeamApply");
         User user = (User)request.getSession().getAttribute("UserSession");
-        if(user == null){
-            //未登录
+        if(user == null){//未登录
             System.out.println("未登录");
             return "login";
         }
@@ -116,7 +115,7 @@ public class TeamController {
                 if(leader == null) {
                     //不存在这个队长
                     return "login";
-                }else{
+                }else{//队长信息有效，接下来判断队员信息
                     if("student".equals(leader.getUserType())){//队长还没有项目
                         if("".equals(team.getTeammate1ID()) && "".equals(team.getTeammate2ID())){
                             //不存在一号队员和二号队员,直接放到数据库里边
@@ -130,7 +129,7 @@ public class TeamController {
                             if(!"".equals(team.getTeammate1ID()) && !"".equals(team.getTeammate2ID())){
                                 User teammate1 = userService.queryStudentById(team.getTeammate1ID());
                                 User teammate2 = userService.queryStudentById(team.getTeammate2ID());
-                                if(teammate1 == null || teammate2 == null){//有队员并不存在
+                                if(teammate1 == null || teammate2 == null){//有队员不存在
                                     System.out.println("队员信息不存在");
                                     model.addAttribute("message","队员信息不存在");
                                     return "failedApply";
@@ -170,14 +169,12 @@ public class TeamController {
                                 }
                             }
                         }
-                    }else{
-                        //有项目了，返回到失败
+                    }else{//有项目了，返回到失败
                         return "failedApply";
                     }
                 }
             }
-            return "";
         }
-        return "failedApply";//为是老师或管理员或队员或队长
+        return "failedApply";//是老师或管理员或队员或队长
     }
 }
