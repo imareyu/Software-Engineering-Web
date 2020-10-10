@@ -84,7 +84,7 @@ public class TeamController {
 
     //进行项目申请，只有学生可以调用
     @RequestMapping("/TeamApply")
-    public String TeamApply(Team team ,HttpServletRequest request){
+    synchronized public String TeamApply(Team team ,HttpServletRequest request,Model model){
         System.out.println("/team/TeamApply");
         User user = (User)request.getSession().getAttribute("UserSession");
         if(user == null){
@@ -106,16 +106,74 @@ public class TeamController {
             }
             team.setTeacherID(teacherID);
             team.setState("nopass");
-            if(teamService.addTeam(team) > 0){
-                //添加成功,修改每一个成员的类型
-                String teamleaderID = team.getTeamleaderID();
-                User teamleader = userService.queryStudentById(teamleaderID);
-                teamleader.setUserType("teamleader");
-                userService.updateStudentUser(teamleader);
-                //队长修改完成
-
-                if(!"".equals(team.getTeammate1ID())){//一号队员不为空
-                    ;
+            //team对象成功构建
+            //接下来，需要验证team的各种数据是否合法
+            //验证队长id和队员userid是否合法
+            if("".equals(team.getTeamleaderID())){
+                return "login";//说明没登录，直接返回
+            }else{
+                User leader = userService.queryStudentById(team.getTeamleaderID());
+                if(leader == null) {
+                    //不存在这个队长
+                    return "login";
+                }else{
+                    if("student".equals(leader.getUserType())){//队长还没有项目
+                        if("".equals(team.getTeammate1ID()) && "".equals(team.getTeammate2ID())){
+                            //不存在一号队员和二号队员,直接放到数据库里边
+                            teamService.addTeam(team);
+                            //然后，修改队长的信息
+                            leader.setUserType("teamleader");
+                            userService.updateStudentUser(leader);
+                            return "successApply";
+                        }else {
+                            //有2个队员
+                            if(!"".equals(team.getTeammate1ID()) && !"".equals(team.getTeammate2ID())){
+                                User teammate1 = userService.queryStudentById(team.getTeammate1ID());
+                                User teammate2 = userService.queryStudentById(team.getTeammate2ID());
+                                if(teammate1 == null || teammate2 == null){//有队员并不存在
+                                    System.out.println("队员信息不存在");
+                                    model.addAttribute("message","队员信息不存在");
+                                    return "failedApply";
+                                }else{
+                                    if("student".equals(teammate1.getUserType()) && "student".equals(teammate2.getUserType())){
+                                        //两个队员都没加入队伍，可以写入数据库
+                                        teamService.addTeam(team);//写队伍表
+                                        leader.setUserType("teamleader");
+                                        userService.updateStudentUser(leader);//更新队长信息
+                                        teammate1.setUserType("teammate");
+                                        userService.updateStudentUser(teammate1);//更新一号队员的信息
+                                        teammate2.setUserType("teammate");
+                                        userService.updateStudentUser(teammate2);//更新二号队员的信息
+                                        System.out.println("成功添加队伍");
+                                        return "successApply";
+                                    }
+                                }
+                            }else{
+                                //有一个队员
+                                User teammate = null;
+                                if("".equals(team.getTeammate1ID())){//一号队员为空，二号队员有效
+                                    teammate = userService.queryStudentById(team.getTeammate2ID());//查到二号队员
+                                }else{//二号队员为空，一号队员有效
+                                    teammate = userService.queryStudentById(team.getTeammate1ID());//查到一号队员的信息
+                                }
+                                if(teammate == null){//没有这个队员，失败
+                                    System.out.println("一个队员，队员信息不存在");
+                                    model.addAttribute("message","队员信息不存在");
+                                    return "failedApply";
+                                }else{//队员存在修改数据库
+                                    leader.setUserType("teamleader");
+                                    userService.updateStudentUser(leader);
+                                    teammate.setUserType("teammate");
+                                    userService.updateStudentUser(teammate);
+                                    System.out.println("单个队员，队伍成功申请，等待审批");
+                                    return "successApply";
+                                }
+                            }
+                        }
+                    }else{
+                        //有项目了，返回到失败
+                        return "failedApply";
+                    }
                 }
             }
             return "";
