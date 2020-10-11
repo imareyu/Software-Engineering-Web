@@ -146,10 +146,13 @@ public class TeamController {
                                         teamService.addTeam(team);//写队伍表
                                         leader.setUserType("teamleader");
                                         userService.updateStudentUser(leader);//更新队长信息
+
                                         teammate1.setUserType("teammate");
                                         userService.updateStudentUser(teammate1);//更新一号队员的信息
+
                                         teammate2.setUserType("teammate");
                                         userService.updateStudentUser(teammate2);//更新二号队员的信息
+
                                         System.out.println("成功添加队伍");
                                         return "successApply";
                                     }
