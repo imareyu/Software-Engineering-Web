@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>学生队伍信息展示</title>
+    <title>项目申请成功</title>
 </head>
 <body>
-<h1>学生用户队伍</h1>
+等待老师审批
 </body>
 </html>

@@ -52,8 +52,10 @@ public class TeamController {
                 System.out.println("无队伍");
                 return "noTeam";
             }
+            System.out.println("其所在队伍"+team);
             model.addAttribute("teams",team);
-            User teachers = (User) userService.queryAllTeacher();
+            List<User> teachers = userService.queryAllTeacher();
+//            System.out.println();
             model.addAttribute("teachers",teachers);
         }
         else{

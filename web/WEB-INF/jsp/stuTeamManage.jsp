@@ -20,53 +20,53 @@
         <div class="row">
             <form class="form-horizontal" role="form" action="${pageContext.request.contextPath}/team/updateTeam" method="post">
                 <div class="col-md-2 column"></div>
-                <div class="col-md-4 column">
+                <div class="col-md-5 column">
                     <div class="form-group">
                         <label >项目名称</label>
                         <label>
-                            <input type="text" name="ProjectName" class="form-control" value="${teams[0].projectName}" required>
+                            <input type="text" name="ProjectName" class="form-control" value="${teams.projectName}" required>
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label >队长ID(你的ID)</label>
                         <label>
-                            <input type="text" name="TeamleaderID" value="${teams[0].teamleaderID}" class="form-control" readonly>
+                            <input type="text" name="TeamleaderID" value="${teams.teamleaderID}" class="form-control" readonly>
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label >队长姓名(你的名字)</label>
                         <label>
-                            <input type="text" name="TeamleaderName" class="form-control" value="" required>
+                            <input type="text" name="TeamleaderName" class="form-control" value="${teams.teamleaderName}" required>
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label >队员1ID</label>
                         <label>
-                            <input type="text" name="Teammate1ID" class="form-control" value="${teams[0].teammate1ID}">
+                            <input type="text" name="Teammate1ID" class="form-control" value="${teams.teammate1ID}">
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label >队员1姓名</label>
                         <label>
-                            <input type="text" name="Teammate1Name" class="form-control" value="${teams[0].teammate1Name}">
+                            <input type="text" name="Teammate1Name" class="form-control" value="${teams.teammate1Name}">
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label >队员2ID</label>
                         <label>
-                            <input type="text" name="Teammate2ID" class="form-control" value="${teams[0].teammate2ID}">
+                            <input type="text" name="Teammate2ID" class="form-control" value="${teams.teammate2ID}">
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label >队员2姓名</label>
                         <label>
-                            <input type="text" name="Teammate2Name" class="form-control" value="${teams[0].teammate2Name}">
+                            <input type="text" name="Teammate2Name" class="form-control" value="${teams.teammate2Name}">
                         </label>
                     </div>
                     <%--下边需要一个选择框--%>
@@ -89,7 +89,7 @@
     </div>
 </div>
 <script>
-    window.onload = setTeacher;
+    // window.onload = setTeacher;
     function setTeacher(){
         var select1 = document.getElementById("TeacherID");
         for (var i = 0; i < select1.options.length; i++) {
@@ -99,8 +99,9 @@
                     break;
             }
             innerText.substring(0,j);
-            if(innerText === "${teams[0].teacherID}"){
+            if(innerText === "${teams.teacherID}"){
                 select1.options[i].selected = true;
+                console(innerText);
                 break;
             }
         }

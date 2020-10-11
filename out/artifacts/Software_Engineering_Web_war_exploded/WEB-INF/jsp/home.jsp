@@ -91,7 +91,7 @@
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a href="#" target="_blank" onclick="return toReportManage();">团队报告</a><%--等到老师上传文件的功能实现之后再完成--%>
+                            <a href="#"  onclick="return toReportManage();">团队报告</a><%--等到老师上传文件的功能实现之后再完成--%>
                         </div>
                     </div>
                 </div>
