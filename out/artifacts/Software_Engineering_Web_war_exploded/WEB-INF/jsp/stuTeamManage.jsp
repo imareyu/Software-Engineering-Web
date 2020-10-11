@@ -89,7 +89,6 @@
     </div>
 </div>
 <script>
-    // window.onload = setTeacher;
     function setTeacher(){
         var select1 = document.getElementById("TeacherID");
         for (var i = 0; i < select1.options.length; i++) {
@@ -98,15 +97,16 @@
                 if(innerText[j] === ' ')
                     break;
             }
-            innerText.substring(0,j);
+            innerText =innerText.substring(0,j);
+            // alert(innerText);
             if(innerText === "${teams.teacherID}"){
                 select1.options[i].selected = true;
-                console(innerText);
                 break;
             }
         }
         return true;
     }
+    window.onload = setTeacher;
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>

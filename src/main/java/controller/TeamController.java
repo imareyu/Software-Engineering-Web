@@ -128,6 +128,8 @@ public class TeamController {
                             //然后，修改队长的信息
                             leader.setUserType("teamleader");
                             userService.updateStudentUser(leader);
+                            System.out.println("只有队长的队伍"+leader.getUserID());
+                            request.getSession().setAttribute("UserSession",leader);//更新一下session中的用户信息
                             return "successApply";
                         }else {
                             //有2个队员
