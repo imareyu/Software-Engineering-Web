@@ -53,6 +53,8 @@ public class TeamController {
                 return "noTeam";
             }
             model.addAttribute("teams",team);
+            User teachers = (User) userService.queryAllTeacher();
+            model.addAttribute("teachers",teachers);
         }
         else{
             //为管理员用户
@@ -79,6 +81,7 @@ public class TeamController {
             model.addAttribute("teachers",teachers);
             return "TeamApply";
         }
+        model.addAttribute("message","已有队伍，请刷新界面");
         return "failedApply";//有队伍，拦截
     }
 
@@ -176,5 +179,11 @@ public class TeamController {
             }
         }
         return "failedApply";//是老师或管理员或队员或队长
+    }
+
+    //学生(队长)修改队伍信息
+    @RequestMapping("/updateTeam")
+    private String updateTeam(Team team){
+        return "";
     }
 }
