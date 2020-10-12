@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7deda246-a9a8-4b46-a350-d59f4a064c81" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TeamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/stuTeamManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/stuTeamManage.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -66,8 +66,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/TeamController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="100" selection-start-line="100" selection-end-line="100" />
+            <state relative-caret-position="228">
+              <caret line="214" column="52" selection-start-line="214" selection-start-column="52" selection-end-line="214" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/stuTeamManage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="996">
-              <caret line="103" column="22" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
+            <state relative-caret-position="250">
+              <caret line="88" column="114" selection-start-line="88" selection-start-column="114" selection-end-line="88" selection-end-column="114" />
             </state>
           </provider>
         </entry>
@@ -113,7 +113,6 @@
       <find>WebApp</find>
       <find>UserMapper</find>
       <find>userServiceImpl</find>
-      <find>user</find>
       <find>load</find>
       <find>stuTeam</find>
       <find>manage</find>
@@ -121,6 +120,7 @@
       <find>stuToReportManage</find>
       <find>toReportManage</find>
       <find>sess</find>
+      <find>user</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\001\IdeaProjects\Software-Engineering-Web</dir>
@@ -178,10 +178,10 @@
         <option value="$PROJECT_DIR$/src/main/java/dao/TeamMapper.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/ReportManage.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/stuTeamManage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/dao/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/pojo/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/stuTeamManage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/TeamController.java" />
       </list>
     </option>
@@ -224,8 +224,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="101" />
-    <option name="y" value="267" />
+    <option name="x" value="-14" />
+    <option name="y" value="159" />
     <option name="width" value="1382" />
     <option name="height" value="702" />
   </component>
@@ -615,12 +615,12 @@
       <workItem from="1602377494475" duration="15000" />
       <workItem from="1602377521256" duration="47000" />
       <workItem from="1602377580954" duration="13943000" />
-      <workItem from="1602462562765" duration="2647000" />
+      <workItem from="1602462562765" duration="8723000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191521000" />
+    <option name="totallyTimeSpent" value="197597000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -632,7 +632,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="101" y="267" width="1382" height="702" extended-state="0" />
+    <frame x="-14" y="159" width="1382" height="702" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49019608" visible="true" weight="0.21028744" />
@@ -863,13 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/modifyPassword.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1855">
-          <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/uploadMaterial.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-730">
@@ -1011,17 +1004,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/modifyPassword.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="80" column="16" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/stuTeamManage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="996">
-          <caret line="103" column="22" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
+        <state relative-caret-position="250">
+          <caret line="88" column="114" selection-start-line="88" selection-start-column="114" selection-end-line="88" selection-end-column="114" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/TeamController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        <state relative-caret-position="228">
+          <caret line="214" column="52" selection-start-line="214" selection-start-column="52" selection-end-line="214" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

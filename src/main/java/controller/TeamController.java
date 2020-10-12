@@ -191,7 +191,30 @@ public class TeamController {
 
     //学生(队长)修改队伍信息
     @RequestMapping("/updateTeam")
-    private String updateTeam(Team team){
+    public String updateTeam(Team team){
+
         return "";
+    }
+
+    //队员退出队伍
+    @RequestMapping("/exitTeam")
+    public String exitTeam(String id){
+        System.out.println("/team/exitTeam");
+        System.out.println("退出队伍"+id);
+        Team team = teamService.queryTeamByMemberID(id);//查询所在的队伍
+        if(id.equals(team.getTeammate1ID())){
+            //为一号队员，设置为空
+            team.setTeammate1ID("");
+            team.setTeammate1Name("");
+            teamService.updateTeam(team);//修改数据库
+        }else{
+            if(id.equals(team.getTeammate2ID())){
+                //二号队员，设为空
+                team.setTeammate2ID("");
+                team.setTeammate2Name("");
+                teamService.updateTeam(team);//更新数据库
+            }
+        }
+        return "redirect:/team/goToTeamManage";//继续解析
     }
 }
