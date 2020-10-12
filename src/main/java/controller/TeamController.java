@@ -189,10 +189,27 @@ public class TeamController {
         return "failedApply";//是老师或管理员或队员或队长
     }
 
-    //学生(队长)修改队伍信息
+    //学生(只有队长可以)修改队伍信息
     @RequestMapping("/updateTeam")
-    public String updateTeam(Team team){
+    public String updateTeam(Team team,HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        if("teamleader".equals(user.getUserType())){//为队长
+            Team teamquery = teamService.queryTeamByMemberID(user.getUserID());
+            if(teamquery == null){
+                //没有这个记录，说明队长没项目
+                System.out.println("此人没有队伍");
+                return "noTeam";
+            }
+            team.setTeamID(teamquery.getTeamID());
+            team.setProjectID(teamquery.getProjectID());
+            team.setState(teamquery.getState());
+            //忽然发现数据库设计不合理了，呜呜
 
+
+        }
         return "";
     }
 
