@@ -96,6 +96,7 @@ public class TeamController {
             System.out.println("未登录");
             return "login";
         }
+        user = userService.queryStudentById(user.getUserID());//到数据库进行同步,因为有可能学生类型已经被更改了
         if("student".equals(user.getUserType())){
             //为学生，且不是老师、管理员、队员和队长
             System.out.println(team);

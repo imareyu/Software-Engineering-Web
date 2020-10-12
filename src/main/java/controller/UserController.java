@@ -100,6 +100,7 @@ public class UserController {
 
             return "forward:/user/home";//实际并不会执行
         }
+        user = userService.queryStudentById(user.getUserID());//到数据库里进行同步，因为用户类型可能发生了更改
         user.setUserPassword(newPassword);//否则，修改密码,写入数据库，注销，返回登录页
         userService.updateStudentUser(user);//写入数据库
         request.getSession().invalidate();//这一步还需要修改
