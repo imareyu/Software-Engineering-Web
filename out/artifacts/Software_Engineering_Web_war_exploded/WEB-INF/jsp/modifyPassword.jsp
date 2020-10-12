@@ -70,7 +70,7 @@
         var newpassword2 = document.getElementById("newPassword2");
         var oldPassword = document.getElementById("oldPassword");
         if(newpassword1.value.length < 6 || newpassword2.value.length < 6 ||newpassword1.value !== newpassword2.value){
-            alert("新密码不一致");
+            alert("新密码过短或不一致");
             return false;
         }
         if(newpassword1.value === oldPassword.value){

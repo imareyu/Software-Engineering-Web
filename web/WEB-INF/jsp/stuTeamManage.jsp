@@ -82,11 +82,11 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-default" onclick="myconfirm();">保存修改</button>
+                        <button type="submit" class="btn btn-default" onclick="return myconfirm();">保存修改</button>
                     </div>
                 </div>
             </form>
-            <button type="button" class="btn tn-default"><a href="${pageContext.request.contextPath}/team/exitTeam?id=<%=user.getUserID()%>" id="exitTeam">退出队伍</a></button>
+            <button type="button" class="btn tn-default"><a title="队长无法退出！注销项目需要教师操作" href="${pageContext.request.contextPath}/team/exitTeam?id=<%=user.getUserID()%>" id="exitTeam" onclick="return myconfirm();">退出队伍</a></button>
         </div>
     </div>
 </div>
@@ -111,6 +111,7 @@
             var exitTeam = document.getElementById("exitTeam");
             exitTeam.disabled = true;//使其不可用
             exitTeam.removeAttribute("href");
+            exitTeam.onclick = null;//队长这个功能不可用，所以直接移除提示
         }else{//为队员，设置除了 自己姓名和 退出队伍按钮 外都为不可用
             var ProjectName = document.getElementById("ProjectName");
             ProjectName.readonly = true;//项目名只可读
@@ -140,9 +141,7 @@
     window.onload = setStatus;
 
     function myconfirm() {
-        if(confirm("确认修改？"))
-            return true;
-        return false;
+        return confirm("确认执行操作？");
     }
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

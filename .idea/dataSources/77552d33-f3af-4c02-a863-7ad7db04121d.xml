@@ -1547,7 +1547,6 @@ UserID</ColNames>
       <Position>2</Position>
       <Comment>项目的id,用户可以得知</Comment>
       <DataType>varchar(10)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="360" parent="294" name="ProjectName">
@@ -1636,8 +1635,7 @@ Teammate2ID</ColNames>
     </index>
     <key id="375" parent="294" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>TeamID
-ProjectID</ColNames>
+      <ColNames>TeamID</ColNames>
       <Primary>1</Primary>
     </key>
     <key id="376" parent="294" name="TeamID_UNIQUE">
