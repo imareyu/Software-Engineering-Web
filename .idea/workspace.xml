@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7deda246-a9a8-4b46-a350-d59f4a064c81" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TeamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/TeacherHome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/TeacherHome.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -62,11 +62,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/TeamController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="298" column="22" lean-forward="true" selection-start-line="298" selection-start-column="22" selection-end-line="298" selection-end-column="22" />
+            <state relative-caret-position="-16">
+              <caret line="91" column="23" lean-forward="true" selection-start-line="91" selection-start-column="23" selection-end-line="91" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -74,14 +74,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/stuTeamManage.jsp">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/TeacherHome.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-255">
-              <caret line="119" column="40" selection-start-line="119" selection-start-column="40" selection-end-line="119" selection-end-column="40" />
+            <state relative-caret-position="370">
+              <caret line="130" column="51" lean-forward="true" selection-start-line="130" selection-start-column="51" selection-end-line="130" selection-end-column="51" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -158,7 +157,6 @@
         <option value="$PROJECT_DIR$/src/main/java/service/MaterialServiceImpl.java" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/MaterialInfor.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/TeacherHome.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/SessionCheckStu.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/stuTeam.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-service.xml" />
@@ -187,6 +185,7 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/stuTeamManage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/TeamController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/TeacherHome.jsp" />
       </list>
     </option>
   </component>
@@ -227,7 +226,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="510" />
     <option name="y" value="104" />
     <option name="width" value="1137" />
@@ -620,12 +619,12 @@
       <workItem from="1602377521256" duration="47000" />
       <workItem from="1602377580954" duration="13943000" />
       <workItem from="1602462562765" duration="14496000" />
-      <workItem from="1602552522534" duration="2257000" />
+      <workItem from="1602552522534" duration="3963000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205627000" />
+    <option name="totallyTimeSpent" value="207333000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -637,10 +636,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49019608" visible="true" weight="0.21331316" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49019608" visible="true" weight="0.21331316" />
       <window_info id="Structure" order="1" sideWeight="0.50980395" side_tool="true" weight="0.22125298" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -670,7 +669,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info active="true" anchor="right" id="Database" order="6" visible="true" weight="0.15733737" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.15733737" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
@@ -847,13 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/TeacherHome.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1241">
-          <caret line="86" column="48" lean-forward="true" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/successApply.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1012,8 +1004,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/stuTeamManage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="119" column="40" selection-start-line="119" selection-start-column="40" selection-end-line="119" selection-end-column="40" />
+        <state relative-caret-position="1270">
+          <caret line="156" column="34" lean-forward="true" selection-start-line="156" selection-start-column="34" selection-end-line="156" selection-end-column="34" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1023,10 +1015,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/TeamController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="298" column="22" lean-forward="true" selection-start-line="298" selection-start-column="22" selection-end-line="298" selection-end-column="22" />
+        <state relative-caret-position="-16">
+          <caret line="91" column="23" lean-forward="true" selection-start-line="91" selection-start-column="23" selection-end-line="91" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/TeacherHome.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="130" column="51" lean-forward="true" selection-start-line="130" selection-start-column="51" selection-end-line="130" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
