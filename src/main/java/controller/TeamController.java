@@ -213,6 +213,17 @@ public class TeamController {
             team.setTeamID(teamquery.getTeamID());
             team.setProjectID(teamquery.getProjectID());
             team.setState(teamquery.getState());
+
+            //下边把教师的id进行处理，因为现在的id其实是id和姓名连在一起的
+            String teacherID = team.getTeacherID();
+            for(int i = 0;i < teacherID.length();i++){
+                if(teacherID.charAt(i) == ' '){
+                    teacherID = teacherID.substring(0,i);
+                    System.out.println(teacherID+"aaa");
+                    break;
+                }
+            }
+            team.setTeacherID(teacherID);
             //忽然发现数据库设计不合理了，呜呜
             if("".equals(team.getTeammate1ID()) && "".equals(team.getTeammate2ID())){//不存在一号队员和二号队员,直接放到数据库里边
                 teamService.addTeam(team);

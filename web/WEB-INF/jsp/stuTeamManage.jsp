@@ -16,7 +16,12 @@
             </div>
         </div>
 
+
         <%--<%Team team = (Team);%>--%>
+        <div class="row">
+            <span style="color: green" id="pass"></span>
+            <span style="color: red" id="nopass"></span>
+        </div>
         <%User user = (User)session.getAttribute("UserSession");%>
         <div class="row">
             <form class="form-horizontal" role="form" action="${pageContext.request.contextPath}/team/updateTeam" method="post">
@@ -105,6 +110,14 @@
                 select1.options[i].selected = true;
                 break;
             }
+        }
+        if("pass" === "${teams.State}"){//通过
+            var pass = document.getElementById("pass");
+            pass.innerText = "项目已通过";
+            select1.disabled = true;//项目通过，指导老师不可更改
+        }else{//未通过
+            var nopass = document.getElementById("nopass");
+            nopass.innerText = "项目等待审批";
         }
         var TeamleaderID = document.getElementById("TeamleaderID");
         if(TeamleaderID.value === "<%=user.getUserID()%>"){//为队长，设置退出队伍按钮为不可用
