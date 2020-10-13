@@ -279,7 +279,7 @@ public class TeamController {
 
     //队员退出队伍
     @RequestMapping("/exitTeam")
-    public String exitTeam(String id){
+    public String exitTeam(String id,HttpServletRequest request){
         System.out.println("/team/exitTeam");
         System.out.println("退出队伍"+id);
         Team team = teamService.queryTeamByMemberID(id);//查询所在的队伍
@@ -296,6 +296,11 @@ public class TeamController {
                 teamService.updateTeam(team);//更新数据库
             }
         }
+        //接下来修改队员的用户类型
+        User user= (User) request.getSession().getAttribute("UserSession");
+        user = userService.queryStudentById(user.getUserID());
+        user.setUserType("student");
+        userService.updateStudentUser(user);
         return "redirect:/team/goToTeamManage";//继续解析
     }
 }
