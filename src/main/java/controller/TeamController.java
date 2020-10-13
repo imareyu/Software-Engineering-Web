@@ -191,26 +191,79 @@ public class TeamController {
 
     //学生(只有队长可以)修改队伍信息
     @RequestMapping("/updateTeam")
-    public String updateTeam(Team team,HttpServletRequest request){
+    public String updateTeam(Team team,HttpServletRequest request,Model model){
         User user = (User) request.getSession().getAttribute("UserSession");
         if(user == null){
             return "login";
         }
         if("teamleader".equals(user.getUserType())){//为队长
             Team teamquery = teamService.queryTeamByMemberID(user.getUserID());
-            if(teamquery == null){
-                //没有这个记录，说明队长没项目
-                System.out.println("此人没有队伍");
-                return "noTeam";
+            //在这里把所有队员的类型都改为student，队长不改，因为队长id不会变，
+            if(!"".equals(teamquery.getTeammate1ID())){//有一号队员
+                User teammate1 = userService.queryStudentById(teamquery.getTeammate1ID());
+                teammate1.setUserType("student");
+                userService.updateStudentUser(teammate1);
+            }
+            if(!"".equals(teamquery.getTeammate2ID())){
+                //二号队员
+                User teammate2 = userService.queryStudentById(teamquery.getTeammate2ID());
+                teammate2.setUserType("student");
+                userService.updateStudentUser(teammate2);
             }
             team.setTeamID(teamquery.getTeamID());
             team.setProjectID(teamquery.getProjectID());
             team.setState(teamquery.getState());
             //忽然发现数据库设计不合理了，呜呜
+            if("".equals(team.getTeammate1ID()) && "".equals(team.getTeammate2ID())){//不存在一号队员和二号队员,直接放到数据库里边
+                teamService.addTeam(team);
+                //然后，修改队长的信息
+                return "successApply";
+            }else {
+                //有2个队员
+                if(!"".equals(team.getTeammate1ID()) && !"".equals(team.getTeammate2ID())){
+                    User teammate1 = userService.queryStudentById(team.getTeammate1ID());
+                    User teammate2 = userService.queryStudentById(team.getTeammate2ID());
+                    if(teammate1 == null || teammate2 == null){//有队员不存在
+                        System.out.println("队员信息不存在");
+                        model.addAttribute("message","队员信息不存在");
+                        return "failedApply";
+                    }else{
+                        if("student".equals(teammate1.getUserType()) && "student".equals(teammate2.getUserType())){
+                            //两个队员都没加入队伍，可以写入数据库
+                            teamService.addTeam(team);//写队伍表
 
+                            teammate1.setUserType("teammate");
+                            userService.updateStudentUser(teammate1);//更新一号队员的信息
 
+                            teammate2.setUserType("teammate");
+                            userService.updateStudentUser(teammate2);//更新二号队员的信息
+
+                            System.out.println("成功添加队伍");
+                            return "successApply";
+                        }
+                    }
+                }else{
+                    //有一个队员
+                    User teammate = null;
+                    if("".equals(team.getTeammate1ID())){//一号队员为空，二号队员有效
+                        teammate = userService.queryStudentById(team.getTeammate2ID());//查到二号队员
+                    }else{//二号队员为空，一号队员有效
+                        teammate = userService.queryStudentById(team.getTeammate1ID());//查到一号队员的信息
+                    }
+                    if(teammate == null){//没有这个队员，失败
+                        System.out.println("一个队员，队员信息不存在");
+                        model.addAttribute("message","队员信息不存在");
+                        return "failedApply";
+                    }else{//队员存在修改数据库
+                        teammate.setUserType("teammate");
+                        userService.updateStudentUser(teammate);
+                        System.out.println("单个队员，队伍成功申请，等待审批");
+                        return "successApply";
+                    }
+                }
+            }
         }
-        return "";
+        return "failedApply";
     }
 
     //队员退出队伍

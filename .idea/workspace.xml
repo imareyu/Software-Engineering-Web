@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7deda246-a9a8-4b46-a350-d59f4a064c81" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TeamController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -65,8 +66,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/TeamController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="208" column="30" lean-forward="true" selection-start-line="208" selection-start-column="30" selection-end-line="208" selection-end-column="30" />
+            <state relative-caret-position="309">
+              <caret line="216" column="17" selection-start-line="216" selection-start-column="17" selection-end-line="216" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/stuTeamManage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-318">
-              <caret line="128" column="53" lean-forward="true" selection-start-line="128" selection-start-column="53" selection-end-line="128" selection-end-column="53" />
+            <state relative-caret-position="3200">
+              <caret line="128" column="53" selection-start-line="128" selection-start-column="53" selection-end-line="128" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -224,9 +225,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="31" />
-    <option name="y" value="197" />
-    <option name="width" value="1386" />
+    <option name="x" value="510" />
+    <option name="y" value="104" />
+    <option name="width" value="1137" />
     <option name="height" value="719" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -368,18 +369,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="Software-Engineering-Web" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -458,6 +447,18 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="Software-Engineering-Web" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -615,12 +616,13 @@
       <workItem from="1602377494475" duration="15000" />
       <workItem from="1602377521256" duration="47000" />
       <workItem from="1602377580954" duration="13943000" />
-      <workItem from="1602462562765" duration="14364000" />
+      <workItem from="1602462562765" duration="14496000" />
+      <workItem from="1602552522534" duration="749000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203238000" />
+    <option name="totallyTimeSpent" value="204119000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -635,7 +637,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49019608" visible="true" weight="0.21028744" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49019608" visible="true" weight="0.21331316" />
       <window_info id="Structure" order="1" sideWeight="0.50980395" side_tool="true" weight="0.22125298" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -645,7 +647,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3218391" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3218391" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3989726" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -921,13 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/FileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5050">
-          <caret line="221" column="30" selection-start-line="221" selection-start-column="30" selection-end-line="221" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -946,12 +941,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3">
           <caret line="103" selection-start-line="103" selection-end-line="103" />
-          <folding>
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3411#3412#0" expanded="true" />
-            <element signature="e#3505#3506#0" expanded="true" />
-            <element signature="e#3544#3545#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1011,20 +1000,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/stuTeamManage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-318">
-          <caret line="128" column="53" lean-forward="true" selection-start-line="128" selection-start-column="53" selection-end-line="128" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/TeamController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="208" column="30" lean-forward="true" selection-start-line="208" selection-start-column="30" selection-end-line="208" selection-end-column="30" />
+        <state relative-caret-position="309">
+          <caret line="216" column="17" selection-start-line="216" selection-start-column="17" selection-end-line="216" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/stuTeamManage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3200">
+          <caret line="128" column="53" selection-start-line="128" selection-start-column="53" selection-end-line="128" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/FileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5050">
+          <caret line="221" column="30" selection-start-line="221" selection-start-column="30" selection-end-line="221" selection-end-column="30" />
         </state>
       </provider>
     </entry>
