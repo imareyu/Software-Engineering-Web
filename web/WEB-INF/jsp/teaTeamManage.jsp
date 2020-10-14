@@ -40,8 +40,9 @@
                         <td>${team.teammate1ID} ${team.teammate1Name}</td>
                         <td>${team.teammate2ID} ${team.teammate2Name}</td>
                         <td>未审批</td>
+
                         <td>
-                            <a href="${pageContext.request.contextPath}/team/passTeam?TeamID=${team.teamID}&ProjectID=1">通过项目</a> <%--携带信息进行跳转--%>
+                            <a href="${pageContext.request.contextPath}/team/passProject?TeamID=${team.teamID}&ProjectID=1" onclick="return myconfirm();">通过项目</a> <%--携带信息进行跳转--%>
                         </td>
                     </tr>
                 </c:forEach>
@@ -51,5 +52,10 @@
     </div>
 </div>
 
+<script>
+    function myconfirm() {
+        return confirm("确定通过项目？");
+    }
+</script>
 </body>
 </html>
