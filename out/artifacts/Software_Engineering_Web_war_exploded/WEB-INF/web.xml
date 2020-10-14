@@ -32,8 +32,8 @@
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-    <!--session超时，15分钟-->
+    <!--session超时，120分钟-->
     <session-config>
-        <session-timeout>15</session-timeout>
+        <session-timeout>120</session-timeout>
     </session-config>
 </web-app>

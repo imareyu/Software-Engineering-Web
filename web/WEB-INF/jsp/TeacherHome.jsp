@@ -125,7 +125,7 @@
                     </div>
                     <div id="collapseFive" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a href="#" target="_blank">项目审批</a><%--跳转到新页面--%>
+                            <a href="${pageContext.request.contextPath}/team/teaGoToTeamManage" target="_blank">项目审批</a><%--跳转到新页面--%>
                         </div>
                         <div class="panel-body">
                             <a href="#" target="_blank">项目查看</a><%--跳转到新页面--%>

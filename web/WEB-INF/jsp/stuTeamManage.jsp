@@ -111,7 +111,7 @@
                 break;
             }
         }
-        if("pass" === "${teams.State}"){//通过
+        if("pass" === "${teams.state}"){//通过，似乎必须用小写
             var pass = document.getElementById("pass");
             pass.innerText = "项目已通过";
             select1.disabled = true;//项目通过，指导老师不可更改

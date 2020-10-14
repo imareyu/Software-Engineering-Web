@@ -219,14 +219,14 @@ public class TeamController {
             for(int i = 0;i < teacherID.length();i++){
                 if(teacherID.charAt(i) == ' '){
                     teacherID = teacherID.substring(0,i);
-                    System.out.println(teacherID+"aaa");
+                    System.out.println(teacherID+"aaa");//aaa只是用来看看最后有没有空格
                     break;
                 }
             }
             team.setTeacherID(teacherID);
             //忽然发现数据库设计不合理了，呜呜
             if("".equals(team.getTeammate1ID()) && "".equals(team.getTeammate2ID())){//不存在一号队员和二号队员,直接放到数据库里边
-                teamService.addTeam(team);
+                teamService.updateTeam(team);
                 //然后，修改队长的信息
                 return "successApply";
             }else {
@@ -302,5 +302,27 @@ public class TeamController {
         user.setUserType("student");
         userService.updateStudentUser(user);
         return "redirect:/team/goToTeamManage";//继续解析
+    }
+
+    //教师前往项目审批界面
+    @RequestMapping("/teaGoToTeamManage")
+    public String teaGoToTeamManage(HttpServletRequest request,Model model){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){//未登录
+            return "login";
+        }
+        if("teacher".equals(user.getUserType())){//为教师
+            List<Team> teams = teamService.queryTeamNopass(user.getUserID());//查询没有通过的队伍数据
+            model.addAttribute("teams",teams);
+        }else{//不是老师
+            return "failed";
+        }
+        return "teaTeamManage";
+    }
+
+    //教师更新某个队伍（其实就是通过项目）
+    @RequestMapping("/passProject")
+    public String passProject(String TeamID,String ProjectID){
+        return "";
     }
 }
