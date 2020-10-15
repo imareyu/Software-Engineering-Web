@@ -17,6 +17,10 @@
         </div>
     </div>
     <div class="row clearfix">
+        <a href="${pageContext.request.contextPath}/team/teaGoToTeamManage">查看未通过项目</a>
+    </div>
+
+    <div class="row clearfix">
         <%--<div class="col-md-12 column">--%>
         <form class="form-horizontal" role="form" action="${pageContext.request.contextPath}/team/passProject" method="post">
             <div class="col-md-4 column"></div>
