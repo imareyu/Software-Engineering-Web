@@ -26,11 +26,8 @@
                 <thead>
                 <tr>
                     <th>队伍id</th><%--TeamID--%>
-                    <th>项目id</th><%--ProjectID--%>
                     <th>项目名称</th>
                     <th>队长</th>
-                    <th>队员1</th>
-                    <th>队员2</th>
                     <th>状态</th>
                     <th>操作</th>
                 </tr>
@@ -39,15 +36,11 @@
                 <c:forEach var="team" items="${teams}">
                     <tr>
                         <td>${team.teamID}</td>
-                        <td><label for="ProjectID"></label><input style="width: 150px" type="text" class="form-control" id="ProjectID" name="ProjectID"></td><%--最初为空--%>
                         <td>${team.projectName}</td>
                         <td>${team.teamleaderID} ${team.teamleaderName}</td>
-                        <td>${team.teammate1ID} ${team.teammate1Name}</td>
-                        <td>${team.teammate2ID} ${team.teammate2Name}</td>
                         <td>未审批</td>
-
                         <td>
-                            <a href="#" onclick="return myconfirm(this);">通过项目</a> <%--携带信息进行跳转--%>
+                            <a href="${pageContext.request.contextPath}/team/goToProcess?TeamID=${team.teamID}" onclick="return myconfirm();">前往审核</a> <%--携带信息进行跳转--%>
                         </td>
                     </tr>
                 </c:forEach>
@@ -58,31 +51,8 @@
 </div>
 
 <script>
-    function myconfirm(obj) {
-        if(confirm("确定通过项目？") === false)
-            return false;
-        alert("确定通过");
-        var tr = $(obj).parent.parent;
-        var input1 = ($(tr).find("td").eq(1)).children("form-control");
-        alert("input1"+input1);
-        var ProjectID1 = input1.value;
-        if(ProjectID1 === "") {
-            alert("队名为空");
-            return false;
-        }
-        alert("ProjectID:"+ProjectID1);
-        var tdd = $(obj).parents("td").siblings("td");
-        var TeamID = tdd[0].innerText;
-        alert("TeamID:"+TeamID);
-        return false;
-        //确定要通过，使用ajax方式进行请求
-        $.post({
-            url:"${pageContext.request.contextPath}/team/passProject",
-            data:{"TeamID":TeamID,ProjectID:ProjectID1},
-            success:function (data) {
-                alert(data);
-            }
-        })
+    function myconfirm() {
+        return confirm("前往审核?");
     }
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

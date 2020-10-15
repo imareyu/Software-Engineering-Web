@@ -321,9 +321,40 @@ public class TeamController {
         return "teaTeamManage";
     }
 
-    //教师更新某个队伍（其实就是通过项目）
+    @RequestMapping("/goToProcess")
+    public String goToProcess(int TeamID,HttpServletRequest request,Model model){//前往某个项目的审批界面
+        Team team = teamService.queryTeamByTeamID(TeamID);
+        if(team == null){//队伍已经不存在了，可能被删了
+            return "notExist";
+        }
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(!team.getTeacherID().equals(user.getUserID())){//换了老师了
+            return "notExist";
+        }
+        model.addAttribute("team",team);
+        return "processATeam";
+    }
+
+    //教师通过某个队伍
     @RequestMapping("/passProject")
-    public void passProject(String TeamID,String ProjectID){
-        return ;
+    public String passProject(Team team,HttpServletRequest request){
+        //需要首先到数据库里边看看队伍是否还存在 并且 为当前的老师用户的名下的队伍
+        Team teamQuery = teamService.queryTeamByTeamID(team.getTeamID());
+        if(teamQuery == null){
+            return "notExist";//队伍已不存在了
+        }
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(!teamQuery.getTeacherID().equals(user.getUserID())){
+            return "notExist";//指导老师不为当前用户
+        }
+        team.setState("pass");
+        teamService.updateTeam(team);
+        return "successAndGoTeamManage";
+    }
+
+    //前往查看所有通过的项目
+    @RequestMapping("/goToReferenceTeams")
+    public String goToReferenceTeams(){
+        return "referenceTeams";
     }
 }
