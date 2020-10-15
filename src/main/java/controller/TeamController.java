@@ -313,6 +313,7 @@ public class TeamController {
         }
         if("teacher".equals(user.getUserType())){//为教师
             List<Team> teams = teamService.queryTeamNopass(user.getUserID());//查询没有通过的队伍数据
+            System.out.println(user.getUserID()+"老师查询到的未通过的记录"+teams.size());
             model.addAttribute("teams",teams);
         }else{//不是老师
             return "failed";
@@ -322,7 +323,7 @@ public class TeamController {
 
     //教师更新某个队伍（其实就是通过项目）
     @RequestMapping("/passProject")
-    public String passProject(String TeamID,String ProjectID){
-        return "";
+    public void passProject(String TeamID,String ProjectID){
+        return ;
     }
 }
