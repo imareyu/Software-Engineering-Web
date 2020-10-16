@@ -257,4 +257,52 @@ public class FileController {//对所有文件操作相关的进行管理
         model.addAttribute("reports",reports);
         return "ReportManage";
     }
+
+    //下载报告
+    @RequestMapping("/downloadReport")
+    public String downloadReport(int id,Model model,HttpServletResponse response,HttpServletRequest request) throws IOException {
+        System.out.println("file/downloadReport下载的ReportID为："+id);
+        Report report = reportService.queryReportByID(id);
+        //获得报告的信息
+        String path = report.getPath();
+        String fileName = report.getTitle();//title就是文件名，我的锅
+
+        System.out.println("下载文件的path:"+path);
+        System.out.println("下载文件的filename:"+fileName);
+        //设置response响应头
+        response.reset();//设置页面不缓存，清空buffer
+        response.setCharacterEncoding("utf-8");//字符编码
+        response.setContentType("multipart/form-data");//二进制传输数据
+        response.setHeader("Content-Disposition","attachment;fileName="+ URLEncoder.encode(fileName,"UTF-8"));
+        File file = new File(path,fileName);
+        //读取文件-输入流
+        InputStream input = new FileInputStream(file);
+        //写出文件--输出流
+        OutputStream out = response.getOutputStream();
+        byte[] buffer = new byte[1024];
+        int index = 0;
+        //执行写出操作
+        while((index = input.read(buffer)) != -1){
+            out.write(buffer,0,index);
+            out.flush();
+        }
+        out.close();
+        input.close();
+        model.addAttribute("downloadSuccess","下载成功");
+
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        System.out.println("学生id："+user.getUserID());
+        //根据userID查询用户所在的队伍的teamID
+        Team team = teamService.queryTeamByMemberID(user.getUserID());
+        if(team == null){
+            //这个人不在队伍里，不能查看报告
+            return "dontHavePermission";
+        }
+        List<Report> reports = reportService.queryReportsByTeamID(team.getTeamID());
+        model.addAttribute("reports",reports);
+        return "ReportManage";
+    }
 }

@@ -9,7 +9,6 @@
     <list default="true" id="7deda246-a9a8-4b46-a350-d59f4a064c81" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/ReportManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/ReportManage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -67,17 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/FileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="254" column="47" selection-start-line="254" selection-start-column="43" selection-end-line="254" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="157" selection-start-line="157" selection-end-line="157" />
+            <state relative-caret-position="174">
+              <caret line="304" column="46" lean-forward="true" selection-start-line="304" selection-start-column="46" selection-end-line="304" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -85,8 +75,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/ReportManage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="33" column="75" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
+            <state relative-caret-position="-25">
+              <caret line="60" column="35" lean-forward="true" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -143,6 +133,9 @@
       <find>redir</find>
       <find>toReportManage</find>
       <find>query</find>
+      <find>downloadSuccess</find>
+      <find>delete</find>
+      <find>download</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\001\IdeaProjects\Software-Engineering-Web</dir>
@@ -203,8 +196,8 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/uploadReport.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/dontHavaPermission.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/FileController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/ReportManage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/FileController.java" />
       </list>
     </option>
   </component>
@@ -245,9 +238,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="107" />
-    <option name="y" value="184" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="34" />
+    <option name="y" value="288" />
     <option name="width" value="1276" />
     <option name="height" value="762" />
   </component>
@@ -481,7 +474,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1602847993356" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1602849225766" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -684,12 +677,12 @@
       <workItem from="1602552522534" duration="3963000" />
       <workItem from="1602662636259" duration="7355000" />
       <workItem from="1602746314730" duration="13108000" />
-      <workItem from="1602809339126" duration="12173000" />
+      <workItem from="1602809339126" duration="13080000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239969000" />
+    <option name="totallyTimeSpent" value="240876000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -701,7 +694,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="107" y="184" width="1276" height="762" extended-state="1" />
+    <frame x="34" y="288" width="1276" height="762" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49019608" visible="true" weight="0.24259868" />
@@ -1072,15 +1065,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
+        <state relative-caret-position="3250">
           <caret line="157" selection-start-line="157" selection-end-line="157" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/FileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="254" column="47" selection-start-line="254" selection-start-column="43" selection-end-line="254" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1091,10 +1077,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/ReportManage.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/FileController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
-          <caret line="33" column="75" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
+          <caret line="304" column="46" lean-forward="true" selection-start-line="304" selection-start-column="46" selection-end-line="304" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/ReportManage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25">
+          <caret line="60" column="35" lean-forward="true" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
         </state>
       </provider>
     </entry>

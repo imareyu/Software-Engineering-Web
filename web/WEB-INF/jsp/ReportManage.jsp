@@ -57,9 +57,9 @@
                         <td>${report.publishTime}</td>
                         <td>${report.title}</td>
                         <td>
-                            <a id="download1" target="_blank" href="${pageContext.request.contextPath}/file/downloadMaterial?id=${report.reportID}" onclick="return confirmDownload();">下载</a> <%--携带id进行跳转--%>
+                            <a id="download1" target="_blank" href="${pageContext.request.contextPath}/file/downloadReport?id=${report.reportID}" onclick="return confirmDownload();">下载</a> <%--携带id进行跳转--%>
                             &nbsp;|
-                            <a id="delete1" href="${pageContext.request.contextPath}/file/deleteAMaterial?id=${report.reportID}" onclick="return myconfirm();">删除</a>
+                            <a id="delete1" href="${pageContext.request.contextPath}/file/deleteAReport?id=${report.reportID}" onclick="return myconfirm();">删除</a>
                         </td>
                     </tr>
                 </c:forEach>
