@@ -411,7 +411,7 @@ public class TeamController {
             userService.updateStudentUser(teammate2);
         }
 
-        teamService.deleteTeam(team.getTeamID());//删除项目
+        teamService.deleteTeam(team.getTeamID());//删除项目，报告不删除
         return "redirect:/team/goToReferenceTeams";
     }
 }
