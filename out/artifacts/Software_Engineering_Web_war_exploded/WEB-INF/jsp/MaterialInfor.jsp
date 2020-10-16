@@ -68,9 +68,7 @@
 </div>
 <script>
     function confirmDownload() {
-        if(confirm("确认下载？"))
-            return true;
-        return false;
+        return confirm("确认下载？");
     }
     function myconfirm(){
         //先判断是否为老师，如果不是，直接false
@@ -82,12 +80,7 @@
             return false;
         }
         else{
-            // if("teacher" === userType){
-                if(confirm("确认删除？"))
-                    return true;
-                else
-                    return false;
-            // }
+            return confirm("确认删除？");
         }
         // alert("不具有删除权限！");
         // return false;

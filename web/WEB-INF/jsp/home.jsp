@@ -83,8 +83,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion"
-                               href="#collapseThree">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
                                 报告管理
                             </a>
                         </h4>

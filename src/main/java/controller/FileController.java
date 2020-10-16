@@ -221,4 +221,14 @@ public class FileController {//对所有文件操作相关的进行管理
 //        reportService.queryReportsByTeamID();
         return "ReportManage";
     }
+
+    //学生到上传报告的界面(只有类型为teamleader和teammate的学生可以)
+    @RequestMapping("/goToUploadReport")
+    public String goToUploadReport(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if("teamleader".equals(user.getUserType()) || "teammate".equals(user.getUserType())){
+            return "uploadReport";
+        }
+        return "dontHavePermission";//没有足够的权限
+    }
 }
