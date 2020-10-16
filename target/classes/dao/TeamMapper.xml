@@ -78,4 +78,9 @@
         select * from sedesign.team
         where TeacherID = #{id}
     </select>
+
+    <select id="queryTeamByProjectID" parameterType="String" resultType="Team">
+        select * from sedesign.team
+        where ProjectID = #{ProjectID}
+    </select>
 </mapper>

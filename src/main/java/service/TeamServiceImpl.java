@@ -58,4 +58,8 @@ public class TeamServiceImpl implements TeamService {
     public List<Team> queryTeamsByTeacherID(String id) {
         return teamMapper.queryTeamsByTeacherID(id);
     }
+
+    public Team queryTeamByProjectID(String ProjectID) {
+        return teamMapper.queryTeamByProjectID(ProjectID);
+    }
 }

@@ -11,7 +11,9 @@ import service.TeamService;
 import service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -352,9 +354,64 @@ public class TeamController {
         return "successAndGoTeamManage";
     }
 
+    //判断ProjectID是否已存在
+    @RequestMapping("/ajaxCheckProjectID")
+    public void ajaxCheckProjectID(String projectID, HttpServletResponse response) throws IOException {
+        Team team = teamService.queryTeamByProjectID(projectID);
+        if(team == null){
+            //没问题，还没用过
+            response.getWriter().print("unused");
+        }else{
+            response.getWriter().print("used");//已经用过了，返回到前端
+        }
+    }
+
     //前往查看所有通过的项目
     @RequestMapping("/goToReferenceTeams")
-    public String goToReferenceTeams(){
+    public String goToReferenceTeams(HttpServletRequest request,Model model){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        List<Team> teams = teamService.queryTeamPass(user.getUserID());//查询此教师名下的通过的项目
+        System.out.println("/goToReferenceTeams查询到的信息条数:"+teams.size());
+        model.addAttribute("teams",teams);
         return "referenceTeams";
+    }
+
+    //前往查看某个已通过的项目
+    @RequestMapping("/goToSeeAPassTeam")
+    public String goToSeeAPassTeam(int TeamID,Model model){
+        Team team = teamService.queryTeamByTeamID(TeamID);
+        model.addAttribute("team",team);
+        return "seeAPassTeam";
+    }
+
+    //教师删除一个项目，学生是没有权限删除项目的
+    @RequestMapping("/deleteProject")
+    public String deleteProject(Team team){
+        //删除项目，需要先恢复学生的身份
+        team = teamService.queryTeamByTeamID(team.getTeamID());
+
+        //修改队长的信息
+        User teamleader = userService.queryStudentById(team.getTeamleaderID());
+        teamleader.setUserType("student");
+        userService.updateStudentUser(teamleader);
+
+        if(!"".equals(team.getTeammate1ID())){
+            //存在一号队员
+            User teammate1 = userService.queryStudentById(team.getTeammate1ID());
+            teammate1.setUserType("student");
+            userService.updateStudentUser(teammate1);
+        }
+        if(!"".equals(team.getTeammate2ID())){
+            //存在二号队员
+            User teammate2 = userService.queryStudentById(team.getTeammate2ID());
+            teammate2.setUserType("student");
+            userService.updateStudentUser(teammate2);
+        }
+
+        teamService.deleteTeam(team.getTeamID());//删除项目
+        return "redirect:/team/goToReferenceTeams";
     }
 }

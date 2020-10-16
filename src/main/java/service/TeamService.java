@@ -42,4 +42,7 @@ public interface TeamService {
 
     //根据教师的id查询
     List<Team> queryTeamsByTeacherID(String id);
+
+    //查询某个ProjectID
+    Team queryTeamByProjectID(String ProjectID);
 }

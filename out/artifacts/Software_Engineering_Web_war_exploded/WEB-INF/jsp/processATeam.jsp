@@ -35,7 +35,7 @@
                 <div class="form-group">
                     <label >项目ID</label>
                     <label>
-                        <input type="text" name="ProjectID" value="${team.projectID}" class="form-control" required><%--项目ID，需要老师填写--%>
+                        <input type="text" id="ProjectID" name="ProjectID" value="${team.projectID}" class="form-control" required onblur="return ajaxCheckProjectID();"><%--项目ID，需要老师填写--%>
                     </label>
                 </div>
 
@@ -103,7 +103,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-default" onclick="return myconfirm();">通过项目</button>
+                    <button id="submit1" type="submit" class="btn btn-default" onclick="return myconfirm();">通过项目</button>
                 </div>
             </div>
         </form>
@@ -112,6 +112,23 @@
 <script>
     function myconfirm() {
         return confirm("确定通过此项目？");
+    }
+    function ajaxCheckProjectID() {
+        var elementById = document.getElementById("ProjectID");
+        var submit1 = document.getElementById("submit1");
+        var projectID = elementById.value;
+        $.post({
+            url:"${pageContext.request.contextPath}/team/ajaxCheckProjectID",
+            data:{"projectID" : projectID},
+            success:function (data) {
+                if(data === "used"){
+                    alert("此projectID已被占用");
+                    submit1.disabled = true;
+                }else{
+                    submit1.disabled = false;
+                }
+            }
+        })
     }
 </script>
 

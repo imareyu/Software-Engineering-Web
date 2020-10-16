@@ -2,11 +2,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>审批单个项目</title>
+    <title>康康一个通过的项目</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<%--此界面为教师审批某个项目的项目展示界面--%>
 <%User user = (User) session.getAttribute("UserSession");%>
 <div class="container">
     <div class="row clearfix">
@@ -17,12 +16,12 @@
         </div>
     </div>
     <div class="row clearfix">
-        <a href="${pageContext.request.contextPath}/team/teaGoToTeamManage">查看未通过项目</a>
+        <a href="${pageContext.request.contextPath}/team/goToReferenceTeams">查看已通过项目</a>
     </div>
 
     <div class="row clearfix">
         <%--<div class="col-md-12 column">--%>
-        <form class="form-horizontal" role="form" action="${pageContext.request.contextPath}/team/passProject" method="post">
+        <form class="form-horizontal" role="form" action="${pageContext.request.contextPath}/team/deleteProject" method="post">
             <div class="col-md-4 column"></div>
             <div class="col-md-4 column">
                 <div class="form-group">
@@ -35,7 +34,7 @@
                 <div class="form-group">
                     <label >项目ID</label>
                     <label>
-                        <input type="text" id="ProjectID" name="ProjectID" value="${team.projectID}" class="form-control" required onblur="return ajaxCheckProjectID();"><%--项目ID，需要老师填写--%>
+                        <input type="text" id="ProjectID" name="ProjectID" value="${team.projectID}" class="form-control" readonly><%--项目ID，需要老师填写--%>
                     </label>
                 </div>
 
@@ -91,7 +90,7 @@
                 <div class="form-group">
                     <label>项目状态</label>
                     <label><%--项目的状态--%>
-                        <input type="text" name="State" value="nopass" class="form-control" readonly>
+                        <input type="text" name="State" value="pass" class="form-control" readonly>
                     </label>
                 </div>
 
@@ -103,36 +102,18 @@
                 </div>
 
                 <div class="form-group">
-                    <button id="submit1" type="submit" class="btn btn-default" onclick="return myconfirm();">通过项目</button>
+                    <button id="submit1" type="submit" class="btn btn-default" onclick="return myconfirm();">删除项目</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
+
 <script>
     function myconfirm() {
-        return confirm("确定通过此项目？");
-    }
-    function ajaxCheckProjectID() {
-        var elementById = document.getElementById("ProjectID");
-        var submit1 = document.getElementById("submit1");
-        var projectID = elementById.value;
-        $.post({
-            url:"${pageContext.request.contextPath}/team/ajaxCheckProjectID",
-            data:{"projectID" : projectID},
-            success:function (data) {
-                if(data === "used"){
-                    alert("此projectID已被占用");
-                    submit1.disabled = true;
-                }else{
-                    submit1.disabled = false;
-                }
-            }
-        })
+        return confirm("确认删除？");
     }
 </script>
-
-
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
