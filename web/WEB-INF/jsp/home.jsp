@@ -156,7 +156,7 @@
     }
     window.onload = alertmess;
     function toReportManage() {
-        document.getElementById("rightframe").src="${pageContext.request.contextPath}/file/stuToReportManage?id=<%=user.getUserID()%>";
+        document.getElementById("rightframe").src="${pageContext.request.contextPath}/file/stuToReportManage";
     }
 
     function stuToTeam(){

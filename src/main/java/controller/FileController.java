@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import pojo.Material;
+import pojo.Report;
+import pojo.Team;
 import pojo.User;
 import service.MaterialService;
 import service.ReportService;
+import service.TeamService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,6 +32,10 @@ public class FileController {//对所有文件操作相关的进行管理
     @Autowired
     @Qualifier("reportServiceImpl")
     private ReportService reportService;//对报告管理
+
+    @Autowired
+    @Qualifier("teamServiceImpl")
+    private TeamService teamService;//对报告管理
 
     @RequestMapping("/goToUploadMaterial")
     public String goToUpload(){
@@ -215,10 +222,21 @@ public class FileController {//对所有文件操作相关的进行管理
 
     //学生到报告管理页面
     @RequestMapping("/stuToReportManage")
-    public String toReportManage(int id){
-        System.out.println("学生id："+id);
+    public String toReportManage(Model model,HttpServletRequest request){
+        System.out.println("file/stuToReportManage");
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        System.out.println("学生id："+user.getUserID());
         //根据userID查询用户所在的队伍的teamID
-//        reportService.queryReportsByTeamID();
+        Team team = teamService.queryTeamByMemberID(user.getUserID());
+        if(team == null){
+            //这个人不在队伍里，不能查看报告
+            return "dontHavePermission";
+        }
+        List<Report> reports = reportService.queryReportsByTeamID(team.getTeamID());
+        model.addAttribute("reports",reports);
         return "ReportManage";
     }
 
@@ -230,5 +248,13 @@ public class FileController {//对所有文件操作相关的进行管理
             return "uploadReport";
         }
         return "dontHavePermission";//没有足够的权限
+    }
+
+    //根据关键词从报告表的Title中搜查
+    @RequestMapping("/queryReportByName")
+    public String queryReportByName(String word,Model model){
+        List<Report> reports = reportService.queryReportByWord(word);
+        model.addAttribute("reports",reports);
+        return "ReportManage";
     }
 }

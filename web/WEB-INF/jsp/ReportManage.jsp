@@ -20,8 +20,8 @@
     </div>
     <div class="row clearfix">
         <div class="col-md-4 column">
-            <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/goToUploadMaterial" target="_blank">上传报告</a>
-            <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/goToMaterialInfor">显示全部报告</a>
+            <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/goToUploadReport" target="_blank">上传报告</a>
+            <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/stuToReportManage">显示全部报告</a>
             <%--<input type="text" id="username" onblur="ajaxtest();" hidden>--%>
         </div>
         <div class="col-md-4 column">
@@ -30,35 +30,36 @@
         </div>
         <div class="col-md-4 column">
             <span style="color: red;font-weight: bold">${error}</span>
-            <form action="${pageContext.request.contextPath}/file/queryMaterialByName" method="post">
-                <input style="display: inline-block;width: 300px" type="text" name="queryBookName" class="form-control" placeholder="请输入要查询的资料名称" required>
-                <input type="submit" value="查询">
+            <form action="${pageContext.request.contextPath}/file/queryReportByName" method="post">
+                <input style="display: inline-block;width: 300px" type="text" name="word" class="form-control" placeholder="请输入要查询的报告名称关键词" required>
+                <button type="submit" class="btn btn-default">查询</button>
             </form>
         </div>
     </div>
 
-    <%Object userSession = request.getSession().getAttribute("UserSession");%>
     <div class="row clearfix">
         <div class="col-md-12 column">
             <table class="table table-hover table-striped"><%--table-hover是隔行变色,table-striped表示--%>
                 <thead>
                 <tr>
-                    <th>资料编号</th>
-                    <th>资料名称</th>
-                    <th>资料修改时间</th>
+                    <th>报告id</th>
+                    <th>队伍ID</th>
+                    <th>报告修改时间</th>
+                    <th>标题</th>
                     <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="material" items="${materials}">
+                <c:forEach var="report" items="${reports}">
                     <tr>
-                        <td>${material.materialID}</td>
-                        <td>${material.materialName}</td>
-                        <td>${material.uploadTime}</td>
+                        <td>${report.reportID}</td>
+                        <td>${report.teamID}</td>
+                        <td>${report.publishTime}</td>
+                        <td>${report.title}</td>
                         <td>
-                            <a id="download1" target="_blank" href="${pageContext.request.contextPath}/file/downloadMaterial?id=${material.materialID}" onclick="return confirmDownload();">下载</a> <%--携带id进行跳转--%>
+                            <a id="download1" target="_blank" href="${pageContext.request.contextPath}/file/downloadMaterial?id=${report.reportID}" onclick="return confirmDownload();">下载</a> <%--携带id进行跳转--%>
                             &nbsp;|
-                            <a id="delete1" href="${pageContext.request.contextPath}/file/deleteAMaterial?id=${material.materialID}" onclick="return myconfirm();">删除</a>
+                            <a id="delete1" href="${pageContext.request.contextPath}/file/deleteAMaterial?id=${report.reportID}" onclick="return myconfirm();">删除</a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -67,6 +68,15 @@
         </div>
     </div>
 </div>
-
+<script>
+    function confirmDownload() {
+        return confirm("确定下载？");
+    }
+    function myconfirm() {
+        return confirm("确定删除文件？");
+    }
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
