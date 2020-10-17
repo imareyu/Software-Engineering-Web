@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 @Data
 @AllArgsConstructor
@@ -12,7 +12,7 @@ import java.sql.Date;
 public class Report {
     private int ReportID;
     private int TeamID;
-    private Date PublishTime;
+    private Timestamp PublishTime;
     private String Title;
     private String Path;
 }
