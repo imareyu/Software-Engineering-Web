@@ -55,7 +55,7 @@
                         <td>${report.reportID}</td>
                         <td>${report.teamID}</td>
                         <td>${report.publishTime}</td>
-                        <td>${report.title}</td>
+                        <td><span style="width: 200px;height:25px;line-height: 25px; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">${report.title}</span></td>
                         <td>
                             <a id="download1" target="_blank" href="${pageContext.request.contextPath}/file/downloadReport?id=${report.reportID}" onclick="return confirmDownload();">下载</a> <%--携带id进行跳转--%>
                             &nbsp;|

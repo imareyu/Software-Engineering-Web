@@ -58,13 +58,7 @@ public class FileController {//对所有文件操作相关的进行管理
         //登录了，判断是不是老师，管理员也不能上传
         User user = (User)userSession1;
         if(!"teacher".equals(user.getUserType())) {//不为老师
-            if("student".equals(user.getUserType())){
-                model.addAttribute("alertmess","学生用户不能上传文件");
-                return "home";//学生，返回到学生主页
-            }else{
-                model.addAttribute("alertmess","管理员用户不能上传文件");
-                return "administratorHome";//管理员，返回到管理员主页
-            }
+            return "dontHavePermission";//没有权限
         }
         String uploadFileName = file.getOriginalFilename();
         if("".equals(uploadFileName)){
@@ -249,6 +243,14 @@ public class FileController {//对所有文件操作相关的进行管理
     @RequestMapping("/goToUploadReport")
     public String goToUploadReport(HttpServletRequest request){
         User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        user = userService.queryStudentById(user.getUserID());
+        if(user == null){//有可能管理员把账号给删了
+            request.getSession().setAttribute("UserSession",null);
+            return "login";
+        }
         if("teamleader".equals(user.getUserType()) || "teammate".equals(user.getUserType())){
             return "uploadReport";
         }
@@ -268,6 +270,11 @@ public class FileController {//对所有文件操作相关的进行管理
     public String downloadReport(int id,Model model,HttpServletResponse response,HttpServletRequest request) throws IOException {
         User user = (User) request.getSession().getAttribute("UserSession");
         if(user == null){
+            return "login";
+        }
+        user = userService.queryStudentById(user.getUserID());
+        if(user == null){
+            request.getSession().setAttribute("UserSession",null);
             return "login";
         }
         System.out.println("学生id："+user.getUserID());
@@ -317,6 +324,11 @@ public class FileController {//对所有文件操作相关的进行管理
         if(user == null){
             return "login";
         }
+        user = userService.queryStudentById(user.getUserID());
+        if(user == null){
+            request.getSession().setAttribute("UserSession",null);
+            return "login";
+        }
         Report report = reportService.queryReportByID(id);
         Team team = teamService.queryTeamByMemberID(user.getUserID());
         if(team == null || report == null){
@@ -340,8 +352,12 @@ public class FileController {//对所有文件操作相关的进行管理
             System.out.println("未登录，不能上传文件");
             return "login";//为空，说明没登录，直接跳回到登录
         }
-        //登录了，判断是不是老师，管理员也不能上传
-        user = userService.queryStudentById(user.getUserID());
+        //登录了，判断是不是学生
+        user = userService.queryStudentById(user.getUserID());//到数据库找最新的数据
+        if(user == null){
+            request.getSession().setAttribute("UserSession",null);
+            return "login";
+        }
         request.getSession().setAttribute("UserSession",user);
         //为队长或者队员
         if("teamleader".equals(user.getUserType()) || "teammate".equals(user.getUserType())) {
@@ -358,7 +374,12 @@ public class FileController {//对所有文件操作相关的进行管理
 
             File realPath = new File(path);
             if (!realPath.exists()) {
-                realPath.mkdir();
+                System.out.println("文件夹不存在");
+                boolean mkdirs = realPath.mkdirs();
+                if(!mkdirs){
+                    System.out.println("创建文件夹失败");
+                    return "failed";
+                }
             }
             System.out.println("保存地址realPath：" + realPath);
             System.out.println("保存地址path：" + path);
@@ -400,7 +421,6 @@ public class FileController {//对所有文件操作相关的进行管理
                 System.out.println("文件重名，已覆盖");
                 model.addAttribute("uploadStatus", "文件重名，已覆盖");
             }
-            //        materialService.teacherUploadMaterial(material);
         }else{
             return "dontHavePermission";
         }
