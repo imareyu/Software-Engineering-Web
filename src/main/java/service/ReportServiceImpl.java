@@ -35,4 +35,9 @@ public class ReportServiceImpl implements ReportService {
     public Report queryReportByID(int ReportID) {
         return reportMapper.queryReportByID(ReportID);
     }
+
+    //根据path和title查询是否有重复的，用于查重
+    public Report queryReportByTitleAndPath(Report report){
+        return reportMapper.queryReportByTitleAndPath(report);
+    }
 }

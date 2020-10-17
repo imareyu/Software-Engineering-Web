@@ -22,4 +22,7 @@ public interface ReportService {
 
     //根据报告id进行查询，主要用于下载时侯
     Report queryReportByID(int ReportID);
+
+    //根据path和title查询是否有重复的，用于查重
+    Report queryReportByTitleAndPath(Report report);
 }
