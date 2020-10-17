@@ -345,6 +345,7 @@ public class FileController {//对所有文件操作相关的进行管理
         request.getSession().setAttribute("UserSession",user);
         //为队长或者队员
         if("teamleader".equals(user.getUserType()) || "teammate".equals(user.getUserType())) {
+            Team team = teamService.queryTeamByMemberID(user.getUserID());//所在的队伍
             String uploadFileName = file.getOriginalFilename();
             if ("".equals(uploadFileName)) {
                 System.out.println("文件名为空");
@@ -353,7 +354,7 @@ public class FileController {//对所有文件操作相关的进行管理
             System.out.println("uploadFileName:" + uploadFileName);
             //需要查询是否有同名文件，如果有同名文件，则需要覆盖，而不是上传
 
-            String path = request.getServletContext().getRealPath("/report");
+            String path = request.getServletContext().getRealPath("/report/"+team.getTeamID());
 
             File realPath = new File(path);
             if (!realPath.exists()) {
@@ -379,25 +380,29 @@ public class FileController {//对所有文件操作相关的进行管理
             report.setTitle(uploadFileName);
             report.setPublishTime(new Timestamp(System.currentTimeMillis()));
             report.setPath(path);
+            report.setTeamID(team.getTeamID());
+
             System.out.println("materialName：" + report.getTitle());
             System.out.println("materialUploadTime：" + report.getPublishTime());
             System.out.println("Path：" + report.getPath());
             //根据路径和文件名在数据库中查询，如果有，则修改时间
             //如果没有，则添加新的记录
-            Material resultMaterial = reportService.query(material);
-            if (resultMaterial == null)//为空说明没有这个文件
+            Report resultReport = reportService.queryReportByTitleAndPath(report);
+            if (resultReport == null)//为空说明没有这个文件
             {//添加文件记录
-                materialService.uploadMaterial(material);
+                reportService.UploadAReport(report);
                 System.out.println("上传成功");
                 model.addAttribute("uploadStatus", "上传成功");
-                return "forward:goToUploadMaterial";
+                return "forward:goToUploadReport";
             } else {//有文件，修改记录的时间
-                material.setMaterialID(resultMaterial.getMaterialID());//获得id
-                materialService.updateMaterial(material);
+                report.setReportID(resultReport.getReportID());//获得id
+                reportService.updateReport(report);
                 System.out.println("文件重名，已覆盖");
                 model.addAttribute("uploadStatus", "文件重名，已覆盖");
             }
             //        materialService.teacherUploadMaterial(material);
+        }else{
+            return "dontHavePermission";
         }
         return "forward:goToUploadMaterial";//继续解析
     }

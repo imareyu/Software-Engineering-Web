@@ -42,4 +42,10 @@
         select * from sedesign.report
         where Title = #{Title} and Path = #{Path}
     </select>
+
+    <update id="updateReport" parameterType="Report">
+        update sedesign.report
+        set PublishTime = #{PublishTime},Title = #{Title},Path = #{Path}
+        where ReportID = #{ReportID}
+    </update>
 </mapper>

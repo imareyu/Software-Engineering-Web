@@ -25,4 +25,7 @@ public interface ReportService {
 
     //根据path和title查询是否有重复的，用于查重
     Report queryReportByTitleAndPath(Report report);
+
+    //更新数据
+    int updateReport(Report report);
 }

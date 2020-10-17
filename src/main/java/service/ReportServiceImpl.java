@@ -40,4 +40,8 @@ public class ReportServiceImpl implements ReportService {
     public Report queryReportByTitleAndPath(Report report){
         return reportMapper.queryReportByTitleAndPath(report);
     }
+
+    public int updateReport(Report report) {
+        return reportMapper.updateReport(report);
+    }
 }
