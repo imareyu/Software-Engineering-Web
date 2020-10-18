@@ -336,8 +336,15 @@ public class FileController {//对所有文件操作相关的进行管理
         }
         if(team.getTeamID() == report.getTeamID()){
             //这个人所在的队伍和报告所在的队伍是一样的
-            reportService.deleteReport(report.getReportID());
-            model.addAttribute("deleteSuccess","成功删除");
+            String path = report.getPath();
+            String filename = report.getTitle();
+            File file = new File(path,filename);
+            if(file.delete()){
+                model.addAttribute("deleteSuccess","成功删除");
+            }else{
+                model.addAttribute("error","删除失败");
+            }
+            reportService.deleteReport(report.getReportID());//删除数据库记录
         }else{//这个人在的队伍和要删除报告的队伍不一样
             return "dontHavePermission";
         }
