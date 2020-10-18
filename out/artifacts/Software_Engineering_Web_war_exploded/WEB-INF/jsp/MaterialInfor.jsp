@@ -19,7 +19,7 @@
     </div>
     <div class="row clearfix">
         <div class="col-md-4 column">
-            <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/goToUploadMaterial" target="_blank">上传文件</a>
+            <a id="upload1" class="btn btn-primary" title="只有教师用户可上传文件" href="${pageContext.request.contextPath}/file/goToUploadMaterial" target="_blank">上传文件</a>
             <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/goToMaterialInfor">显示前15条数据</a>
             <%--<input type="text" id="username" onblur="ajaxtest();" hidden>--%>
         </div>
@@ -36,6 +36,7 @@
         </div>
     </div>
 
+    <%User user = (User) request.getSession().getAttribute("UserSession");%>
     <%Object userSession = request.getSession().getAttribute("UserSession");%>
     <div class="row clearfix">
         <div class="col-md-12 column">
@@ -85,6 +86,20 @@
         // alert("不具有删除权限！");
         // return false;
     }
+
+    function onloadcheck(){
+        <%--var usertype = "<%=user.getUserType()%>";--%>
+        // alert(usertype);
+        if ("teacher" === "<%=user.getUserType()%>") {
+            return;
+        }
+        var upload1 = document.getElementById("upload1");
+        upload1.disabled = true;//上传按钮不可用
+        upload1.removeAttribute("href");
+        upload1.onclick = null;
+    }
+
+    window.onload = onloadcheck;
 </script>
 </body>
 </html>

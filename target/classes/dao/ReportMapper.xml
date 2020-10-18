@@ -48,4 +48,10 @@
         set PublishTime = #{PublishTime},Title = #{Title},Path = #{Path}
         where ReportID = #{ReportID}
     </update>
+
+    <!--根据教师id到team表和report表中查询报告-->
+    <select id="queryReportByTeacherID" parameterType="String" resultType="Report">
+        select ReportID,a.TeamID,PublishTime,Title,Path from sedesign.report as a,sedesign.team as b
+        where TeacherID = #{TeacherID} and a.TeamID = b.TeamID
+    </select>
 </mapper>
