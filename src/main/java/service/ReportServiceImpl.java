@@ -44,4 +44,8 @@ public class ReportServiceImpl implements ReportService {
     public int updateReport(Report report) {
         return reportMapper.updateReport(report);
     }
+
+    public List<Report> queryReportByTeacherID(String TeacherID) {
+        return reportMapper.queryReportByTeacherID(TeacherID);
+    }
 }

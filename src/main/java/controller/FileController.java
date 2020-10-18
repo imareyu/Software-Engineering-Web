@@ -317,7 +317,7 @@ public class FileController {//对所有文件操作相关的进行管理
         return "forward:stuToReportManage";
     }
 
-    //删除一份报告
+    //删除一份报告，学生调用
     @RequestMapping("/deleteAReport")
     public String deleteAReport(int id,HttpServletRequest request,Model model){
         User user = (User) request.getSession().getAttribute("UserSession");
@@ -434,4 +434,20 @@ public class FileController {//对所有文件操作相关的进行管理
         return "forward:goToUploadMaterial";//继续解析
     }
 
+
+    //教师查看名下的队伍的报告
+    @RequestMapping("/teaGoToReportManage")
+    public String teaGoToReportManage(HttpServletRequest request,Model model){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        if("teacher".equals(user.getUserType())){//教师用户和学生用户有不同，学生用户的类型可能会变，教师类型的不会变，所以不需要到数据库进行更新
+            List<Report> reports = reportService.queryReportByTeacherID(user.getUserID());//根据指导老师的ID到team和report表中查询
+            model.addAttribute("reports",reports);
+        }else{
+            return "dontHavePermission";
+        }
+        return "reportManage_tea";//前往教师查看学生报告页面
+    }
 }

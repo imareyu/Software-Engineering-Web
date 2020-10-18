@@ -28,4 +28,7 @@ public interface ReportService {
 
     //更新数据
     int updateReport(Report report);
+
+    //根据教师id到team表和report表中查询报告
+    List<Report> queryReportByTeacherID(String TeacherID);
 }
