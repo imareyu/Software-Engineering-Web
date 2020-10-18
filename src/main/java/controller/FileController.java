@@ -239,28 +239,42 @@ public class FileController {//对所有文件操作相关的进行管理
         return "ReportManage";
     }
 
-    //学生到上传报告的界面(只有类型为teamleader和teammate的学生可以)
+    //学生到上传报告的界面(只有类型为teamleader和teammate的学生可以)后来，发现老师，懂？
     @RequestMapping("/goToUploadReport")
     public String goToUploadReport(HttpServletRequest request){
         User user = (User) request.getSession().getAttribute("UserSession");
         if(user == null){
             return "login";
         }
-        user = userService.queryStudentById(user.getUserID());
-        if(user == null){//有可能管理员把账号给删了
-            request.getSession().setAttribute("UserSession",null);
-            return "login";
+        if(!"teacher".equals(user.getUserType())) {//不是老师，看看是不是学生
+            user = userService.queryStudentById(user.getUserID());
+            if (user == null) {//有可能管理员把账号给删了
+                request.getSession().setAttribute("UserSession", null);
+                return "login";
+            }
         }
-        if("teamleader".equals(user.getUserType()) || "teammate".equals(user.getUserType())){
+        if("teacher".equals(user.getUserType())||"teamleader".equals(user.getUserType()) || "teammate".equals(user.getUserType())){
             return "uploadReport";
         }
         return "dontHavePermission";//没有足够的权限
     }
 
-    //根据关键词从报告表的Title中搜查
+    //根据关键词从报告表的Title中搜查,这个是学生只能查自己队伍的报告
     @RequestMapping("/queryReportByName")
-    public String queryReportByName(String word,Model model){
+    public String queryReportByName(String word,Model model,HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        Team team = teamService.queryTeamByMemberID(user.getUserID());
         List<Report> reports = reportService.queryReportByWord(word);
+        for(int i = 0;i < reports.size();i++){
+            if(reports.get(i).getTeamID() != team.getTeamID()){
+                //不相等，不是自己的队伍的，删掉
+                reports.remove(i);
+                i--;
+            }
+        }
         model.addAttribute("reports",reports);
         return "ReportManage";
     }
@@ -272,18 +286,15 @@ public class FileController {//对所有文件操作相关的进行管理
         if(user == null){
             return "login";
         }
-        user = userService.queryStudentById(user.getUserID());
-        if(user == null){
-            request.getSession().setAttribute("UserSession",null);
-            return "login";
+        if(!"teacher".equals(user.getUserType())){
+            user = userService.queryStudentById(user.getUserID());
+            if(user == null){
+                request.getSession().setAttribute("UserSession",null);
+                return "login";
+            }
+            System.out.println("学生id："+user.getUserID());
         }
-        System.out.println("学生id："+user.getUserID());
         //根据userID查询用户所在的队伍的teamID
-        Team team = teamService.queryTeamByMemberID(user.getUserID());
-        if(team == null){
-            //这个人不在队伍里，不能查看报告
-            return "dontHavePermission";
-        }
 
         System.out.println("file/downloadReport下载的ReportID为："+id);
         Report report = reportService.queryReportByID(id);
@@ -317,38 +328,26 @@ public class FileController {//对所有文件操作相关的进行管理
         return "forward:stuToReportManage";
     }
 
-    //删除一份报告，学生调用
+    //删除一份报告，学生调用（后来想了想，老师应该也可以删除
     @RequestMapping("/deleteAReport")
     public String deleteAReport(int id,HttpServletRequest request,Model model){
         User user = (User) request.getSession().getAttribute("UserSession");
         if(user == null){
             return "login";
         }
-        user = userService.queryStudentById(user.getUserID());
-        if(user == null){
-            request.getSession().setAttribute("UserSession",null);
-            return "login";
-        }
+
         Report report = reportService.queryReportByID(id);
-        Team team = teamService.queryTeamByMemberID(user.getUserID());
-        if(team == null || report == null){
-            return "dontHavePermission";
+
+        String path = report.getPath();
+        String filename = report.getTitle();
+        File file = new File(path,filename);
+        if(file.delete()){
+            model.addAttribute("deleteSuccess","成功删除");
+        }else{
+            model.addAttribute("error","删除失败");
         }
-        if(team.getTeamID() == report.getTeamID()){
-            //这个人所在的队伍和报告所在的队伍是一样的
-            String path = report.getPath();
-            String filename = report.getTitle();
-            File file = new File(path,filename);
-            if(file.delete()){
-                model.addAttribute("deleteSuccess","成功删除");
-            }else{
-                model.addAttribute("error","删除失败");
-            }
-            reportService.deleteReport(report.getReportID());//删除数据库记录
-        }else{//这个人在的队伍和要删除报告的队伍不一样
-            return "dontHavePermission";
-        }
-        return "forward:stuToReportManage";
+        reportService.deleteReport(report.getReportID());//删除数据库记录
+        return "forward:/teaGoToReportManage";//继续解析
     }
 
     //处理上传的报告数据
@@ -444,10 +443,26 @@ public class FileController {//对所有文件操作相关的进行管理
         }
         if("teacher".equals(user.getUserType())){//教师用户和学生用户有不同，学生用户的类型可能会变，教师类型的不会变，所以不需要到数据库进行更新
             List<Report> reports = reportService.queryReportByTeacherID(user.getUserID());//根据指导老师的ID到team和report表中查询
+            System.out.println("查询到的记录条数:"+reports.size());
             model.addAttribute("reports",reports);
         }else{
             return "dontHavePermission";
         }
         return "reportManage_tea";//前往教师查看学生报告页面
+    }
+
+    //教师根据名称查询报告，和学生的不一样
+    @RequestMapping("/teaQueryReportByName")
+    public String teaQueryReportByName(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        if(!"teacher".equals(user.getUserType())){
+            //不是老师
+            return "dontHavePermission";
+        }
+        //是老师，根据指导老师的Id和文件的title中的关键词进行查询
+        return "";
     }
 }

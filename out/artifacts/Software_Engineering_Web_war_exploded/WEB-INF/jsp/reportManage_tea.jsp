@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,8 +19,9 @@
     </div>
     <div class="row clearfix">
         <div class="col-md-4 column">
-            <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/goToUploadReport" target="_blank">上传报告</a>
-            <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/stuToReportManage">显示全部报告</a>
+            <%--<a class="btn btn-primary" href="${pageContext.request.contextPath}/file/goToUploadReport" target="_blank">上传报告</a>--%>
+            <%--把上传报告的按钮去掉了，考虑换个位置，因为教师上传报告应当是传个某个项目的，所以需要考虑给某项目--%>
+            <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/teaGoToReportManage">显示全部报告</a>
         </div>
         <div class="col-md-4 column">
             <span style="color: green;font-weight: bold">${downloadSuccess}</span>

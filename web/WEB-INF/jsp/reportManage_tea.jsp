@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,8 +19,9 @@
     </div>
     <div class="row clearfix">
         <div class="col-md-4 column">
-            <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/goToUploadReport" target="_blank">上传报告</a>
-            <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/stuToReportManage">显示全部报告</a>
+            <%--<a class="btn btn-primary" href="${pageContext.request.contextPath}/file/goToUploadReport" target="_blank">上传报告</a>--%>
+            <%--把上传报告的按钮去掉了，考虑换个位置，因为教师上传报告应当是传个某个项目的，所以需要考虑给某项目--%>
+            <a class="btn btn-primary" href="${pageContext.request.contextPath}/file/teaGoToReportManage">显示全部报告</a>
         </div>
         <div class="col-md-4 column">
             <span style="color: green;font-weight: bold">${downloadSuccess}</span>
@@ -27,7 +29,7 @@
         </div>
         <div class="col-md-4 column">
             <span style="color: red;font-weight: bold">${error}</span>
-            <form action="${pageContext.request.contextPath}/file/queryReportByName" method="post">
+            <form action="${pageContext.request.contextPath}/file/teaQueryReportByName" method="post">
                 <input style="display: inline-block;width: 300px" type="text" name="word" class="form-control" placeholder="请输入要查询的报告名称关键词" required>
                 <button type="submit" class="btn btn-default">查询</button>
             </form>

@@ -93,7 +93,7 @@
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a href="#">查看报告</a><%--查看各个项目的报告--%>
+                            <a href="${pageContext.request.contextPath}/file/teaGoToReportManage" target="_blank">查看报告</a><%--查看各个项目的报告--%>
                         </div>
                     </div>
                 </div>
