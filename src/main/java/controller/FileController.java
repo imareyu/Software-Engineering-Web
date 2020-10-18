@@ -369,7 +369,7 @@ public class FileController {//对所有文件操作相关的进行管理
         if("teamleader".equals(user.getUserType()) || "teammate".equals(user.getUserType())) {
             Team team = teamService.queryTeamByMemberID(user.getUserID());//所在的队伍
             String uploadFileName = file.getOriginalFilename();
-            if ("".equals(uploadFileName)) {
+            if (uploadFileName == null||"".equals(uploadFileName)) {
                 System.out.println("文件名为空");
                 return "redirect:/file/goToUploadReport";//返回到上传文件页面
             }

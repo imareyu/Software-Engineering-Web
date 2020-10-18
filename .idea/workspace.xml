@@ -7,13 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7deda246-a9a8-4b46-a350-d59f4a064c81" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/controller/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/TeacherHome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/TeacherHome.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/TeacherHome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/TeacherHome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/reportManage_tea.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/reportManage_tea.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -71,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/FileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="464" column="41" lean-forward="true" selection-start-line="464" selection-start-column="41" selection-end-line="464" selection-end-column="41" />
+            <state relative-caret-position="-1003">
+              <caret line="371" selection-start-line="371" selection-end-line="371" />
             </state>
           </provider>
         </entry>
@@ -249,9 +243,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="78" />
-    <option name="y" value="100" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="63" />
+    <option name="y" value="75" />
     <option name="width" value="1276" />
     <option name="height" value="713" />
   </component>
@@ -436,7 +430,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Software-Engineering-Web" type="b2602c69:ProjectViewProjectNode" />
@@ -674,12 +668,12 @@
       <workItem from="1602900132552" duration="18000" />
       <workItem from="1602900163808" duration="7476000" />
       <workItem from="1602984273281" duration="5609000" />
-      <workItem from="1603015258727" duration="4336000" />
+      <workItem from="1603015258727" duration="6542000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258373000" />
+    <option name="totallyTimeSpent" value="260579000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -691,10 +685,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="78" y="100" width="1276" height="713" extended-state="0" />
+    <frame x="63" y="75" width="1276" height="713" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49019608" visible="true" weight="0.25904605" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49019608" visible="true" weight="0.25904605" />
       <window_info id="Structure" order="1" sideWeight="0.50980395" side_tool="true" weight="0.22125298" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -704,7 +698,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27854672" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27854672" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3989726" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1076,8 +1070,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/FileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="464" column="41" lean-forward="true" selection-start-line="464" selection-start-column="41" selection-end-line="464" selection-end-column="41" />
+        <state relative-caret-position="-1003">
+          <caret line="371" selection-start-line="371" selection-end-line="371" />
         </state>
       </provider>
     </entry>
