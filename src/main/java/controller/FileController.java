@@ -328,6 +328,23 @@ public class FileController {//对所有文件操作相关的进行管理
         return "forward:stuToReportManage";
     }
 
+    //教师查看名下的队伍的报告
+    @RequestMapping("/teaGoToReportManage")
+    public String teaGoToReportManage(HttpServletRequest request,Model model){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        if("teacher".equals(user.getUserType())){//教师用户和学生用户有不同，学生用户的类型可能会变，教师类型的不会变，所以不需要到数据库进行更新
+            List<Report> reports = reportService.queryReportByTeacherID(user.getUserID());//根据指导老师的ID到team和report表中查询
+            System.out.println("查询到的记录条数:"+reports.size());
+            model.addAttribute("reports",reports);
+        }else{
+            return "dontHavePermission";
+        }
+        return "reportManage_tea";//前往教师查看学生报告页面
+    }
+
     //删除一份报告，学生调用（后来想了想，老师应该也可以删除
     @RequestMapping("/deleteAReport")
     public String deleteAReport(int id,HttpServletRequest request,Model model){
@@ -347,8 +364,12 @@ public class FileController {//对所有文件操作相关的进行管理
             model.addAttribute("error","删除失败");
         }
         reportService.deleteReport(report.getReportID());//删除数据库记录
-        return "forward:/teaGoToReportManage";//继续解析
+        if("teacher".equals(user.getUserType()))
+            return "forward:teaGoToReportManage";//继续解析
+        return "forward:stuToReportManage";//学生
     }
+
+
 
     //处理上传的报告数据
     @RequestMapping("/uploadReport")
@@ -430,26 +451,9 @@ public class FileController {//对所有文件操作相关的进行管理
         }else{
             return "dontHavePermission";
         }
-        return "forward:goToUploadMaterial";//继续解析
+        return "forward:goToUploadReport";//继续解析
     }
 
-
-    //教师查看名下的队伍的报告
-    @RequestMapping("/teaGoToReportManage")
-    public String teaGoToReportManage(HttpServletRequest request,Model model){
-        User user = (User) request.getSession().getAttribute("UserSession");
-        if(user == null){
-            return "login";
-        }
-        if("teacher".equals(user.getUserType())){//教师用户和学生用户有不同，学生用户的类型可能会变，教师类型的不会变，所以不需要到数据库进行更新
-            List<Report> reports = reportService.queryReportByTeacherID(user.getUserID());//根据指导老师的ID到team和report表中查询
-            System.out.println("查询到的记录条数:"+reports.size());
-            model.addAttribute("reports",reports);
-        }else{
-            return "dontHavePermission";
-        }
-        return "reportManage_tea";//前往教师查看学生报告页面
-    }
 
     //教师根据名称查询报告，和学生的不一样
     @RequestMapping("/teaQueryReportByName")
