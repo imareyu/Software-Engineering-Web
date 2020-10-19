@@ -18,5 +18,15 @@ public interface QuestionsMapper {
     //查询若干个问题
     List<Questions> queryAnyQuestions(@Param("start") int start, @Param("len") int len);
 
+    //根据QuestionID查询
+    Questions queryByQuestionID(int id);
 
+    //根据UserID查询
+    List<Questions> queryByUserID(String UserID);
+
+    //查询AnsState为yes的记录，回答过的问题
+    List<Questions> queryAllAnswered();
+
+    //查询AnsState为no的记录，没回答过的问题
+    List<Questions> queryAllNotAnswered();
 }
