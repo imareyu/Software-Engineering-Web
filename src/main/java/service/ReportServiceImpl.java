@@ -48,4 +48,8 @@ public class ReportServiceImpl implements ReportService {
     public List<Report> queryReportByTeacherID(String TeacherID) {
         return reportMapper.queryReportByTeacherID(TeacherID);
     }
+
+    public List<Report> queryByTeaIdAndTitleWord(String TeacherID, String word) {
+        return reportMapper.queryByTeaIdAndTitleWord(TeacherID,word);
+    }
 }

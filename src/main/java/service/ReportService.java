@@ -1,5 +1,6 @@
 package service;
 
+import org.apache.ibatis.annotations.Param;
 import pojo.Report;
 
 import java.util.List;
@@ -31,4 +32,6 @@ public interface ReportService {
 
     //根据教师id到team表和report表中查询报告
     List<Report> queryReportByTeacherID(String TeacherID);
+
+    List<Report> queryByTeaIdAndTitleWord(String TeacherID,String word );
 }

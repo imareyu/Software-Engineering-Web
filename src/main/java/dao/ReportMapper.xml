@@ -54,4 +54,9 @@
         select ReportID,a.TeamID,PublishTime,Title,Path from sedesign.report as a,sedesign.team as b
         where TeacherID = #{TeacherID} and a.TeamID = b.TeamID
     </select>
+
+    <select id="queryByTeaIdAndTitleWord" resultType="Report">
+        select * from sedesign.team as a,sedesign.report as b
+        where a.TeacherID = #{param1} and a.TeamID = b.TeamID and Title like CONCAT('%',#{param2},'%')
+    </select>
 </mapper>

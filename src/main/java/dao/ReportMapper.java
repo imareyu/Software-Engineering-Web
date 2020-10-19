@@ -1,5 +1,6 @@
 package dao;
 
+import org.apache.ibatis.annotations.Param;
 import pojo.Report;
 
 import java.util.List;
@@ -31,4 +32,7 @@ public interface ReportMapper {
 
     //根据教师id到team表和report表中查询报告
     List<Report> queryReportByTeacherID(String TeacherID);
+
+    //根据教师的id和title的关键词查询报告，模糊查询
+    List<Report> queryByTeaIdAndTitleWord(@Param("TeacherID")String TeacherID,@Param("word")String word );
 }
