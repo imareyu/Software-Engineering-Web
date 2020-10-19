@@ -453,7 +453,7 @@ public class FileController {//对所有文件操作相关的进行管理
 
     //教师根据名称查询报告，和学生的不一样
     @RequestMapping("/teaQueryReportByName")
-    public String teaQueryReportByName(HttpServletRequest request){
+    public String teaQueryReportByName(String word,HttpServletRequest request,Model model){
         User user = (User) request.getSession().getAttribute("UserSession");
         if(user == null){
             return "login";
@@ -463,6 +463,9 @@ public class FileController {//对所有文件操作相关的进行管理
             return "dontHavePermission";
         }
         //是老师，根据指导老师的Id和文件的title中的关键词进行查询
-        return "";
+        List<Report> reports = reportService.queryByTeaIdAndTitleWord(user.getUserID(), word);
+        model.addAttribute("reports",reports);
+        System.out.println(user.getUserID()+"老师根据关键词查询到的报告条数："+reports.size());
+        return "reportManage_tea";
     }
 }
