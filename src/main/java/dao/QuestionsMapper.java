@@ -29,4 +29,15 @@ public interface QuestionsMapper {
 
     //查询AnsState为no的记录，没回答过的问题
     List<Questions> queryAllNotAnswered();
+
+    //增加一条记录
+    int addQuestion(Questions questions);
+
+    //删除一条记录，根据QuestionID，有点想要在这里直接把问题的答案也删掉来着,,,
+    int deleteAQuestion(int QuestionID);
+
+    //修改一条记录
+    int updateQuestion(Questions questions);
+
+    
 }
