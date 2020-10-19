@@ -29,7 +29,7 @@
         </div>
         <div class="col-md-4 column">
             <span style="color: red;font-weight: bold">${error}</span>
-            <form action="${pageContext.request.contextPath}/file/queryReportByName" method="post">
+            <form action="${pageContext.request.contextPath}/file/teaQueryReportByName" method="post">
                 <input style="display: inline-block;width: 300px" type="text" name="word" class="form-control" placeholder="请输入要查询的报告名称关键词" required>
                 <button type="submit" class="btn btn-default">查询</button>
             </form>

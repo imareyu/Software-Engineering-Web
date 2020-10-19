@@ -463,6 +463,7 @@ public class FileController {//对所有文件操作相关的进行管理
             return "dontHavePermission";
         }
         //是老师，根据指导老师的Id和文件的title中的关键词进行查询
+        //需要指导老师id，防止查到别的老师的队伍的报告
         List<Report> reports = reportService.queryByTeaIdAndTitleWord(user.getUserID(), word);
         model.addAttribute("reports",reports);
         System.out.println(user.getUserID()+"老师根据关键词查询到的报告条数："+reports.size());
