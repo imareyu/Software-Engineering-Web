@@ -6,7 +6,7 @@ import pojo.Questions;
 
 import java.util.List;
 
-//考虑的是，所有老师都可以回答问题，
+// 考虑的是，所有老师都可以回答问题，
 // 否则，没有队伍的学生是没有办法找到对应的老师的，
 // 但是没有队伍的学生应该有权限提问题，
 // 考虑在answers类中加一个回答的老师的userID
@@ -19,7 +19,7 @@ public interface QuestionsMapper {
     List<Questions> queryAnyQuestions(@Param("start") int start, @Param("len") int len);
 
     //根据QuestionID查询
-    Questions queryByQuestionID(int id);
+    Questions queryByQuestionID(int QuestionID);
 
     //根据UserID查询
     List<Questions> queryByUserID(String UserID);
@@ -39,5 +39,5 @@ public interface QuestionsMapper {
     //修改一条记录
     int updateQuestion(Questions questions);
 
-    
+
 }

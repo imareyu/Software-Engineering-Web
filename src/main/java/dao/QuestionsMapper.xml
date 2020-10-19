@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.QuestionsMapper">
+    <!--查询所有的问题,这个应该不常用，问题数量巨大时，会给数据库造成很大的负担-->
+    <!--List<Questions> queryAllQuestions();-->
+    <select id="queryAllQuestions" resultType="Questions">
+        select * from sedesign.questions
+    </select>
+
+    <!--//查询若干个问题-->
+    <!--List<Questions> queryAnyQuestions(@Param("start") int start, @Param("len") int len);-->
+    <select id="queryAnyQuestions" resultType="Questions">
+        select * from sedesign.questions
+        order by QuestionID limit #{param1},#{param2}
+    </select>
+
+    <!--//根据QuestionID查询-->
+    <!--Questions queryByQuestionID(int id);-->
+    <select id="queryByQuestionID" parameterType="int" resultType="Questions">
+        select * from sedesign.questions
+        where QuestionID = #{QuestionID}
+    </select>
+
+    <!--//根据UserID查询-->
+    <!--List<Questions> queryByUserID(String UserID);-->
+    <select id="queryByUserID" parameterType="String" resultType="Questions">
+        select * from sedesign.questions
+        where UserID = #{UserID}
+    </select>
+
+    <!--//查询AnsState为yes的记录，回答过的问题-->
+    <!--List<Questions> queryAllAnswered();-->
+    <select id="queryAllAnswered" resultType="Questions">
+        select * from sedesign.questions
+        where AnsState = 'yes'
+    </select>
+
+    <!--//查询AnsState为no的记录，没回答过的问题-->
+    <!--List<Questions> queryAllNotAnswered();-->
+    <select id="queryAllNotAnswered" resultType="Questions">
+        select * from sedesign.questions
+        where AnsState = 'no'
+    </select>
+
+
+    <!--//增加一条记录-->
+    <!--int addQuestion(Questions questions);-->
+    <insert id="addQuestion" parameterType="Questions">
+        insert
+        into sedesign.questions(UserID,PublishTime,Content,AnsState)
+        values (#{UserID},#{PublishTime},#{Content},#{AnsState})
+    </insert>
+
+    <!--//删除一条记录，根据QuestionID，有点想要在这里直接把问题的答案也删掉来着,,,-->
+    <!--int deleteAQuestion(int QuestionID);-->
+    <delete id="deleteAQuestion" parameterType="int">
+        delete from sedesign.questions
+        where QuestionID = #{QuestionID};
+    </delete>
+
+    <!--//修改一条记录，提问用户不会变，回答状态不变-->
+    <!--int updateQuestion(Questions questions);-->
+    <update id="updateQuestion" parameterType="Questions">
+        update sedesign.questions
+        set PublishTime = #{PublishTime},Content = #{Content}
+        where QuestionID = #{QuestionID}
+    </update>
+</mapper>
