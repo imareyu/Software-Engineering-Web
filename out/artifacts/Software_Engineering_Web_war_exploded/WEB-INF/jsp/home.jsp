@@ -109,7 +109,7 @@
                             <a href="#">我要提问</a>
                         </div>
                         <div class="panel-body">
-                            <a href="#">我的问题</a>
+                            <a href="#" onclick="return myquestions();">我的问题</a>
                         </div>
                     </div>
                 </div>
@@ -161,6 +161,10 @@
 
     function stuToTeam(){
         document.getElementById("rightframe").src="${pageContext.request.contextPath}/team/goToTeamManage";
+    }
+
+    function myquestions() {
+        document.getElementById("rightframe").src="${pageContext.request.contextPath}/questions/stuGoToQuestionsManage"
     }
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
