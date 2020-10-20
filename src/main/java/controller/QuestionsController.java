@@ -41,4 +41,19 @@ public class QuestionsController {
         }
         return "questionsManage_stu";
     }
+
+    //前往问题提交页面，只有学生可以调用
+    @RequestMapping("/goToAskQuestion")
+    public String goToAskQuestion(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "logon";
+        }
+        user = userService.queryStudentById(user.getUserID());
+        request.getSession().setAttribute("UserSession",user);
+        if("student".equals(user.getUserType()) || "teamleader".equals(user.getUserType()) || "teammate".equals(user.getUserType())){
+            return "askQuestion";
+        }
+        return "dontHavePermission";
+    }
 }

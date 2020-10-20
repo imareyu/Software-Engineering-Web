@@ -7,11 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7deda246-a9a8-4b46-a350-d59f4a064c81" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/spring-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/spring-service.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-service.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/askQuestion.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/QuestionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/QuestionsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_stu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_stu.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -69,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/QuestionsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
+            <state relative-caret-position="273">
+              <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,10 +77,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/askQuestion.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_stu.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="1098">
+              <caret line="54" column="35" lean-forward="true" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
               <folding>
                 <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -93,8 +100,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
-              <caret line="111" column="80" lean-forward="true" selection-start-line="111" selection-start-column="80" selection-end-line="111" selection-end-column="80" />
+            <state relative-caret-position="198">
+              <caret line="170" column="96" selection-start-line="170" selection-start-column="96" selection-end-line="170" selection-end-column="96" />
             </state>
           </provider>
         </entry>
@@ -153,7 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/adminiTeamManage.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/pojo/Team.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/noTeam.jsp" />
@@ -201,9 +207,10 @@
         <option value="$PROJECT_DIR$/src/main/java/service/QuestionsService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-service.xml" />
         <option value="$PROJECT_DIR$/src/main/java/service/QuestionsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/QuestionsController.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_stu.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/QuestionsController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/askQuestion.jsp" />
       </list>
     </option>
   </component>
@@ -244,7 +251,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="125" />
     <option name="y" value="54" />
     <option name="width" value="1137" />
@@ -461,7 +468,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1603183199613" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1603190254139" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -670,12 +677,12 @@
       <workItem from="1602984273281" duration="5609000" />
       <workItem from="1603015258727" duration="6606000" />
       <workItem from="1603066798715" duration="8999000" />
-      <workItem from="1603154876812" duration="7660000" />
+      <workItem from="1603154876812" duration="9481000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277302000" />
+    <option name="totallyTimeSpent" value="279123000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -690,7 +697,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49019608" visible="true" weight="0.24583964" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49019608" visible="true" weight="0.24583964" />
       <window_info id="Structure" order="1" sideWeight="0.50980395" side_tool="true" weight="0.22125298" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -720,7 +727,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info active="true" anchor="right" id="Database" order="6" visible="true" weight="0.12254161" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.12254161" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
@@ -732,13 +739,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/failed.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/modifyPassword.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -1072,23 +1072,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/QuestionsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="111" column="80" lean-forward="true" selection-start-line="111" selection-start-column="80" selection-end-line="111" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/InforManage.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-816" />
@@ -1101,13 +1084,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="170" column="96" selection-start-line="170" selection-start-column="96" selection-end-line="170" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/QuestionsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_stu.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="1098">
+          <caret line="54" column="35" lean-forward="true" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
           <folding>
             <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/askQuestion.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>

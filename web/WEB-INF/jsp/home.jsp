@@ -106,7 +106,7 @@
                     </div>
                     <div id="collapseFour" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a href="#">我要提问</a>
+                            <a href="#" onclick="return gotoAsk();">我要提问</a>
                         </div>
                         <div class="panel-body">
                             <a href="#" onclick="return myquestions();">我的问题</a>
@@ -166,6 +166,11 @@
     function myquestions() {
         document.getElementById("rightframe").src="${pageContext.request.contextPath}/questions/stuGoToQuestionsManage"
     }
+
+    function gotoAsk() {
+        document.getElementById("rightframe").src="${pageContext.request.contextPath}/questions/"
+    }
+
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
