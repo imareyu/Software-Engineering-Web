@@ -72,4 +72,11 @@
         select * from sedesign.questions
         where UserID = #{param1} and Content like CONCAT('%',#{param2},'%')
     </select>
+
+    <!--//根据word查询-->
+    <!--List<Questions> queryByWord();-->
+    <select id="queryByWord" resultType="Questions" parameterType="String">
+        select * from sedesign.questions
+        where Content like CONCAT('%',#{word},'%')
+    </select>
 </mapper>

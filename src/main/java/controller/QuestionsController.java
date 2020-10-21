@@ -106,7 +106,19 @@ public class QuestionsController {
 
     //教师前往问题查看页面
     @RequestMapping("/teaGoToQuesManage")
-    public String teaGoToQuesManage(){
+    public String teaGoToQuesManage(Model model,HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        if("teacher".equals(user.getUserType())){
+            //教师用户
+            List<Questions> questions = questionsService.queryAnyQuestions(0, 15);//查先15条数据
+            model.addAttribute("questions",questions);
+        }else{
+            //非教师用户
+            return "dontHavePermission";
+        }
         return "questionsManage_tea";
     }
 
