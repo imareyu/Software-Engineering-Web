@@ -41,4 +41,7 @@ public interface QuestionsMapper {
 
     //根据UserID和content中的关键词查询
     List<Questions> queryByUserIDAndWord(@Param("UserID") String UserID, @Param("word") String word);
+
+    //根据word查询
+    List<Questions> queryByWord(String word);
 }

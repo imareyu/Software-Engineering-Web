@@ -7,14 +7,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7deda246-a9a8-4b46-a350-d59f4a064c81" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_tea.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/controller/QuestionsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/controller/QuestionsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/QuestionsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/QuestionsMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/QuestionsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/QuestionsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/QuestionsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/QuestionsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/QuestionsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/QuestionsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/questionsManage_stu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/questionsManage_stu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/QuestionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/QuestionsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/QuestionsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/QuestionsMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/QuestionsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/QuestionsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/QuestionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/QuestionsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/QuestionsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/QuestionsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/askQuestion.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/askQuestion.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_stu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_stu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/QuestionsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/QuestionsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/QuestionsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/QuestionsMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/QuestionsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/QuestionsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/QuestionsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/QuestionsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/QuestionsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/QuestionsServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -79,10 +89,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/QuestionsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="94" column="12" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
+            <state relative-caret-position="175">
+              <caret line="88" column="27" lean-forward="true" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4266#4267#0" expanded="true" />
+                <element signature="e#4290#4291#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -151,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/pojo/Team.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/noTeam.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/failedApply.jsp" />
@@ -196,11 +207,12 @@
         <option value="$PROJECT_DIR$/src/main/resources/spring-service.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/askQuestion.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_stu.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/dao/QuestionsMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/QuestionsMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/service/QuestionsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/QuestionsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_stu.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_tea.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/QuestionsController.java" />
       </list>
     </option>
@@ -243,8 +255,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="107" />
-    <option name="y" value="205" />
+    <option name="x" value="57" />
+    <option name="y" value="28" />
     <option name="width" value="1247" />
     <option name="height" value="732" />
   </component>
@@ -415,13 +427,6 @@
             <path>
               <item name="Software-Engineering-Web" type="b2602c69:ProjectViewProjectNode" />
               <item name="Software-Engineering-Web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Software-Engineering-Web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Software-Engineering-Web" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -459,7 +464,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1603200199218" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1603262729933" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -669,12 +674,12 @@
       <workItem from="1603015258727" duration="6606000" />
       <workItem from="1603066798715" duration="8999000" />
       <workItem from="1603154876812" duration="10683000" />
-      <workItem from="1603246577521" duration="5740000" />
+      <workItem from="1603246577521" duration="7440000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="286065000" />
+    <option name="totallyTimeSpent" value="287765000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -686,7 +691,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="107" y="205" width="1247" height="732" extended-state="0" />
+    <frame x="57" y="28" width="1247" height="732" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49019608" visible="true" weight="0.2780118" />
@@ -711,7 +716,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.3123967" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.3115578" />
       <window_info anchor="bottom" id="Database Console" order="15" weight="0.32793522" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -731,13 +736,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/modifyPassword.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/notExist.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -1037,34 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/QuestionsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="73" column="13" lean-forward="true" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/QuestionsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/QuestionsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/QuestionsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/askQuestion.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -1079,12 +1049,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/QuestionsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="79" column="44" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/QuestionsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/QuestionsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/QuestionsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="55" column="49" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
+          <folding>
+            <element signature="e#1599#1600#0" expanded="true" />
+            <element signature="e#1626#1627#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_tea.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/QuestionsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="94" column="12" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
+        <state relative-caret-position="175">
+          <caret line="88" column="27" lean-forward="true" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4266#4267#0" expanded="true" />
+            <element signature="e#4290#4291#0" expanded="true" />
           </folding>
         </state>
       </provider>

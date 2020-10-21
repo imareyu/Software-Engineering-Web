@@ -51,4 +51,8 @@ public class QuestionsServiceImpl implements QuestionsService{
     public List<Questions> queryByUserIDAndWord(String UserID, String word) {
         return questionsMapper.queryByUserIDAndWord(UserID,word);
     }
+
+    public List<Questions> queryByWord(String word) {
+        return questionsMapper.queryByWord(word);
+    }
 }

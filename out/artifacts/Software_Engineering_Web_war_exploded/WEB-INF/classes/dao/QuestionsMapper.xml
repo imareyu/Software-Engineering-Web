@@ -67,4 +67,9 @@
         set PublishTime = #{PublishTime},Content = #{Content}
         where QuestionID = #{QuestionID}
     </update>
+
+    <select id="queryByUserIDAndWord" resultType="Questions">
+        select * from sedesign.questions
+        where UserID = #{param1} and Content like CONCAT('%',#{param2},'%')
+    </select>
 </mapper>
