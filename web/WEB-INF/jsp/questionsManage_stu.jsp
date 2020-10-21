@@ -25,8 +25,8 @@
         <div class="col-md-4 column"></div>
         <div class="col-md-4 column">
             <span style="color: red;font-weight: bold">${error}</span>
-            <form action="${pageContext.request.contextPath}" method="post">
-                <input style="display: inline-block;width: 300px" type="text" name="queryBookName" class="form-control" placeholder="请输入问题的某个关键词" required>
+            <form action="${pageContext.request.contextPath}/questions/queryQuesByWord" method="post">
+                <input style="display: inline-block;width: 300px" type="text" name="word" class="form-control" placeholder="请输入问题的某个关键词" required>
                 <input type="submit" value="查询">
             </form>
         </div>
@@ -48,7 +48,7 @@
                 <c:forEach var="question" items="${questions}">
                     <tr>
                         <td>${question.questionID}</td>
-                        <td style="display: block;width: 50px;word-break: keep-all;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">${question.content}</td>
+                        <td style="display: block;width: 216px;word-break: keep-all;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;" title="${question.content}">${question.content}</td>
                         <td>${question.publishTime}</td>
                         <td>
                             <c:if test="${question.ansState == 'yes'}">

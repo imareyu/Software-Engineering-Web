@@ -47,4 +47,8 @@ public class QuestionsServiceImpl implements QuestionsService{
     public int updateQuestion(Questions questions) {
         return questionsMapper.updateQuestion(questions);
     }
+
+    public List<Questions> queryByUserIDAndWord(String UserID, String word) {
+        return questionsMapper.queryByUserIDAndWord(UserID,word);
+    }
 }

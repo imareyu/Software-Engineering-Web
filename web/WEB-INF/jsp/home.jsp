@@ -168,7 +168,7 @@
     }
 
     function gotoAsk() {
-        document.getElementById("rightframe").src="${pageContext.request.contextPath}/questions/"
+        document.getElementById("rightframe").src="${pageContext.request.contextPath}/questions/goToAskQuestion"
     }
 
 </script>

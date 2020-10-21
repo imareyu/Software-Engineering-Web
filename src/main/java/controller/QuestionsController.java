@@ -82,7 +82,22 @@ public class QuestionsController {
         return "forward:goToAskQuestion";
     }
 
-
+    @RequestMapping("/queryQuesByWord")
+    public String queryQuesByWord(String word,HttpServletRequest request,Model model){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        //学生需要只能查询自己的问题，老师的话，暂时定为查15条
+        if("student".equals(user.getUserType()) || "teamleader".equals(user.getUserType()) || "teammate".equals(user.getUserType())){
+            List<Questions> questions = questionsService.queryByUserIDAndWord(user.getUserID(), word);
+            model.addAttribute("questions",questions);
+            return "questionsManage_stu";
+        }else{//老师，查询所有的问题里边的有关键词的
+            ;
+        }
+        return "";
+    }
 
 
 

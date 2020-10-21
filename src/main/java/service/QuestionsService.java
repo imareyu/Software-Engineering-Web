@@ -32,4 +32,7 @@ public interface QuestionsService {
 
     //修改一条记录
     int updateQuestion(Questions questions);
+
+    //根据UserID和content中的关键词查询
+    List<Questions> queryByUserIDAndWord(@Param("UserID") String UserID, @Param("word") String word);
 }

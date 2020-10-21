@@ -48,7 +48,7 @@
                 <c:forEach var="question" items="${questions}">
                     <tr>
                         <td>${question.questionID}</td>
-                        <td style="display: block;width: 50px;word-break: keep-all;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">${question.content}</td>
+                        <td style="display: block;width: 216px;word-break: keep-all;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;" title="${question.content}">${question.content}</td>
                         <td>${question.publishTime}</td>
                         <td>
                             <c:if test="${question.ansState == 'yes'}">
@@ -66,7 +66,8 @@
     </div>
 </div>
 
-
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </body>
 </html>
