@@ -109,7 +109,7 @@
                     </div>
                     <div id="collapseFour" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a href="#">问题列表</a><%--跳转到一个新页面,展示全部问题--%>
+                            <a href="#" onclick="return gotoQuestionsManage();">问题列表</a><%--跳转到一个新页面,展示全部问题--%>
                         </div>
                     </div>
                 </div>
@@ -149,6 +149,10 @@
         // if(top.location !== self.location)
         //     top.location = "../index.jsp";
     }
+    function gotoQuestionsManage() {
+        document.getElementById("rightframe").src = "${pageContext.request.contextPath}/questions/teaGoToQuesManage";
+    }
+
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>

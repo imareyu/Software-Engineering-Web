@@ -122,12 +122,12 @@ public class QuestionsController {
         return "questionsManage_tea";
     }
 
+    //教师     前往问题回答页面
+    @RequestMapping("/goToAnswerQuestion")
+    public String goToAnswerQuestion(int id){
 
-
-
-
-
-
+        return "";
+    }
 
 
 
