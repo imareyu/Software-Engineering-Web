@@ -1,6 +1,7 @@
 package controller;
 
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -124,9 +125,22 @@ public class QuestionsController {
 
     //教师     前往问题回答页面
     @RequestMapping("/goToAnswerQuestion")
-    public String goToAnswerQuestion(int id){
-
-        return "";
+    public String goToAnswerQuestion(int id, HttpServletRequest request, Model model){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        Questions questions = questionsService.queryByQuestionID(id);
+        if(questions == null){
+            model.addAttribute("error","不存在此问题");
+            return "forward:teaGoToQuesManage";
+        }
+        if("teacher".equals(user.getUserType())){
+            model.addAttribute("questions",questions);
+        }else{
+            return "dontHavePermission";
+        }
+        return "answerQuestions_tea";
     }
 
 
