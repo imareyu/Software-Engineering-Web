@@ -12,6 +12,7 @@ import service.QuestionsService;
 import service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
+import java.sql.Timestamp;
 import java.util.List;
 
 @Controller
@@ -56,4 +57,41 @@ public class QuestionsController {
         }
         return "dontHavePermission";
     }
+
+    //添加一个问题
+    @RequestMapping("/addAQuestion")
+    public String addAQuestion(String content1,Model model,HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        user = userService.queryStudentById(user.getUserID());
+        request.getSession().setAttribute("UserSession",user);
+        if("student".equals(user.getUserType()) || "teamleader".equals(user.getUserType()) || "teammate".equals(user.getUserType())){
+            //学生可以
+            Questions questions = new Questions();
+            questions.setUserID(user.getUserID());
+            questions.setPublishTime(new Timestamp(System.currentTimeMillis()));
+            questions.setContent(content1);
+            questions.setAnsState("no");//未回答
+            questionsService.addQuestion(questions);//写到数据库里边
+            model.addAttribute("success","问题成功提交");
+        }else{
+            return "dontHavePermission";
+        }
+        return "forward:goToAskQuestion";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
