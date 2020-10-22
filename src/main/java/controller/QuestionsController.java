@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pojo.Answer;
 import pojo.Questions;
 import pojo.User;
+import service.AnswerService;
 import service.QuestionsService;
 import service.UserService;
 
@@ -25,6 +27,10 @@ public class QuestionsController {
     @Autowired
     @Qualifier("userServiceImpl")
     private UserService userService;
+
+    @Autowired
+    @Qualifier("answerServiceImpl")
+    private AnswerService answerService;
 
     //学生前往查看问题页面
     @RequestMapping("/stuGoToQuestionsManage")
@@ -144,9 +150,19 @@ public class QuestionsController {
 
     //提交一个回答(教师用户
     @RequestMapping("/submitAnswer")
-    public String submitAnswer( HttpServletRequest request,Model model){
-
-        return "";
+    public String submitAnswer(Answer answer,HttpServletRequest request, Model model){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        if("teacher".equals(user.getUserType())) {//教师用户
+            answer.setAnsTime(new Timestamp(System.currentTimeMillis()));
+            answerService.addAnswer(answer);
+            model.addAttribute("success","成功提交回答");
+        }else{
+            return "dontHavePermission";
+        }
+        return "forward:teaGoToQuesManage";
     }
 
 
