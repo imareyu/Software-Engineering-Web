@@ -143,7 +143,12 @@ public class QuestionsController {
         return "answerQuestions_tea";
     }
 
+    //提交一个回答(教师用户
+    @RequestMapping("/submitAnswer")
+    public String submitAnswer( HttpServletRequest request,Model model){
 
+        return "";
+    }
 
 
 }
