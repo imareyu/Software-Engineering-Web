@@ -60,11 +60,11 @@
         where QuestionID = #{QuestionID};
     </delete>
 
-    <!--//修改一条记录，提问用户不会变，回答状态不变-->
+    <!--//修改一条记录，提问用户不会变-->
     <!--int updateQuestion(Questions questions);-->
     <update id="updateQuestion" parameterType="Questions">
         update sedesign.questions
-        set PublishTime = #{PublishTime},Content = #{Content}
+        set PublishTime = #{PublishTime},Content = #{Content},AnsState=#{AnsState}
         where QuestionID = #{QuestionID}
     </update>
 

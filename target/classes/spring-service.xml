@@ -25,6 +25,10 @@
     <bean id="questionsServiceImpl" class="service.QuestionsServiceImpl">
         <property name="questionsMapper" ref="questionsMapper"/>
     </bean>
+
+    <bean id="answerServiceImpl" class="service.AnswerServiceImpl">
+        <property name="answerMapper" ref="answerMapper"/>
+    </bean>
     <!--3.声明式事务配置-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>

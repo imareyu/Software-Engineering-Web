@@ -22,7 +22,9 @@
         <div class="col-md-4 column">
             <a class="btn btn-primary" href="${pageContext.request.contextPath}/questions/teaGoToQuesManage">显示前15条问题</a>
         </div>
-        <div class="col-md-4 column"></div>
+        <div class="col-md-4 column">
+            <span style="color: green">${success}</span>
+        </div>
         <div class="col-md-4 column">
             <span style="color: red;font-weight: bold">${error}</span>
             <form action="${pageContext.request.contextPath}/questions/queryQuesByWord" method="post">
@@ -60,7 +62,7 @@
                             </c:if>
                         </td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/" target="_blank">前往查看|回答问题</a>
+                            <a href="${pageContext.request.contextPath}/questions/goToAnswerQuestion?id=${question.questionID}" target="_blank">前往查看|回答问题</a>
                         </td>
                     </tr>
                 </c:forEach>

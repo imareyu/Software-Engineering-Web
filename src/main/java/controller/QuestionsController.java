@@ -158,6 +158,13 @@ public class QuestionsController {
         if("teacher".equals(user.getUserType())) {//教师用户
             answer.setAnsTime(new Timestamp(System.currentTimeMillis()));
             answerService.addAnswer(answer);
+            Questions questions = questionsService.queryByQuestionID(answer.getQuestionID());
+            //更新问题的回答状态
+            if("no".equals(questions.getAnsState())) {//未回答，更新一下
+                questions.setAnsState("yes");
+                questionsService.updateQuestion(questions);
+                System.out.println("更新问题状态成功");
+            }
             model.addAttribute("success","成功提交回答");
         }else{
             return "dontHavePermission";

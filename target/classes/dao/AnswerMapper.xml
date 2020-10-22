@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.AnswerMapper">
+    <!--//查询某个问题的所有回答-->
+    <!--List<Answer> queryByQuestionID(int id);-->
+    <select id="queryByQuestionID" parameterType="int" resultType="Answer">
+        select * from sedesign.answers
+        where QuestionID = #{id}
+    </select>
+
+    <!--//根据AnswerID查询回答-->
+    <!--Answer queryByAnswerID(int id);-->
+    <select id="queryByAnswerID" parameterType="int" resultType="Answer">
+        select * from sedesign.answers
+        where AnswerID = #{id}
+    </select>
+
+    <!--//增加一条回答-->
+    <!--int addAnswer(Answer answer);-->
+    <insert id="addAnswer" parameterType="Answer">
+        insert into sedesign.answers(QuestionID,Answer,AnsTime)
+        values (#{QuestionID},#{Answer},#{AnsTime})
+    </insert>
+
+    <!--删除一条回答，根据AnswerID-->
+    <!--int deleteAnswer(int id);-->
+    <delete id="deleteAnswer" parameterType="int">
+        delete from sedesign.answers
+        where AnswerID = #{id}
+    </delete>
+
+    <!--修改回答-->
+    <!--int updateAnswer(Answer answer);-->
+    <update id="updateAnswer" parameterType="Answer">
+        update sedesign.answers
+        set Answer = #{Answer},AnsTime = #{AnsTime}
+        where AnswerID = #{AnswerID}
+    </update>
+
+</mapper>
