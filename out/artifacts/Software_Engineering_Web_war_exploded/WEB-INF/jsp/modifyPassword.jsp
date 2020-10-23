@@ -30,12 +30,12 @@
                 </div>
                 <div class="form-group">
                     <label>输入新密码</label>
-                    <input name="newPassword" id="newPassword1" style="width: 200px" minlength="6" maxlength="26" class="form-control" type="password" placeholder="请输入新密码" required>
+                    <input name="newPassword" id="newPassword1" style="width: 200px" minlength="6" maxlength="26" class="form-control" type="password" placeholder="请输入新密码" required onkeydown="return checkNumberOrLetter(event);">
                 </div>
                 <div class="form-group">
                     <label>确认新密码</label>
                     <div>
-                        <label><input id="newPassword2" style="width: 200px" minlength="6" maxlength="26" class="form-control" type="password" placeholder="请再次输入新密码" onchange="return checknewPassword();" required></label><%--文本改变事件，当文本改变时，对比两个新的密码是否相等--%>
+                        <label><input id="newPassword2" style="width: 200px" minlength="6" maxlength="26" class="form-control" type="password" placeholder="请再次输入新密码" onkeydown="return checkNumberOrLetter(event);" onchange="return checknewPassword();" required></label><%--文本改变事件，当文本改变时，对比两个新的密码是否相等--%>
                         <label style="color: red" id="passwordNotSame"></label>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
             return true;
         }
         else{//如果不相等，则提示不同
-            document.getElementById("passwordNotSame").innerText = "新密码不一致";
+            document.getElementById("passwordNotSame").innerText = "新密码不一致或长度未达到6位";
             // alert(newpassword1.value +"!=" +newpassword2.value);
             return false;
         }
