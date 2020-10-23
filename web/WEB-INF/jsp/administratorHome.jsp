@@ -57,7 +57,7 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
-                            <a href="#" onclick="return ;">修改密码</a>
+                            <a href="#" onclick="return goToSearchStu();">修改密码</a>
                         </div>
                         <div class="panel-body">
                             <a href="#" onclick="return ;">修改用户类型</a>
@@ -105,7 +105,9 @@
 </div>
 
 <script>
-
+    function goToSearchStu() {//iframe替换为搜索学生用户的界面
+        document.getElementById("rightframe").src="${pageContext.request.contextPath}/user/goToSearchStu"
+    }
 </script>
 
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

@@ -114,4 +114,11 @@ public class UserController {
         request.getSession().invalidate();
         return "redirect:/user/goToLogin";
     }
+
+    //管理员    前往查询学生页面
+    @RequestMapping("/goToSearchStu")
+    public String goToSearchStu(){
+        return "searchStu_ad";
+    }
+
 }
