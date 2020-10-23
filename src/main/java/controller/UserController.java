@@ -117,8 +117,20 @@ public class UserController {
 
     //管理员    前往查询学生页面
     @RequestMapping("/goToSearchStu")
-    public String goToSearchStu(){
+    public String goToSearchStu(HttpServletRequest request){
+
         return "searchStu_ad";
     }
 
+    //管理员   查询某个学生用户
+    @RequestMapping("/queryStu_ad")
+    public String queryStu_ad(String userID,HttpServletRequest request,Model model){
+        User user = userService.queryStudentById(userID);
+        if(user == null){
+            model.addAttribute("error","不存在此学生用户");
+            return "forward:goToSearchStu";
+        }
+        model.addAttribute("user",user);
+        return "stuPasswordModify_ad";
+    }
 }
