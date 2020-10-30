@@ -9,7 +9,7 @@
         values (#{UserID},#{UserPassword},#{UserType})
     </insert>
     <!--删除一个学生用户-->
-    <delete id="deleteStudentUserByID" parameterType="int">
+    <delete id="deleteStudentUserByID" parameterType="String">
         delete from sedesign.students
         where UserID = #{UserID}
     </delete>

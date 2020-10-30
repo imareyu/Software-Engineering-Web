@@ -1,6 +1,5 @@
 package controller;
 
-import org.graalvm.compiler.lir.LIRInstruction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -181,8 +180,12 @@ public class UserController {
         //存在这个学生，需要看一下ta是否参加了队伍
         if("student".equals(user.getUserType())){
             //没有参加队伍
-            userService.deleteStudentUserByID(user.getUserID());
+            userService.deleteStudentUserByID(user.getUserID());//修改数据库
+            model.addAttribute("mess","删除学生用户成功");
+        }else{//参加了队伍，删除失败
+            model.addAttribute("error","删除失败，学生用户在队伍中");
+            return "forward:goToSearchStu_forDeleteStu_ad";
         }
-        return "";
+        return "forward:goToSearchStu_forDeleteStu_ad";
     }
 }
