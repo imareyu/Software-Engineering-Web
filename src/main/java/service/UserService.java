@@ -9,7 +9,7 @@ public interface UserService {
     int addStudentUser(User user);
 
     //删除一个学生用户
-    int deleteStudentUserByID(int id);
+    int deleteStudentUserByID(String id);
 
     //修改一个学生用户姓名,此方法过于复杂，由service层实现
 //    int updateStudentUserName(User user);

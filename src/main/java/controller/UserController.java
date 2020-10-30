@@ -1,5 +1,6 @@
 package controller;
 
+import org.graalvm.compiler.lir.LIRInstruction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -149,5 +150,39 @@ public class UserController {
         userService.updateStudentUser(user);//更新数据库信息
         model.addAttribute("mess","学生用户密码修改成功");
         return "forward:goToSearchStu";
+    }
+
+    //管理员   前往为了删除学生用户的查询学生用户界面
+    @RequestMapping("/goToSearchStu_forDeleteStu_ad")
+    public String goToSearchStu_forDeleteStu_ad(){
+        return "SearchStu_forDeleteStu_ad";
+    }
+
+    //管理员  查询学生用户，查到之后则前往删除确认页面
+    @RequestMapping("/queryStu_forDeleteStu_ad")
+    public String queryStu_forDeleteStu_ad(String userID,HttpServletRequest request,Model model){
+        User user = userService.queryStudentById(userID);
+        if(user == null){
+            model.addAttribute("error","不存在此学生用户");
+            return "forward:goToSearchStu_forDeleteStu_ad";
+        }
+        model.addAttribute("user",user);
+        return "deleteStu_ad";
+    }
+
+    //管理员     删除学生用户
+    @RequestMapping("/deleteStu")
+    public String deleteStu(String UserID,Model model){
+        User user = userService.queryStudentById(UserID);
+        if(user == null){
+            model.addAttribute("error","删除失败，学生用户已不存在");
+            return "forward:goToSearchStu_forDeleteStu_ad";
+        }
+        //存在这个学生，需要看一下ta是否参加了队伍
+        if("student".equals(user.getUserType())){
+            //没有参加队伍
+            userService.deleteStudentUserByID(user.getUserID());
+        }
+        return "";
     }
 }

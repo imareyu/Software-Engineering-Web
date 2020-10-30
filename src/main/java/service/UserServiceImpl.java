@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService{
         return userMapper.addStudentUser(user);
     }
 
-    public int deleteStudentUserByID(int id) {
+    public int deleteStudentUserByID(String id) {
         return userMapper.deleteStudentUserByID(id);
     }
 

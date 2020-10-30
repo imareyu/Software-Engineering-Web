@@ -60,7 +60,10 @@
                             <a href="#" onclick="return goToSearchStu();">修改密码</a>
                         </div>
                         <div class="panel-body">
-                            <a href="#" onclick="return ;">修改用户类型</a>
+                            <a href="#" onclick="return gotoDeleteStu();">删除学生用户</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="#" onclick="return ;">添加学生用户</a>
                         </div>
                     </div>
                 </div>
@@ -107,6 +110,10 @@
 <script>
     function goToSearchStu() {//iframe替换为搜索学生用户的界面
         document.getElementById("rightframe").src="${pageContext.request.contextPath}/user/goToSearchStu"
+    }
+
+    function gotoDeleteStu() {//前往删除学生页面,首先要前往查询学生页面,,,,但是发现前边那个页面不能复用（或者说我不会复用
+        document.getElementById("rightframe").src="${pageContext.request.contextPath}/user/goToSearchStu_forDeleteStu_ad"
     }
 </script>
 
