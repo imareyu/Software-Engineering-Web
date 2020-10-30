@@ -188,4 +188,12 @@ public class UserController {
         }
         return "forward:goToSearchStu_forDeleteStu_ad";
     }
+
+    //管理员    前往添加学生用户界面
+    @RequestMapping("/gotoAddStu")
+    public String gotoAddStu(HttpServletRequest request){
+
+        return "AddStudent_ad";
+    }
+
 }
