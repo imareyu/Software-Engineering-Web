@@ -20,6 +20,7 @@
         <div class="col-md-5 column">
             <form class="form-horizontal" role="form" action="${pageContext.request.contextPath}/user/queryStu_ad" method="post">
                 <span style="color: red">${error}</span>
+                <span style="color: green">${mess}</span>
                 <div class="form-group">
                     <label for="input1" style="width: 100px;" class="col-sm-3 control-label">用户名</label>
                     <div class="col-sm-9">

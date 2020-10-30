@@ -133,4 +133,21 @@ public class UserController {
         model.addAttribute("user",user);
         return "stuPasswordModify_ad";
     }
+
+    //管理员   修改某个学生用户的密码
+    @RequestMapping("/modifyStuPassword_ad")
+    public String modifyStuPassword_ad(int ID,String UserID,String UserPassword,Model model){
+        System.out.println("ID:"+ID);
+        System.out.println("UserID:"+UserID);
+        System.out.println("UserPassword:"+UserPassword);
+        User user = userService.queryStudentById(UserID);//忽然发现ID没有用 ，UserID有用
+        if(user == null){
+            model.addAttribute("error","密码修改失败，不存在此学生用户");
+            return "forward:goToSearchStu";
+        }
+        user.setUserPassword(UserPassword);
+        userService.updateStudentUser(user);//更新数据库信息
+        model.addAttribute("mess","学生用户密码修改成功");
+        return "forward:goToSearchStu";
+    }
 }

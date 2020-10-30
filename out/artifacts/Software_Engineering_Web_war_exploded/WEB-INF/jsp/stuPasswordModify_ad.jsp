@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>管理员查看修改学生用户</title>
+    <title>管理员查看修改学生用户信息页面</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -18,7 +18,7 @@
     </div>
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <form action="${pageContext.request.contextPath}" method="get">
+            <form action="${pageContext.request.contextPath}/user/modifyStuPassword_ad" method="get">
                 <div class="form-group">
                     <label>id</label>
                     <input style="width: 200px" name="ID" class="form-control" type="text" readonly value="${user.ID}">
@@ -58,7 +58,7 @@
         //    3：如果都满足，则提示确认，调用后端代码
         var newpassword1 = document.getElementById("newPassword1");
         var newpassword2 = document.getElementById("newPassword2");
-        var oldPassword = "${user.userPassword}";
+        var oldPassword = "${user.userPassword}";//这个 user是后台查出来 的学生信息，不是管理员的用户信息
         if(newpassword1.value.length < 6 || newpassword2.value.length < 6 ||newpassword1.value !== newpassword2.value){
             alert("新密码过短或不一致");
             return false;
@@ -71,9 +71,7 @@
             return false;
         }
         // alert(userPassword);
-        if(!confirm("确认修改密码？")){
-            return false;//不修改
-        }
+        return confirm("确认修改密码？");
     }
     
     function checknewPassword(){
