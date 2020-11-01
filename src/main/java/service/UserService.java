@@ -8,6 +8,9 @@ public interface UserService {
     //增加一名学生用户
     int addStudentUser(User user);
 
+    //增加一名教师用户
+    int addTeacherUser(User user);
+
     //删除一个学生用户
     int deleteStudentUserByID(String id);
 

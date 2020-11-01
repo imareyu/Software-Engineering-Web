@@ -8,6 +8,11 @@
         insert into sedesign.students(UserID, UserPassword, UserType)
         values (#{UserID},#{UserPassword},#{UserType})
     </insert>
+
+    <insert id="addTeacherUser" parameterType="User">
+        insert into sedesign.teacher(UserID,UserName,UserPassword,UserType)
+        values (#{UserID},#{UserName},#{UserPassword},#{UserType})
+    </insert>
     <!--删除一个学生用户-->
     <delete id="deleteStudentUserByID" parameterType="String">
         delete from sedesign.students
@@ -16,7 +21,7 @@
 
     <!--删除一个教师用户-->
     <delete id="deleteTeacherUserByID" parameterType="String">
-        delete from sedesign.students
+        delete from sedesign.teacher
         where UserID = #{UserID}
     </delete>
     <!--修改一个学生用户的信息（除了姓名之外的信息）,其实只有改密码,在项目申请时发现需要改用户类型，10月11日-->

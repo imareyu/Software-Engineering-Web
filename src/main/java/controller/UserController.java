@@ -297,4 +297,33 @@ public class UserController {
         }
         return "forward:goToSearchTea_forDeleteTea_ad";
     }
+
+    //管理员   前往添加教师用户页面
+    @RequestMapping("/gotoAddTea")
+    public String gotoAddTea(){
+        return "addTeacher_ad";
+    }
+
+    //管理员  添加一个教师用户
+    @RequestMapping("/addTea_ad")
+    public String addTea_ad(String UserID,String Password,String UserName,Model model){
+        System.out.println("尝试添加教师用户UserID:"+UserID+";密码:"+Password);
+        //首先需要判断此UserID是否已被使用（包括students表、teacher表、administrator表）
+        if(userService.queryStudentById(UserID) != null||userService.queryTeacherById(UserID) != null ||userService.queryAdministratorById(UserID) != null){
+            //查到了，说明这个userID被占用了，返回错误信息
+            model.addAttribute("error","用户名"+UserID+"已被占用，添加失败");
+            System.out.println("用户名重复，添加教师用户失败");
+            return "forward:gotoAddTea";
+        }
+        //没有被占用，添加
+        User user = new User();
+        user.setUserID(UserID);
+        user.setUserPassword(Password);
+        user.setUserType("teacher");
+        user.setUserName(UserName);
+        userService.addTeacherUser(user);
+        model.addAttribute("mess","教师用户添加成功");
+        System.out.println("教师用户添加成功");
+        return "forward:gotoAddTea";
+    }
 }

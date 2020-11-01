@@ -15,6 +15,11 @@ public class UserServiceImpl implements UserService{
         return userMapper.addStudentUser(user);
     }
 
+    //增加一名教师用户
+    public int addTeacherUser(User user){
+        return userMapper.addTeacherUser(user);
+    }
+
     public int deleteStudentUserByID(String id) {
         return userMapper.deleteStudentUserByID(id);
     }

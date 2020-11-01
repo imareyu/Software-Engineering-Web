@@ -83,7 +83,7 @@
                             <a href="#" onclick="return gotoDeleteTea();">删除教师用户</a>
                         </div>
                         <div class="panel-body">
-                            <a href="#" onclick="return ;">添加教师用户</a>
+                            <a href="#" onclick="return gotoAddTea();">添加教师用户</a>
                         </div>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a href="#"  onclick="return ;">修改密码</a>
+                            <a href="#"  onclick="return modifyPassword();">修改密码</a>
                         </div>
                     </div>
                 </div>
@@ -129,6 +129,14 @@
 
     function gotoDeleteTea() {//前往搜索教师页面，删除老师用户流程
         document.getElementById("rightframe").src="${pageContext.request.contextPath}/user/goToSearchTea_forDeleteTea_ad"
+    }
+
+    function gotoAddTea() {//前往添加教师用户页面
+        document.getElementById("rightframe").src="${pageContext.request.contextPath}/user/gotoAddTea";
+    }
+
+    function modifyPassword() {
+        document.getElementById("rightframe").src = "${pageContext.request.contextPath}/user/toModifyPassword";
     }
 
 </script>
