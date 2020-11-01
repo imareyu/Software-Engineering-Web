@@ -8,6 +8,9 @@ public interface MaterialService {
     //老师上传参考资料
     int uploadMaterial(Material material);
 
+    //查询总的条数
+    int queryCounts();
+
     //老师删除一个参考资料（根据id
     int deleteMaterial(int id);
 

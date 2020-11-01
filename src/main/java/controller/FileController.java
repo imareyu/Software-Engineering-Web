@@ -15,6 +15,7 @@ import service.MaterialService;
 import service.ReportService;
 import service.TeamService;
 import service.UserService;
+import sun.text.normalizer.NormalizerBase;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,8 +44,17 @@ public class FileController {//对所有文件操作相关的进行管理
     private UserService userService;
 
     @RequestMapping("/goToUploadMaterial")
-    public String goToUpload(){
-        return "uploadMaterial";
+    public String goToUpload(HttpServletRequest request){
+        Object userSession = request.getSession().getAttribute("UserSession");
+        if(userSession == null){
+            //未登录，无法上传资料
+            return "failed";
+        }
+        User user = (User)userSession;
+        if("teacher".equals(user.getUserType())) {//教师用户，可以去上传页面
+            return "uploadMaterial";
+        }
+        return "failed";
     }
 
     @RequestMapping("/uploadMaterial")
@@ -116,8 +126,18 @@ public class FileController {//对所有文件操作相关的进行管理
     }
 
     @RequestMapping("/goToMaterialInfor")
-    public String goToMaterialInfor(Model model){
+    public String goToMaterialInfor(Model model, HttpServletRequest request ){
         //需要先查询15条信息，以便不是一个空页面
+        int Materialcounts = materialService.queryCounts();
+        request.getSession().setAttribute("Materialcounts",Materialcounts);//每个人都需要独立的所在的页数，所以存到session中
+        request.getSession().setAttribute("MaterialNowPage",1);//MaterialNowPage是当前所在的页面的页数，从1开始
+        model.addAttribute("MaterialNowPage",1);
+        int MaterialAllPages = Materialcounts / 15;
+        if(Materialcounts % 15 != 0){
+            MaterialAllPages++;//如果不满15条，则按照一页计算
+        }
+        request.getSession().setAttribute("MaterialAllPages",MaterialAllPages);//MaterialAllPages是资料总的页面数（按照每个页面最多15条展示）
+        model.addAttribute("MaterialAllPages",MaterialAllPages);
         System.out.println("进入跳转资料页面流程");
         List<Material> materials = materialService.query15Materials(0, 15);//查询15条
         System.out.println("完成15条资料查询");

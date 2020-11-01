@@ -66,6 +66,19 @@
             </table>
         </div>
     </div>
+
+    <div class="row clearfix">
+        <div class="col-md-3 column"></div>
+        <div class="col-md-2 column">
+            <a id="afrontPage" class="btn btn-primary" href="${pageContext.request.contextPath}/file/gotoFrontPage_Material">上一页</a>
+        </div>
+        <div class="col-md-3 column">
+            <span>共${MaterialAllPages}页 , 目前第 ${MaterialNowPage} 页</span>
+        </div>
+        <div class="col-md-2 column">
+            <a id="nextPage" class="btn btn-primary" href="${pageContext.request.contextPath}/file/gotoNextPage_Material">下一页</a>
+        </div>
+    </div>
 </div>
 <script>
     function confirmDownload() {
@@ -74,8 +87,6 @@
     function myconfirm(){
         //先判断是否为老师，如果不是，直接false
         var user = "<%=userSession%>";
-        // alert(user);
-        <%--alert("<%=userSession%>");--%>
         if(user === "null"){
             alert("未登录，不具有删除权限！");
             return false;
@@ -83,20 +94,25 @@
         else{
             return confirm("确认删除？");
         }
-        // alert("不具有删除权限！");
-        // return false;
     }
 
     function onloadcheck(){
-        <%--var usertype = "<%=user.getUserType()%>";--%>
-        // alert(usertype);
-        if ("teacher" === "<%=user.getUserType()%>") {
-            return;
+        //11.1号添加如下代码，用于实现翻页功能
+        var MaterialNowPage = "${MaterialNowPage}";
+        var MaterialAllPages = "${MaterialAllPages}";
+        if(MaterialNowPage === "1"){
+            var afrontPage = document.getElementById("afrontPage");
+            afrontPage.removeAttribute("href");//目前是第一页，把这个功能取消
         }
-        var upload1 = document.getElementById("upload1");
-        upload1.disabled = true;//上传按钮不可用
-        upload1.removeAttribute("href");
-        upload1.onclick = null;
+        if(parseInt(MaterialAllPages) <= parseInt(MaterialNowPage)) {//已经到最后一页了
+            var nextPage = document.getElementById("nextPage");
+            nextPage.removeAttribute("href");//最后一页了，取消功能
+        }
+        // 截止以上为翻页的代码
+        // var upload1 = document.getElementById("upload1");
+        // upload1.disabled = true;//上传按钮不可用
+        // upload1.removeAttribute("href");
+        // upload1.onclick = null;
     }
 
     window.onload = onloadcheck;

@@ -8,6 +8,9 @@ import java.util.List;
 public interface MaterialMapper {
     //查询所有的资料
     List<Material> queryAllMaterials();
+
+    //查询总的条数
+    int queryCounts();
     
     //上传一份资料,记录下信息
     int UploadAMaterial(Material material);

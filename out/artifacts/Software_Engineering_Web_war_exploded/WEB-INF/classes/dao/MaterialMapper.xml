@@ -9,6 +9,10 @@
         from sedesign.material
     </select>
 
+    <select id="queryCounts" resultType="int">
+        select count(*) from sedesign.material
+    </select>
+
     <!--上传一份资料,记录下信息-->
     <!--int UploadAMaterial(Material material);-->
     <insert id="UploadAMaterial" parameterType="Material">

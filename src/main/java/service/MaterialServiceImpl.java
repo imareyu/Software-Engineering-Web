@@ -14,6 +14,11 @@ public class MaterialServiceImpl implements MaterialService {
         return materialMapper.UploadAMaterial(material);
     }
 
+    //查询总的条数
+    public int queryCounts(){
+        return materialMapper.queryCounts();
+    }
+
     public int deleteMaterial(int id) {
         return materialMapper.deleteMaterial(id);//这里只是把数据库记录删掉了，还需要在文件夹中删除
     }
