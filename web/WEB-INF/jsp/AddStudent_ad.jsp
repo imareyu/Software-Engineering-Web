@@ -19,7 +19,11 @@
     </div>
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <form action="${pageContext.request.contextPath}" method="post">
+            <form action="${pageContext.request.contextPath}/user/addStu_ad" method="post">
+                <div class="form-group">
+                    <span style="color: green">${mess}</span>
+                    <span style="color: red">${error}</span>
+                </div>
                 <div class="form-group">
                     <label>用户id</label>
                     <input style="width: 200px" class="form-control" maxlength="20" minlength="4" name="UserID" type="text" required autocomplete="new-password" onkeydown="return checkNumberOrLetter(event);">

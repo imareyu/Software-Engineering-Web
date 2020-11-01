@@ -196,4 +196,23 @@ public class UserController {
         return "AddStudent_ad";
     }
 
+    //管理员  添加一个学生用户
+    @RequestMapping("/addStu_ad")
+    public String addStu_ad(String UserID,String Password,Model model){
+        System.out.println("尝试添加学生用户UserID:"+UserID+";密码:"+Password);
+        //首先需要判断此UserID是否已被使用（包括students表、teacher表、administrator表）
+        if(userService.queryStudentById(UserID) != null||userService.queryTeacherById(UserID) != null ||userService.queryAdministratorById(UserID) != null){
+            //查到了，说明这个userID被占用了，返回错误信息
+            model.addAttribute("error","用户名重复，添加失败");
+            return "forward:gotoAddStu";
+        }
+        //没有被占用，添加
+        User user = new User();
+        user.setUserID(UserID);
+        user.setUserPassword(Password);
+        user.setUserType("student");
+        userService.addStudentUser(user);
+        model.addAttribute("mess","学生用户添加成功");
+        return "forward:gotoAddStu";
+    }
 }
