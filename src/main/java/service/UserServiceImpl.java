@@ -19,8 +19,17 @@ public class UserServiceImpl implements UserService{
         return userMapper.deleteStudentUserByID(id);
     }
 
+    //删除一个教师用户，根据UserID
+    public int deleteTeacherUserByID(String id){
+        return userMapper.deleteTeacherUserByID(id);
+    }
+
     public int updateStudentUser(User user) {
         return userMapper.updateStudentUser(user);
+    }
+
+    public int updateTeacherUser(User user){
+        return userMapper.updateTeacherUser(user);
     }
 
     public User queryStudentById(String id) {

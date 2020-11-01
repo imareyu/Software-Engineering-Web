@@ -77,10 +77,13 @@
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a href="#" onclick="return ;">修改密码</a>
+                            <a href="#" onclick="return gotoSearchTea();">修改密码</a>
                         </div>
                         <div class="panel-body">
-                            <a href="#" onclick="return ;">修改用户类型</a>
+                            <a href="#" onclick="return gotoDeleteTea();">删除教师用户</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="#" onclick="return ;">添加教师用户</a>
                         </div>
                     </div>
                 </div>
@@ -119,6 +122,15 @@
     function gotoAddStu() {//前往添加学生界面
         document.getElementById("rightframe").src="${pageContext.request.contextPath}/user/gotoAddStu"
     }
+
+    function gotoSearchTea() {//前往搜索教师页面，修改密码流程
+        document.getElementById("rightframe").src="${pageContext.request.contextPath}/user/gotoSearchTea"
+    }
+
+    function gotoDeleteTea() {//前往搜索教师页面，删除老师用户流程
+        document.getElementById("rightframe").src="${pageContext.request.contextPath}/user/goToSearchTea_forDeleteTea_ad"
+    }
+
 </script>
 
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

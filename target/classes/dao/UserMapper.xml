@@ -13,10 +13,22 @@
         delete from sedesign.students
         where UserID = #{UserID}
     </delete>
+
+    <!--删除一个教师用户-->
+    <delete id="deleteTeacherUserByID" parameterType="String">
+        delete from sedesign.students
+        where UserID = #{UserID}
+    </delete>
     <!--修改一个学生用户的信息（除了姓名之外的信息）,其实只有改密码,在项目申请时发现需要改用户类型，10月11日-->
     <update id="updateStudentUser" parameterType="User">
         update sedesign.students
         set UserPassword = #{UserPassword},UserType = #{UserType}
+        where UserID = #{UserID}
+    </update>
+
+    <update id="updateTeacherUser" parameterType="User">
+        update sedesign.teacher
+        set UserName = #{UserName} , UserPassword = #{UserPassword}
         where UserID = #{UserID}
     </update>
     <!--查询一个学生的信息（根据用户的用户id，即userID,不是数据库id）-->

@@ -5,11 +5,15 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pojo.Team;
 import pojo.User;
+import service.TeamService;
 import service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.plaf.PanelUI;
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -17,6 +21,10 @@ public class UserController {
     @Autowired
     @Qualifier("userServiceImpl")
     private UserService userService;
+
+    @Autowired
+    @Qualifier("teamServiceImpl")
+    private TeamService teamService;
 
     @RequestMapping("/goToLogin")
     public String ToLogin(){
@@ -216,5 +224,77 @@ public class UserController {
         model.addAttribute("mess","学生用户添加成功");
         System.out.println("学生用户添加成功");
         return "forward:gotoAddStu";
+    }
+
+    // 管理员  前往查询教师用户界面
+    @RequestMapping("/gotoSearchTea")
+    public String gotoSearchTea(){
+        return "searchTea_ad";
+    }
+
+    // 管理员   查询教师用户（然后前往修改密码页面
+    @RequestMapping("/queryTea_ad")
+    public String queryTea_ad(String userID,Model model){
+        User user = userService.queryTeacherById(userID);
+        if(user == null){//没有这个教师用户
+            model.addAttribute("error","不存在用户id为："+userID+" 的教师用户");
+            return "forward:gotoSearchTea";
+        }
+        model.addAttribute("user",user);
+        return "teaPasswordModify_ad";
+    }
+
+    //管理员  修改教师用户密码
+    @RequestMapping("/modifyTeaPassword_ad")
+    public String modifyTeaPassword_ad(String UserID,String UserPassword,Model model){
+        System.out.println("尝试修改教师用户密码：UserID:"+UserID+" 新密码："+UserPassword );
+        User user = userService.queryTeacherById(UserID);
+        if(user == null){
+            model.addAttribute("error","此教师用户不存在："+UserID);
+            return "forward:gotoSearchTea";
+        }
+        user.setUserPassword(UserPassword);
+        userService.updateTeacherUser(user);
+        model.addAttribute("mess","用户密码修改成功");
+        return "forward:gotoSearchTea";
+    }
+
+    //管理员  前往为了删除老师用户的查询老师用户界面
+    @RequestMapping("/goToSearchTea_forDeleteTea_ad")
+    public String goToSearchTea_forDeleteTea_ad(){
+        return "SearchTea_forDeleteTea_ad";
+    }
+
+    //管理员  查询教师用户，查到之后则前往删除确认页面
+    @RequestMapping("/queryTea_forDeleteTea_ad")
+    public String queryTea_forDeleteTea_ad(String userID,HttpServletRequest request,Model model){
+        User user = userService.queryTeacherById(userID);
+        if(user == null){
+            model.addAttribute("error","不存在此教师用户");
+            return "forward:goToSearchTea_forDeleteTea_ad";
+        }
+        model.addAttribute("user",user);
+        return "deleteTea_ad";
+    }
+
+    //管理员     删除教师用户
+    @RequestMapping("/deleteTea")
+    synchronized public String deleteTea(String UserID,Model model){
+        User user = userService.queryTeacherById(UserID);
+        if(user == null){
+            model.addAttribute("error","删除失败，教师用户已不存在");
+            return "forward:goToSearchTea_forDeleteTea_ad";
+        }
+        //存在这个教师用户，需要看一下ta名下是否有队伍
+        List<Team> teams = teamService.queryTeamsByTeacherID(UserID);
+        if(teams == null || teams.size() == 0){
+            //名下没有队伍
+            userService.deleteTeacherUserByID(user.getUserID());//修改数据库
+            model.addAttribute("mess","删除教师用户成功");
+        }else{//有队伍，删除失败
+            model.addAttribute("error","删除失败，教师用户"+UserID+"名下有队伍");
+            return "forward:goToSearchTea_forDeleteTea_ad";
+        }
+        return "forward:goToSearchTea_forDeleteTea_ad";
     }
 }
