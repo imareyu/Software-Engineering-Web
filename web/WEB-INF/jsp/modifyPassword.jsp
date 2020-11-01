@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label>输入新密码</label>
-                    <input name="newPassword" id="newPassword1" style="width: 200px" minlength="6" maxlength="26" class="form-control" type="password" placeholder="请输入新密码" required onkeydown="return checkNumberOrLetter(event);">
+                    <input name="newPassword" id="newPassword1" style="width: 200px" minlength="6" maxlength="26" class="form-control" type="password" placeholder="请输入新密码" required onkeydown="return checkNumberOrLetter(event);" onchange="return checknewPassword();">
                 </div>
                 <div class="form-group">
                     <label>确认新密码</label>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-default" onclick="return checkPassword();">修改密码</button>
+                    <button type="submit" class="btn btn-default" onclick="return myconfirm();">修改密码</button>
                 </div>
             </form>
         </div>
@@ -62,7 +62,7 @@
             return false;
         }
     }
-    function checkPassword() {
+    function myconfirm() {
     //    1：判断两个新密码是否长度至少为6且相等,不相等，则提示
     //    2：判断新密码和旧密码是否相同，相同则提示密码相同，不能修改
     //    3：如果都满足，则提示确认，调用后端代码

@@ -37,6 +37,11 @@ public class UserServiceImpl implements UserService{
         return userMapper.updateTeacherUser(user);
     }
 
+    //更新管理员用户的信息，（密码）
+    public int updateAdminiUser(User user){
+        return userMapper.updateAdminiUser(user);
+    }
+
     public User queryStudentById(String id) {
         return userMapper.queryStudentById(id);
     }

@@ -36,6 +36,12 @@
         set UserName = #{UserName} , UserPassword = #{UserPassword}
         where UserID = #{UserID}
     </update>
+
+    <update id="updateAdminiUser" parameterType="User">
+        update sedesign.administrator
+        set UserPassword = #{UserPassword}
+        where UserID = #{UserID}
+    </update>
     <!--查询一个学生的信息（根据用户的用户id，即userID,不是数据库id）-->
     <select id="queryStudentById" resultType="User">
         select * from sedesign.students

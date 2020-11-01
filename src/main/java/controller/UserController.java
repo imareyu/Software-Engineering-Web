@@ -106,20 +106,46 @@ public class UserController {
             //原密码输错了,返回首页
             System.out.println("密码未修改，返回home");
 
-            return "forward:/user/home";//实际并不会执行
+            return "forward:failed";//实际并不会执行
         }
-        user = userService.queryStudentById(user.getUserID());//到数据库里进行同步，因为用户类型可能发生了更改
-        user.setUserPassword(newPassword);//否则，修改密码,写入数据库，注销，返回登录页
-        userService.updateStudentUser(user);//写入数据库
-        request.getSession().invalidate();//这一步还需要修改
-        System.out.println("密码已修改，返回login");
+        if("student".equals(user.getUserType())||"teamleader".equals(user.getUserType())||"teammate".equals(user.getUserType())){
+            //学生用户
+            user = userService.queryStudentById(user.getUserID());//到数据库里进行同步，因为用户类型可能发生了更改
+            if(user == null){
+                return "failed";
+            }
+            user.setUserPassword(newPassword);//否则，修改密码,写入数据库，注销，返回登录页
+            userService.updateStudentUser(user);//写入数据库
+            request.getSession().setAttribute("UserSession",null);//这一步还需要修改
+            System.out.println("密码已修改，返回login");
+            return "redirect:/user/goToLogin";
+        }else{
+            if("teacher".equals(user.getUserType())){
+                //教师用户
+                user = userService.queryTeacherById(user.getUserID());
+                user.setUserPassword(newPassword);
+                userService.updateTeacherUser(user);
+                request.getSession().setAttribute("UserSession",null);
+                System.out.println("密码已修改，返回login");
+            }
+            else{
+                if("admini".equals(user.getUserType())){
+                    //管理员用户
+                    user = userService.queryAdministratorById(user.getUserID());
+                    user.setUserPassword(newPassword);
+                    userService.updateAdminiUser(user);
+                    request.getSession().setAttribute("UserSession",null);
+                    System.out.println("密码已修改，返回login");
+                }
+            }
+        }
         return "redirect:/user/goToLogin";
     }
 
     //注销
     @RequestMapping("/logout")
     public String logout(HttpServletRequest request){
-        request.getSession().invalidate();
+        request.getSession().setAttribute("UserSession",null);
         return "redirect:/user/goToLogin";
     }
 

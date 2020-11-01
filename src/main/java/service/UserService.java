@@ -26,6 +26,9 @@ public interface UserService {
     //更新教师的信息
     int updateTeacherUser(User user);
 
+    //更新管理员用户的信息，（密码）
+    int updateAdminiUser(User user);
+
     //查询一个学生的信息（根据用户的用户id，即userID,不是数据库id）
     User queryStudentById(String id);
     //查询所有学生的信息

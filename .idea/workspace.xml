@@ -7,14 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7deda246-a9a8-4b46-a350-d59f4a064c81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/addTeacher_ad.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/UserMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/administratorHome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/administratorHome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/modifyPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/modifyPassword.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserMapper.xml" afterDir="false" />
@@ -25,7 +24,7 @@
       <change beforePath="$PROJECT_DIR$/target/classes/dao/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/administratorHome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/administratorHome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/modifyPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/modifyPassword.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -73,18 +72,18 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="sedesign: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="teacher: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="administrator: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="101" column="30" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="30" />
+            <state relative-caret-position="142">
+              <caret line="149" column="5" lean-forward="true" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5686#5687#0" expanded="true" />
@@ -103,26 +102,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/administratorHome.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="-270">
               <caret line="99" column="74" selection-start-line="99" selection-start-column="74" selection-end-line="99" selection-end-column="74" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/modifyPassword.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="146" column="5" lean-forward="true" selection-start-line="144" selection-start-column="4" selection-end-line="146" selection-end-column="5" />
+            <state relative-caret-position="256">
+              <caret line="58" column="25" lean-forward="true" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/modifyPassword.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://77552d33-f3af-4c02-a863-7ad7db04121d/schema/sedesign/table/administrator">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -140,8 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>redi</find>
-      <find>red</find>
       <find>re</find>
       <find>redire</find>
       <find>forward</find>
@@ -159,7 +156,6 @@
       <find>student</find>
       <find>like</find>
       <find>time</find>
-      <find>checknewPassword</find>
       <find>passwordNotSame</find>
       <find>checkPassword</find>
       <find>maxlength</find>
@@ -167,9 +163,12 @@
       <find>newPassword1</find>
       <find>value</find>
       <find>UserID</find>
-      <find>modify</find>
-      <find>toModifyPassword</find>
       <find>user</find>
+      <find>toModifyPassword</find>
+      <find>checknewPassword</find>
+      <find>modify</find>
+      <find>teamle</find>
+      <find>invalidate</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\001\IdeaProjects\Software-Engineering-Web</dir>
@@ -219,19 +218,19 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/SearchStu_forDeleteStu_ad.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/stuPasswordModify_ad.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/deleteStu_ad.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/modifyPassword.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/AddStudent_ad.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/SearchTea_forDeleteTea_ad.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/deleteTea_ad.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/searchTea_ad.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/teaPasswordModify_ad.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/addTeacher_ad.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/administratorHome.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/modifyPassword.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/dao/UserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/addTeacher_ad.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/administratorHome.jsp" />
       </list>
     </option>
   </component>
@@ -273,8 +272,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="275" />
-    <option name="y" value="128" />
+    <option name="x" value="197" />
+    <option name="y" value="162" />
     <option name="width" value="1247" />
     <option name="height" value="581" />
   </component>
@@ -446,6 +445,14 @@
             <path>
               <item name="Software-Engineering-Web" type="b2602c69:ProjectViewProjectNode" />
               <item name="Software-Engineering-Web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Software-Engineering-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Software-Engineering-Web" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -453,13 +460,6 @@
               <item name="Software-Engineering-Web" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Software-Engineering-Web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Software-Engineering-Web" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -482,7 +482,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1604222463804" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1604232931257" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -697,12 +697,12 @@
       <workItem from="1603425766676" duration="9184000" />
       <workItem from="1604060974678" duration="7675000" />
       <workItem from="1604208606550" duration="36000" />
-      <workItem from="1604208652071" duration="7394000" />
+      <workItem from="1604208652071" duration="10056000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="338191000" />
+    <option name="totallyTimeSpent" value="340853000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -714,10 +714,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="47" y="102" width="1247" height="581" extended-state="0" />
+    <frame x="197" y="162" width="1247" height="581" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49019608" visible="true" weight="0.22914912" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49019608" visible="true" weight="0.22914912" />
       <window_info id="Structure" order="1" sideWeight="0.50980395" side_tool="true" weight="0.22125298" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -727,7 +727,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49873632" visible="true" weight="0.31614348" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49873632" visible="true" weight="0.4058296" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3989726" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -935,13 +935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://77552d33-f3af-4c02-a863-7ad7db04121d/schema/sedesign/table/administrator">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/InforManage.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-523">
@@ -1022,13 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/TeamController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/stuPasswordModify_ad.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
@@ -1040,35 +1026,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-          <folding>
-            <element signature="e#454#455#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#506#507#0" expanded="true" />
-            <element signature="e#789#790#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1086,13 +1043,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="60" column="28" lean-forward="true" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -1102,15 +1052,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/administratorHome.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="-270">
           <caret line="99" column="74" selection-start-line="99" selection-start-column="74" selection-end-line="99" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/modifyPassword.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="58" column="25" lean-forward="true" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://77552d33-f3af-4c02-a863-7ad7db04121d/schema/sedesign/table/administrator">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/TeamController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="47" column="127" lean-forward="true" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#508#509#0" expanded="true" />
+            <element signature="e#1025#1026#0" expanded="true" />
+            <element signature="e#1057#1058#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="101" column="30" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="30" />
+        <state relative-caret-position="142">
+          <caret line="149" column="5" lean-forward="true" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5686#5687#0" expanded="true" />
@@ -1122,13 +1127,6 @@
             <element signature="e#11033#11034#0" expanded="true" />
             <element signature="e#11058#11059#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/modifyPassword.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
         </state>
       </provider>
     </entry>
