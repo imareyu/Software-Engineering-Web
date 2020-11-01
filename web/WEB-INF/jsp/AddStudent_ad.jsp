@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label>用户id</label>
-                    <input style="width: 200px" class="form-control" maxlength="20" minlength="4" name="UserID" type="text" required autocomplete="new-password" onkeydown="return checkNumberOrLetter(event);">
+                    <input style="width: 200px" id="UserID" class="form-control" maxlength="20" minlength="4" name="UserID" type="text" required autocomplete="new-password" onkeydown="return checkNumberOrLetter(event);">
                 </div>
                 <div class="form-group">
                     <label>输入密码</label>

@@ -204,6 +204,7 @@ public class UserController {
         if(userService.queryStudentById(UserID) != null||userService.queryTeacherById(UserID) != null ||userService.queryAdministratorById(UserID) != null){
             //查到了，说明这个userID被占用了，返回错误信息
             model.addAttribute("error","用户名重复，添加失败");
+            System.out.println("用户名重复，添加失败");
             return "forward:gotoAddStu";
         }
         //没有被占用，添加
@@ -213,6 +214,7 @@ public class UserController {
         user.setUserType("student");
         userService.addStudentUser(user);
         model.addAttribute("mess","学生用户添加成功");
+        System.out.println("学生用户添加成功");
         return "forward:gotoAddStu";
     }
 }
