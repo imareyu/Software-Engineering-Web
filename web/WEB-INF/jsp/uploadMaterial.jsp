@@ -21,6 +21,7 @@
     <div class="row clearfix">
         <div class="col-md-5"></div>
         <div class="col-md-2 column">
+            <span>注意：.doc文件及包含doc文件的压缩包无法上传，请转为.docx之后再上传</span>
             <h4><span style="color: green;font-weight: bold">${uploadStatus}</span></h4>
             <form action="${pageContext.request.contextPath}/file/uploadMaterial" enctype="multipart/form-data" method="post">
                 <input type="file" name="file" id="file1">

@@ -129,15 +129,15 @@ public class FileController {//对所有文件操作相关的进行管理
     public String goToMaterialInfor(Model model, HttpServletRequest request ){
         //需要先查询15条信息，以便不是一个空页面
         int Materialcounts = materialService.queryCounts();
-        request.getSession().setAttribute("Materialcounts",Materialcounts);//每个人都需要独立的所在的页数，所以存到session中
-        request.getSession().setAttribute("MaterialNowPage",1);//MaterialNowPage是当前所在的页面的页数，从1开始
-        model.addAttribute("MaterialNowPage",1);
+        request.getSession().setAttribute("Materialcounts",Integer.toString(Materialcounts));//每个人都需要独立的所在的页数，所以存到session中
+        request.getSession().setAttribute("MaterialNowPage","1");//MaterialNowPage是当前所在的页面的页数，从1开始
+        model.addAttribute("MaterialNowPage","1");
         int MaterialAllPages = Materialcounts / 15;
         if(Materialcounts % 15 != 0){
             MaterialAllPages++;//如果不满15条，则按照一页计算
         }
-        request.getSession().setAttribute("MaterialAllPages",MaterialAllPages);//MaterialAllPages是资料总的页面数（按照每个页面最多15条展示）
-        model.addAttribute("MaterialAllPages",MaterialAllPages);
+        request.getSession().setAttribute("MaterialAllPages",Integer.toString(MaterialAllPages));//MaterialAllPages是资料总的页面数（按照每个页面最多15条展示）
+        model.addAttribute("MaterialAllPages",Integer.toString(MaterialAllPages));
         System.out.println("进入跳转资料页面流程");
         List<Material> materials = materialService.query15Materials(0, 15);//查询15条
         System.out.println("完成15条资料查询");
@@ -149,8 +149,81 @@ public class FileController {//对所有文件操作相关的进行管理
         return "MaterialInfor";
     }
 
+    //前往上一页
+    @RequestMapping("/gotoFrontPage_Material")
+    public String gotoFrontPage_Material(Model model,HttpServletRequest request){
+        int Materialcounts = materialService.queryCounts();
+        request.getSession().setAttribute("Materialcounts",Integer.toString(Materialcounts));
+        model.addAttribute("Materialcounts",Integer.toString(Materialcounts));
+
+        String materialNowPageObj = (String) ((request.getSession().getAttribute("MaterialNowPage")));
+        int materialNowPage = Integer.parseInt(materialNowPageObj);//当前页
+        materialNowPage--;
+        if(materialNowPage <= 0){
+            return "forward:goToMaterialInfor";
+        }
+
+        request.getSession().setAttribute("MaterialNowPage",Integer.toString(materialNowPage));
+        model.addAttribute("MaterialNowPage",Integer.toString(materialNowPage));
+
+        List<Material> materials = materialService.query15Materials(15 * (materialNowPage - 1), 15);
+        int MaterialAllPages = Materialcounts / 15;
+        if(Materialcounts % 15 != 0){
+            MaterialAllPages++;//如果不满15条，则按照一页计算
+        }
+
+        request.getSession().setAttribute("MaterialAllPages",Integer.toString(MaterialAllPages));//MaterialAllPages是资料总的页面数（按照每个页面最多15条展示）
+        model.addAttribute("MaterialAllPages",Integer.toString(MaterialAllPages));
+
+        if(materials.size() == 0){//没有查询到相关的资料
+            model.addAttribute("error","没有查询到相关的文件");
+            return "MaterialInfor";
+        }
+        model.addAttribute("materials",materials);
+        return "MaterialInfor";
+    }
+
+    //前往下一页
+    @RequestMapping("/gotoNextPage_Material")
+    public String gotoNextPage_Material(Model model,HttpServletRequest request){
+        System.out.println("前往下一页");
+        int Materialcounts = materialService.queryCounts();
+        request.getSession().setAttribute("Materialcounts",Integer.toString(Materialcounts));
+        //model.addAttribute("Materialcounts",Materialcounts);
+        System.out.println("总条数："+Materialcounts);
+
+        int MaterialAllPages = Materialcounts / 15;
+        if(Materialcounts % 15 != 0){
+            MaterialAllPages++;//如果不满15条，则按照一页计算
+        }
+        request.getSession().setAttribute("MaterialAllPages",Integer.toString(MaterialAllPages));//MaterialAllPages是资料总的页面数（按照每个页面最多15条展示）
+        model.addAttribute("MaterialAllPages",Integer.toString(MaterialAllPages));
+
+        String materialNowPageObj = (String) request.getSession().getAttribute("MaterialNowPage");
+        int materialNowPage = Integer.parseInt(materialNowPageObj);//当前页
+        materialNowPage++;
+        if(materialNowPage > MaterialAllPages){
+            materialNowPage = MaterialAllPages;
+        }
+
+        request.getSession().setAttribute("MaterialNowPage",Integer.toString(materialNowPage));
+        model.addAttribute("MaterialNowPage",Integer.toString(materialNowPage));
+
+        List<Material> materials = materialService.query15Materials(15 * (materialNowPage - 1), 15);
+        if(materials.size() == 0){//没有查询到相关的资料
+            model.addAttribute("error","没有查询到相关的文件");
+            return "MaterialInfor";
+        }
+        model.addAttribute("materials",materials);
+        return "MaterialInfor";
+    }
+
     @RequestMapping("/queryMaterialByName")
-    public String queryMaterialByName(String queryBookName,Model model){//根据资料名称查询资料，模糊查询
+    public String queryMaterialByName(String queryBookName,Model model,HttpServletRequest request){//根据资料名称查询资料，模糊查询
+        request.getSession().setAttribute("MaterialNowPage","1");//目前在第一页，并且前端也要实现仅有一页
+        model.addAttribute("MaterialNowPage","1");
+        request.getSession().setAttribute("MaterialAllPages","1");//总的也只有一页
+        model.addAttribute("MaterialAllPages","1");
         List<Material> materials = materialService.queryMaterialByWord(queryBookName);
         if(materials.size() == 0){//没有查询到相关的资料
             model.addAttribute("error","没有查询到相关的文件");
