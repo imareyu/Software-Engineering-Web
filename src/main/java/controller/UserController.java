@@ -34,6 +34,12 @@ public class UserController {
         return "login";
     }
 
+    //忘记密码
+    @RequestMapping("/forgetPassword")
+    public String forgetPassword(){
+        return "forgetPassword";
+    }
+
     //登录
     @RequestMapping("/login")
     public String login(String userID, String userPassword, Model model, HttpServletRequest request){

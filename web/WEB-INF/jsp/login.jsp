@@ -35,7 +35,7 @@
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="checkbox">
                             <label><input type="checkbox" />记住密码</label>
-                            <label><a href="#">忘记密码</a></label>
+                            <label><a href="${pageContext.request.contextPath}/user/forgetPassword">忘记密码</a></label>
                         </div>
                     </div>
                 </div>
