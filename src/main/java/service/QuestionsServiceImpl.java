@@ -16,6 +16,10 @@ public class QuestionsServiceImpl implements QuestionsService{
         return questionsMapper.queryAllQuestions();
     }
 
+    //查询问题的总数量
+    public int queryCounts(){
+        return questionsMapper.queryCounts();
+    }
     public List<Questions> queryAnyQuestions(int start, int len) {
         return questionsMapper.queryAnyQuestions(start,len);
     }

@@ -103,6 +103,12 @@ public class QuestionsController {
             if("teacher".equals(user.getUserType())){
                 List<Questions> questions = questionsService.queryByWord(word);
                 model.addAttribute("questions",questions);
+
+                request.getSession().setAttribute("questionsNowPage","1");
+                model.addAttribute("questionsNowPage","1");//目前所在的页
+
+                request.getSession().setAttribute("questionsAllPages","1");
+                model.addAttribute("questionsAllPages","1");//总共只有一页
                 return "questionsManage_tea";//前往教师的页面
             }
         }
@@ -119,11 +125,103 @@ public class QuestionsController {
         }
         if("teacher".equals(user.getUserType())){
             //教师用户
+            int counts = questionsService.queryCounts();
+            request.getSession().setAttribute("questionsCounts",Integer.toString(counts));//总的问题条数
+            model.addAttribute("questionsCounts",Integer.toString(counts));
+
+            request.getSession().setAttribute("questionsNowPage","1");
+            model.addAttribute("questionsNowPage","1");//目前在第一页
+
+            //计算一下总的页数
+            int questionsAllPages = counts/15;
+            if(counts % 15 != 0){//不满一页，当作一页处理
+                questionsAllPages++;
+            }
+            if(questionsAllPages == 0){
+                //没有一个问题，那就当作有一页
+                questionsAllPages = 1;
+            }
+            //总的页数
+            request.getSession().setAttribute("questionsAllPages",Integer.toString(questionsAllPages));
+            model.addAttribute("questionsAllPages",Integer.toString(questionsAllPages));
+
             List<Questions> questions = questionsService.queryAnyQuestions(0, 15);//查先15条数据
             model.addAttribute("questions",questions);
         }else{
             //非教师用户
             return "dontHavePermission";
+        }
+        return "questionsManage_tea";
+    }
+
+    //教师 前往下一页问题
+    @RequestMapping("/gotoNextQuestionPage_tea")
+    public String gotoNextQuestionPage_tea(HttpServletRequest request,Model model){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        int counts = questionsService.queryCounts();
+        request.getSession().setAttribute("questionsCounts",Integer.toString(counts));
+        model.addAttribute("questionsCounts",Integer.toString(counts));
+
+        int questionsAllPages = counts/15;
+        if(counts % 15 != 0){//不满一页，当作一页处理
+            questionsAllPages++;
+        }
+        if(questionsAllPages == 0){
+            //没有一个问题，那就当作有一页
+            questionsAllPages = 1;
+        }
+        request.getSession().setAttribute("questionsAllPages",Integer.toString(questionsAllPages));
+        model.addAttribute("questionsAllPages",Integer.toString(questionsAllPages));
+
+        String questionsNowPageStr = (String) request.getSession().getAttribute("questionsNowPage");
+        int questionsNowPage = Integer.parseInt(questionsNowPageStr);//目前所在的页
+        questionsNowPage++;
+        request.getSession().setAttribute("questionsNowPage",Integer.toString(questionsNowPage));
+        model.addAttribute("questionsNowPage",Integer.toString(questionsNowPage));
+        if(questionsNowPage <= questionsAllPages && questionsNowPage >= 1){
+            List<Questions> questions = questionsService.queryAnyQuestions(15 * (questionsNowPage - 1), 15);
+            if(questions == null||questions.size() == 0)
+                return "forward:teaGoToQuesManage";//没有，返回第一页吧
+            model.addAttribute("questions",questions);
+        }
+        return "questionsManage_tea";
+    }
+
+    //教师 前往上一页问题
+    @RequestMapping("/gotoFrontQuestionPage_tea")
+    public String gotoFrontQuestionPage_tea(HttpServletRequest request,Model model){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        int counts = questionsService.queryCounts();
+        request.getSession().setAttribute("questionsCounts",Integer.toString(counts));
+        model.addAttribute("questionsCounts",Integer.toString(counts));
+
+        int questionsAllPages = counts/15;
+        if(counts % 15 != 0){//不满一页，当作一页处理
+            questionsAllPages++;
+        }
+        if(questionsAllPages == 0){
+            //没有一个问题，那就当作有一页
+            questionsAllPages = 1;
+        }
+        request.getSession().setAttribute("questionsAllPages",Integer.toString(questionsAllPages));
+        model.addAttribute("questionsAllPages",Integer.toString(questionsAllPages));
+
+        String questionsNowPageStr = (String) request.getSession().getAttribute("questionsNowPage");
+        int questionsNowPage = Integer.parseInt(questionsNowPageStr);//目前所在的页
+        questionsNowPage--;
+        request.getSession().setAttribute("questionsNowPage",Integer.toString(questionsNowPage));
+        model.addAttribute("questionsNowPage",Integer.toString(questionsNowPage));
+        if(questionsNowPage <= questionsAllPages && questionsNowPage > 0){
+            List<Questions> questions = questionsService.queryAnyQuestions(15 * (questionsNowPage - 1), 15);
+            if(questions == null||questions.size() == 0)
+                return "forward:teaGoToQuesManage";//没有，返回第一页吧
+            model.addAttribute("questions",questions);
         }
         return "questionsManage_tea";
     }

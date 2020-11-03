@@ -9,6 +9,9 @@ public interface QuestionsService {
     //查询所有的问题,这个应该不常用，问题数量巨大时，会给数据库造成很大的负担
     List<Questions> queryAllQuestions();
 
+    //查询问题的总数量
+    int queryCounts();
+
     //查询若干个问题
     List<Questions> queryAnyQuestions(@Param("start") int start, @Param("len") int len);
 
