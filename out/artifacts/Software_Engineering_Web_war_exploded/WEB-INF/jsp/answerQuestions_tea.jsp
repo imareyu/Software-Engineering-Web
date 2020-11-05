@@ -31,41 +31,67 @@
     <%User user = (User) request.getSession().getAttribute("UserSession");%>
     <div class="row clearfix">
         <div class="row">
-           <div class="col-md-4 column"></div>
-            <div class="col-md-4 column">
+            <div class="col-md-3 column"></div>
+            <div class="col-md-6 column">
                 <div><span style="font-size: 16px;color: black">问题编号：</span><span>${questions.questionID}</span></div>
             </div>
         </div>
         <div class="row">
-                <div class="col-md-4 column"></div>
-                <div class="col-md-4 column">
+                <div class="col-md-3 column"></div>
+                <div class="col-md-6 column">
                     <div><span style="font-size: 16px;color: black">提问学生id：</span><span>${questions.userID}</span></div>
                 </div>
         </div>
         <div class="row">
-            <div class="col-md-4 column"></div>
-            <div class="col-md-4 column">
+            <div class="col-md-3 column"></div>
+            <div class="col-md-6 column">
                 <div><span style="font-size: 16px;color: black">提问时间：</span><span>${questions.publishTime}</span></div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-4 column"></div>
-            <div class="col-md-4 column">
+            <div class="col-md-3 column"></div>
+            <div class="col-md-6 column">
                 <div><span style="font-size: 16px;color: black">问题内容：</span><span>${questions.content}</span></div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-4 column"></div>
-            <div class="col-md-4 column">
+            <div class="col-md-3 column"></div>
+            <div class="col-md-6 column">
                 <div><span style="font-size: 16px;color: black">有无回答：</span><span>${questions.ansState}</span></div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-4 column"></div>
-            <div class="col-md-4 column">
+            <div class="col-md-3 column"></div>
+            <div class="col-md-6 column">
+                <div>
+                    <table class="table table-hover table-striped"><%--table-hover是隔行变色,table-striped表示--%>
+                        <thead>
+                        <tr>
+                            <th>回答编号</th>
+                            <th>内容</th>
+                            <th>时间</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach var="answer" items="${answers}">
+                                <tr>
+                                    <td>回答<span>${answer.answerID}</span>、</td>
+                                    <td>${answer.answer}</td>
+                                    <td>${answer.ansTime}</td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 column"></div>
+            <div class="col-md-5 column">
                 <form  class="form-horizontal" role="form"  action="${pageContext.request.contextPath}/questions/submitAnswer" method="post">
                     <div class="form-group">
                         <label class="col-sm-3 control-label">问题ID</label>

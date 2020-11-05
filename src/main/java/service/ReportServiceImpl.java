@@ -24,6 +24,11 @@ public class ReportServiceImpl implements ReportService {
         return reportMapper.deleteReport(ReportId);
     }
 
+    //根据TeamID删除报告。
+    public int deleteReportsByTeamID(int id){
+        return reportMapper.deleteReportsByTeamID(id);
+    }
+
     public List<Report> queryReportByWord(String word) {
         return reportMapper.queryReportByWord(word);
     }

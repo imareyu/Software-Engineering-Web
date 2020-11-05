@@ -9,6 +9,11 @@
         select * from sedesign.questions
     </select>
 
+    <select id="queryCounts" resultType="int">
+        select count(*)
+        from sedesign.questions
+    </select>
+
     <!--//查询若干个问题-->
     <!--List<Questions> queryAnyQuestions(@Param("start") int start, @Param("len") int len);-->
     <select id="queryAnyQuestions" resultType="Questions">

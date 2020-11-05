@@ -40,8 +40,9 @@
                 <tr>
                     <th>问题编号</th>
                     <th>问题题要</th>
-                    <th>资料修改时间</th>
+                    <th>问题修改时间</th>
                     <th>状态</th>
+                    <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -57,6 +58,9 @@
                             <c:if test="${question.ansState == 'no'}">
                                 未回答
                             </c:if>
+                        </td>
+                        <td>
+                            <a href="${pageContext.request.contextPath}/questions/gotoSeeAQuestion_stu?id=${question.questionID}">查看问题及回答</a>
                         </td>
                     </tr>
                 </c:forEach>

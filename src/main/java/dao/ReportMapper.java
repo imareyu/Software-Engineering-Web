@@ -15,6 +15,9 @@ public interface ReportMapper {
     //删除一份报告,根据报告id删除
     int deleteReport(int ReportId);
 
+    //根据TeamID删除报告。
+    int deleteReportsByTeamID(int id);
+
     //根据文件名进行一次模糊查询,Title就是文件名
     List<Report> queryReportByWord(String word);
 

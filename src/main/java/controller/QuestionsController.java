@@ -240,10 +240,30 @@ public class QuestionsController {
         }
         if("teacher".equals(user.getUserType())){
             model.addAttribute("questions",questions);
+            List<Answer> answers = answerService.queryByQuestionID(questions.getQuestionID());
+            model.addAttribute("answers",answers);
         }else{
             return "dontHavePermission";
         }
         return "answerQuestions_tea";
+    }
+
+    //学生      查看具体的问题
+    @RequestMapping("/gotoSeeAQuestion_stu")
+    public String gotoSeeAQuestion_stu(int id,HttpServletRequest request,Model model){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if(user == null){
+            return "login";
+        }
+        Questions questions = questionsService.queryByQuestionID(id);
+        if(questions == null){
+            model.addAttribute("error","不存在此问题");
+            return "forward:stuGoToQuestionsManage";
+        }
+        model.addAttribute("questions",questions);
+        List<Answer> answers = answerService.queryByQuestionID(questions.getQuestionID());
+        model.addAttribute("answers",answers);
+        return "questionAndAnswers_stu";//查看单个问题的回答
     }
 
     //提交一个回答(教师用户

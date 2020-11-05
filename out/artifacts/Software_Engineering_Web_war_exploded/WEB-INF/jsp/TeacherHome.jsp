@@ -9,7 +9,7 @@
     <style>
         #rightframe{
             width: 800px;
-            height: 800px;
+            height: 1000px;
             border: 0;
         }
         .loginout {

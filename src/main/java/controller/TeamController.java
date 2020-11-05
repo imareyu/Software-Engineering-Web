@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pojo.Team;
 import pojo.User;
+import service.ReportService;
 import service.TeamService;
 import service.UserService;
 
@@ -26,6 +27,10 @@ public class TeamController {
     @Autowired
     @Qualifier("userServiceImpl")
     private UserService userService;
+
+    @Autowired
+    @Qualifier("reportServiceImpl")
+    private ReportService reportService;//对报告管理
 
     //前往队伍管理页面，根据用户类型进行分流
     @RequestMapping("/goToTeamManage")
@@ -390,9 +395,10 @@ public class TeamController {
     //教师删除一个项目，学生是没有权限删除项目的
     @RequestMapping("/deleteProject")
     public String deleteProject(Team team){
-        //删除项目，需要先恢复学生的身份
-        team = teamService.queryTeamByTeamID(team.getTeamID());
-
+        //删除项目，需要先删除项目的报告。
+        team = teamService.queryTeamByTeamID(team.getTeamID());//到数据库进行同步
+        reportService.deleteReportsByTeamID(team.getTeamID());
+        //删除项目，需要恢复学生的身份
         //修改队长的信息
         User teamleader = userService.queryStudentById(team.getTeamleaderID());
         teamleader.setUserType("student");

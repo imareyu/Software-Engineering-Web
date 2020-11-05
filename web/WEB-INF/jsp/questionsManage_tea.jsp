@@ -62,7 +62,7 @@
                             </c:if>
                         </td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/questions/goToAnswerQuestion?id=${question.questionID}" target="_blank">前往查看|回答问题</a>
+                            <a href="${pageContext.request.contextPath}/questions/goToAnswerQuestion?id=${question.questionID}" target="_blank">查看\回答问题</a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -70,7 +70,38 @@
             </table>
         </div>
     </div>
+
+    <div class="row clearfix">
+        <div class="col-md-3 column"></div>
+        <div class="col-md-2 column">
+            <a id="afrontPage" class="btn btn-primary" href="${pageContext.request.contextPath}/questions/gotoFrontQuestionPage_tea">上一页</a>
+        </div>
+        <div class="col-md-3 column">
+            <span>共${questionsAllPages}页 , 目前第 ${questionsNowPage} 页</span>
+        </div>
+        <div class="col-md-2 column">
+            <a id="nextPage" class="btn btn-primary" href="${pageContext.request.contextPath}/questions/gotoNextQuestionPage_tea">下一页</a>
+        </div>
+    </div>
 </div>
+
+<script>
+    function onloadcheck(){
+        //11.5号添加如下代码，用于实现翻页功能
+        var MaterialNowPage = "${questionsNowPage}";
+        var MaterialAllPages = "${questionsAllPages}";
+        if(MaterialNowPage === "1"){
+            var afrontPage = document.getElementById("afrontPage");
+            afrontPage.removeAttribute("href");//目前是第一页，把这个功能取消
+        }
+        if(parseInt(MaterialAllPages) <= parseInt(MaterialNowPage)) {//已经到最后一页了
+            var nextPage = document.getElementById("nextPage");
+            nextPage.removeAttribute("href");//最后一页了，取消功能
+        }
+    }
+
+    window.onload = onloadcheck;
+</script>
 
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
