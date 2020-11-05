@@ -111,7 +111,7 @@
 
 <script>
     function myconfirm() {
-        return confirm("确认删除？");
+        return confirm("确认删除？（删除操作会导致项目文件一起删除）");
     }
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

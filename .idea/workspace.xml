@@ -7,31 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7deda246-a9a8-4b46-a350-d59f4a064c81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/questionAndAnswers_stu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/controller/QuestionsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/controller/QuestionsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/QuestionsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/QuestionsMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/QuestionsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/dao/QuestionsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/QuestionsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/QuestionsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/QuestionsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/classes/service/QuestionsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/ReportManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/ReportManage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/questionsManage_tea.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Software_Engineering_Web_war_exploded/WEB-INF/jsp/questionsManage_tea.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/QuestionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/QuestionsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TeamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ReportMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ReportMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ReportMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ReportMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ReportService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/ReportServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ReportServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/QuestionsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/QuestionsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/QuestionsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/QuestionsMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/QuestionsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/QuestionsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/QuestionsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/QuestionsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/QuestionsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/QuestionsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/TeacherHome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/TeacherHome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/answerQuestions_tea.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/answerQuestions_tea.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_stu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_stu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_tea.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/questionsManage_tea.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/seeAPassTeam.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/seeAPassTeam.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -98,11 +75,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/TeamController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="401" column="17" lean-forward="true" selection-start-line="401" selection-start-column="17" selection-end-line="401" selection-end-column="17" />
+            <state relative-caret-position="207">
+              <caret line="391" column="28" selection-start-line="391" selection-start-column="16" selection-end-line="391" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/seeAPassTeam.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="113" column="2" selection-start-line="113" selection-start-column="2" selection-end-line="113" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/referenceTeams.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="42" column="93" selection-start-line="42" selection-start-column="77" selection-end-line="42" selection-end-column="93" />
             </state>
           </provider>
         </entry>
@@ -120,7 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>goToUploadReport</find>
       <find>ueryReportByName</find>
       <find>teaGoToReportManage</find>
       <find>uploadreport</find>
@@ -150,6 +144,7 @@
       <find>lom</find>
       <find>goToAnswerQuestion</find>
       <find>delete</find>
+      <find>goToSeeAPassTeam</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\001\IdeaProjects\Software-Engineering-Web</dir>
@@ -161,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/pojo/Answer.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/AnswerMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/AnswerMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/service/AnswerService.java" />
@@ -212,6 +206,7 @@
         <option value="$PROJECT_DIR$/src/main/java/service/ReportService.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/ReportServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/TeamController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/seeAPassTeam.jsp" />
       </list>
     </option>
   </component>
@@ -252,9 +247,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="57" />
-    <option name="y" value="166" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="105" />
+    <option name="y" value="117" />
     <option name="width" value="1227" />
     <option name="height" value="719" />
   </component>
@@ -429,6 +424,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Software-Engineering-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Software-Engineering-Web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -470,7 +473,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1604586810222" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1604587119588" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -691,12 +694,12 @@
       <workItem from="1604412567650" duration="2000" />
       <workItem from="1604412577304" duration="2351000" />
       <workItem from="1604580772814" duration="2000" />
-      <workItem from="1604580782655" duration="6001000" />
+      <workItem from="1604580782655" duration="6300000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="362315000" />
+    <option name="totallyTimeSpent" value="362614000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -708,7 +711,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="166" width="1227" height="719" extended-state="0" />
+    <frame x="105" y="117" width="1227" height="719" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49019608" visible="true" weight="0.2596401" />
@@ -753,34 +756,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/InforManage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-523">
-          <caret line="4" column="25" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://77552d33-f3af-4c02-a863-7ad7db04121d/schema/sedesign/table/team">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://77552d33-f3af-4c02-a863-7ad7db04121d/schema/sedesign/table/students">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/SearchStu_forDeleteStu_ad.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/deleteTea_ad.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -1077,16 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/FileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="35" column="47" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="35" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/ReportMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
@@ -1119,10 +1084,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/processATeam.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2725">
+          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/referenceTeams.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="42" column="93" selection-start-line="42" selection-start-column="77" selection-end-line="42" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/teaTeamManage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="39" column="76" lean-forward="true" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/FileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="35" column="47" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="35" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/TeamController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="401" column="17" lean-forward="true" selection-start-line="401" selection-start-column="17" selection-end-line="401" selection-end-column="17" />
+        <state relative-caret-position="207">
+          <caret line="391" column="28" selection-start-line="391" selection-start-column="16" selection-end-line="391" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/seeAPassTeam.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="113" column="2" selection-start-line="113" selection-start-column="2" selection-end-line="113" selection-end-column="2" />
         </state>
       </provider>
     </entry>

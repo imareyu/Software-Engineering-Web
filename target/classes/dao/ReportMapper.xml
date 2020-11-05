@@ -20,6 +20,11 @@
         where ReportID = #{ReportId}
     </delete>
 
+    <delete id="deleteReportsByTeamID" parameterType="int">
+        delete from sedesign.report
+        where TeamID = #{id}
+    </delete>
+
     <!--根据文件名进行一次模糊查询,Title就是文件名-->
     <select id="queryReportByWord" resultType="Report">
         select * from sedesign.report
