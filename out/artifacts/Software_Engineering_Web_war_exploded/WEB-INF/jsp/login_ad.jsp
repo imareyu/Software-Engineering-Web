@@ -1,11 +1,11 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>学生教师登录页面</title>
+    <title>管理员登录</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
 <div class="container">
     <br/>
     <br/>
@@ -18,7 +18,7 @@
         <div class="col-md-4 column">
         </div>
         <div class="col-md-5 column">
-            <form class="form-horizontal" role="form" action="${pageContext.request.contextPath}/user/login" method="post">
+            <form class="form-horizontal" role="form" action="${pageContext.request.contextPath}/user/login_ad" method="post">
                 <span style="color: red">${error}</span>
                 <div class="form-group">
                     <label for="input1" class="col-sm-2 control-label">用户名</label>
@@ -31,15 +31,6 @@
                     <div class="col-sm-10">
                         <input style="width: 50%;" maxlength="26" name="userPassword" class="form-control" id="inputPassword3" type="password" required/>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label >登录身份</label>
-                    <label>
-                        <select class="selectpicker" name="shenfen">
-                            <option>teacher</option>
-                            <option>student</option>
-                        </select>
-                    </label>
                 </div>
 
                 <div class="form-group">
@@ -61,5 +52,7 @@
         </div>
     </div>
 </div>
+
+
 </body>
 </html>

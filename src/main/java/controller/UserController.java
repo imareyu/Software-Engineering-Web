@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.swing.plaf.PanelUI;
 import java.util.List;
 
+
+//11.11  修改，教师用户、学生用户以及管理员的UserID可以重复了
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -25,6 +27,56 @@ public class UserController {
     @Autowired
     @Qualifier("teamServiceImpl")
     private TeamService teamService;
+
+    //教师学生前往登录页面
+    @RequestMapping("/goToLogin_TeaOrStu")
+    public String goToLogin_TeaOrStu(){
+        return "login";
+    }
+
+    //管理员登录
+    @RequestMapping("/goToLogin_ad")
+    public String goToLogin_ad(){
+        return "login_ad";
+    }
+
+    //学生教师前往注册页面
+    @RequestMapping("/goToSignUp")
+    public String goToSignUp(){
+        return "stu_teaSignUp";
+    }
+
+    //教师学生 注册
+    @RequestMapping("/signup")
+    public String signup(String userID, String Password,String shenfen, Model model, HttpServletRequest request){
+        System.out.println("注册的用户ID："+userID);
+        System.out.println("用户密码："+Password);
+        System.out.println("用户身份："+shenfen);
+
+        User user = new User();
+        user.setUserID(userID);
+        user.setUserPassword(Password);
+        if("student".equals(shenfen)){
+            user.setUserType("student");
+            userService.addStudentUser(user);
+            user = userService.queryStudentById(userID);
+            request.getSession().setAttribute("UserSession",user);
+            System.out.println("学生注册成功");
+            return "home";
+        }else{
+            if("teacher".equals(shenfen)){
+                user.setUserType("teacher");
+                user.setUserName("NULL");
+                userService.addTeacherUser(user);
+                user = userService.queryTeacherById(userID);
+                request.getSession().setAttribute("UserSession",user);
+                System.out.println("教师注册成功");
+                return "TeacherHome";
+            }
+        }
+        model.addAttribute("error","未选择注册用户类型");
+        return "stu_teaSignUp";
+    }
 
     @RequestMapping("/goToLogin")
     public String ToLogin(){
@@ -40,56 +92,79 @@ public class UserController {
         return "forgetPassword";
     }
 
-    //登录
-    @RequestMapping("/login")
-    public String login(String userID, String userPassword, Model model, HttpServletRequest request){
-        User user = userService.queryStudentById(userID);
+    //管理员登录
+    @RequestMapping("/login_ad")
+    public String login_ad(String userID, String userPassword,  Model model, HttpServletRequest request){
         System.out.println("用户id:"+userID);
         System.out.println("用户密码:"+userPassword);
 
-        if(user == null){//没有此学生,查询老师，原则上来说，老师和学生的用户名不同
-            user = userService.queryTeacherById(userID);//查询老师用户
-            if(user == null)//不是老师，查询管理员
-            {
-                user = userService.queryAdministratorById(userID);
-                if(user == null){//不是学生，老师和管理员
-                    model.addAttribute("error","用户名或密码错误");
-                    System.out.println("不是学生、老师和管理员");
-                    return "login";
-                }else{//管理员用户
-                    if(user.getUserPassword().equals(userPassword)){
-                        //密码正确
-                        request.getSession().setAttribute("UserSession",user);
-                        System.out.println("管理员用户"+userID+"：成功登录");
-                        return "administratorHome";//返回到教师首页
-                    }else{//密码错误
-                        model.addAttribute("error","用户名或密码错误");
-                        System.out.println("管理员用户：用户名或密码错误");
-                        return "login";
-                    }
-                }
-            }else{//是老师
-                if(user.getUserPassword().equals(userPassword)){//密码正确
-                    request.getSession().setAttribute("UserSession",user);
-                    System.out.println("教师用户"+userID+"：成功登录");
-                    return "TeacherHome";//返回到教师首页
-                }else{//密码错误
-                    model.addAttribute("error","用户名或密码错误");
-                    System.out.println("教师用户：用户名或密码错误");
-                    return "login";
-                }
-            }
+        User user = userService.queryAdministratorById(userID);
+        if(user == null){
+            model.addAttribute("error","管理员用户名或密码错误");
+            System.out.println("管理员登录失败，用户名不存在");
+            return "login_ad";
         }
-        else{
-            if(user.getUserPassword().equals(userPassword))
+        if(user.getUserPassword().equals(userPassword)){
+            //密码正确，登录成功
+            request.getSession().setAttribute("UserSession",user);
+            System.out.println("管理员登录成功");
+            return "administratorHome";
+        }else{
+            //密码错了
+            System.out.println("管理员登录失败，密码错误");
+            model.addAttribute("error","管理员用户名或密码错误");
+            return "login_ad";
+        }
+    }
+
+    //登录  学生教师登录
+    @RequestMapping("/login")
+    public String login(String userID, String userPassword,String shenfen,  Model model, HttpServletRequest request){
+        System.out.println("用户id:"+userID);
+        System.out.println("用户密码:"+userPassword);
+        System.out.println("身份："+shenfen);
+
+        if("student".equals(shenfen)) {
+            User user = userService.queryStudentById(userID);
+            if (user == null) {//没有此学生，提示两个错误，不能说用户名不存在
+                model.addAttribute("error","学生用户名或密码错误");
+                System.out.println("学生登录失败，用户名不存在");
+                return "login";
+            }
+            //比较密码
+            if(user.getUserPassword().equals(userPassword)){
                 request.getSession().setAttribute("UserSession",user);//把对象存下来
-            else{
-                model.addAttribute("error","用户名或密码错误");
-                System.out.println("用户名或密码错误");
+                System.out.println("学生登录成功");
+                return "home";
+            }else{//密码错误
+                model.addAttribute("error","学生用户名或密码错误");
+                System.out.println("学生登录失败，密码错误");
                 return "login";
             }
         }
-        return "home";
+        else{
+            if("teacher".equals(shenfen)){
+                User user = userService.queryTeacherById(userID);//查询老师用户
+                if (user == null) {//没有此教师，提示两个错误，不能说用户名不存在
+                    model.addAttribute("error","教师用户名或密码错误");
+                    System.out.println("教师登录失败，用户名不存在");
+                    return "login";
+                }
+                if(user.getUserPassword().equals(userPassword)){
+                    request.getSession().setAttribute("UserSession",user);//把对象存下来
+                    System.out.println("教师登录成功");
+                    return "TeacherHome";
+                }else{//密码错误
+                    model.addAttribute("error","教师用户名或密码错误");
+                    System.out.println("教师登录失败，密码错误");
+                    return "login";
+                }
+            }else{
+                model.addAttribute("error","未选择登录身份");
+                System.out.println("登录失败，未选择登录身份");
+                return "login";
+            }
+        }
     }
 
     //基本信息管理

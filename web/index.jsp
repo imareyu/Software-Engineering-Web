@@ -44,11 +44,22 @@
     <div class="row clearfix">
             <div class="col-md-5 column"></div>
             <div class="col-md-2 column">
-                <a style="text-decoration: none;" class="login" href="${pageContext.request.contextPath}/user/goToLogin">去登录</a><%--没有提示，解决方法--%>
+                <a style="text-decoration: none;" class="login" href="${pageContext.request.contextPath}/user/goToLogin_ad">管理员登录</a>
                 <br/>
                 <br/>
                 <br/>
-                <a style="text-decoration: none;" class="login" href="${pageContext.request.contextPath}/file/goToMaterialInfor">下载文件</a><%--没有提示，解决方法--%>
+                <a style="text-decoration: none;" class="login" href="${pageContext.request.contextPath}/user/goToLogin_TeaOrStu">教师/学生登录</a>
+                <br/>
+                <br/>
+                <br/>
+                <a style="text-decoration: none;" class="login" href="${pageContext.request.contextPath}/user/goToSignUp">教师/学生注册</a>
+                <br/>
+                <br/>
+                <br/>
+                <a style="text-decoration: none;" class="login" href="${pageContext.request.contextPath}/file/goToMaterialInfor">下载文件</a>
+                <br/>
+                <br/>
+                <br/>
             </div>
             <div class="col-md-5 column"></div>
     </div>

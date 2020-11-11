@@ -1,7 +1,8 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>登录</title>
+    <title>学生教师登录页面</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -31,6 +32,16 @@
                         <input style="width: 50%;" maxlength="26" name="userPassword" class="form-control" id="inputPassword3" type="password" required/>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label >登录身份</label>
+                    <label>
+                        <select class="selectpicker" name="shenfen">
+                            <option>teacher</option>
+                            <option>student</option>
+                        </select>
+                    </label>
+                </div>
+
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="checkbox">
