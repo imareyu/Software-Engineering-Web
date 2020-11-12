@@ -4,6 +4,8 @@
 <head>
     <title>修改用户密码</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.18.0/js/md5.js"></script>
 </head>
 <body>
 <div class="container">
@@ -80,15 +82,18 @@
         }
         var userPassword = "<%=user.getUserPassword()%>";
         // alert(userPassword);
-        if(userPassword !== oldPassword.value) {
+        if(userPassword !== md5(oldPassword.value)) {
             alert("原密码错误");
             return false;//输入的旧密码错误
         }
         if(!confirm("确认修改密码？")){
             return false;//不修改
         }
+        newpassword1.value = md5(newpassword1.value);
+        newpassword2.value = md5(newpassword2.value);
+        oldPassword.value = md5(oldPassword.value);
         //必定可以修改成功，修改地址
-        top.location.replace("${pageContext.request.contextPath}/user/goToLogin");
+        <%--top.location.replace("${pageContext.request.contextPath}/user/goToLogin");--%>
         return true;//修改密码，在这之前要先确保能够跳出iframe
     }
     function checkNumberOrLetter(e){

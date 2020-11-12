@@ -181,7 +181,7 @@ public class UserController {
 
     //修改密码并且注销要求重新登录
     @RequestMapping("/modifyPassword")
-    public String modifyPassword(String oldPassword, String newPassword, HttpServletRequest request, HttpServletResponse response){
+    public String modifyPassword(String oldPassword, String newPassword, HttpServletRequest request, HttpServletResponse response,Model model){
         User user = (User) request.getSession().getAttribute("UserSession");
         if(!user.getUserPassword().equals(oldPassword)){
             //原密码输错了,返回首页
@@ -199,7 +199,8 @@ public class UserController {
             userService.updateStudentUser(user);//写入数据库
             request.getSession().setAttribute("UserSession",null);//这一步还需要修改
             System.out.println("密码已修改，返回login");
-            return "redirect:/user/goToLogin";
+            model.addAttribute("status",'1');
+            return "changeTopAddress";
         }else{
             if("teacher".equals(user.getUserType())){
                 //教师用户
@@ -208,6 +209,8 @@ public class UserController {
                 userService.updateTeacherUser(user);
                 request.getSession().setAttribute("UserSession",null);
                 System.out.println("密码已修改，返回login");
+                model.addAttribute("status",'1');
+                return "changeTopAddress";
             }
             else{
                 if("admini".equals(user.getUserType())){
@@ -217,6 +220,8 @@ public class UserController {
                     userService.updateAdminiUser(user);
                     request.getSession().setAttribute("UserSession",null);
                     System.out.println("密码已修改，返回login");
+                    model.addAttribute("status",'2');
+                    return "changeTopAddress";
                 }
             }
         }
@@ -226,6 +231,12 @@ public class UserController {
     //注销
     @RequestMapping("/logout")
     public String logout(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("UserSession");
+        if("admini".equals(user.getUserType())){
+            //管理员注销
+            request.getSession().setAttribute("UserSession",null);
+            return "login_ad";
+        }
         request.getSession().setAttribute("UserSession",null);
         return "redirect:/user/goToLogin";
     }

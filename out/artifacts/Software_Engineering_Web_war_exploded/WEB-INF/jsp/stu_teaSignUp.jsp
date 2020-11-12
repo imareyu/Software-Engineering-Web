@@ -3,6 +3,8 @@
 <head>
     <title>学生教师注册页面</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.18.0/js/md5.js"></script>
 </head>
 <body>
 
@@ -91,7 +93,12 @@
             alert("新密码过短或不一致");
             return false;
         }
-        return confirm("确认注册？");
+        if(confirm("确认注册？")){
+            newpassword1.value = md5(newpassword1.value);
+            newpassword2.value = md5(newpassword2.value);
+            return true;
+        }
+        return false;
     }
     function checkNumberOrLetter(e){
         //判断是否为数字或字母

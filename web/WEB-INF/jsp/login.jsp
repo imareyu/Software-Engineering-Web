@@ -4,6 +4,8 @@
 <head>
     <title>学生教师登录页面</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.18.0/js/md5.js"></script>
 </head>
 <body>
 <div class="container">
@@ -52,7 +54,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">登录</button>
+                        <button type="submit" class="btn btn-default" onclick="return mymd5();">登录</button>
                     </div>
                 </div>
             </form>
@@ -61,5 +63,16 @@
         </div>
     </div>
 </div>
+
+<script>
+    function mymd5() {//对密码加密
+        var userPassword = document.getElementById("inputPassword3");
+        // confirm(userPassword.value);
+        userPassword.value = md5(userPassword.value);
+        // confirm(userPassword.value);
+        return true;
+    }
+</script>
+
 </body>
 </html>

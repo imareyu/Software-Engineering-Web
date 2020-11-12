@@ -3,6 +3,8 @@
 <head>
     <title>管理员登录</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.18.0/js/md5.js"></script>
 </head>
 <body>
 
@@ -43,7 +45,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">登录</button>
+                        <button type="submit" class="btn btn-default" onclick="return myconfirm();">登录</button>
                     </div>
                 </div>
             </form>
@@ -53,6 +55,13 @@
     </div>
 </div>
 
+<script>
+    function myconfirm() {
+        var password = document.getElementById("inputPassword3");
+        password.value = md5(password.value);
+        return true;
+    }
+</script>
 
 </body>
 </html>

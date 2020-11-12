@@ -3,6 +3,8 @@
 <head>
     <title>管理员查看修改学生用户信息页面</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.18.0/js/md5.js"></script>
 </head>
 <body>
 
@@ -65,13 +67,18 @@
         }
         // alert("新密码"+newpassword1);
         // alert("旧密码"+oldPassword);
-        if(newpassword1.value === oldPassword){
+        if(md5(newpassword1.value) === oldPassword){
             //新旧密码相同
             alert("新旧密码相同，请使用新密码");
             return false;
         }
         // alert(userPassword);
-        return confirm("确认修改密码？");
+        if(confirm("确认修改密码？")){
+            newpassword1.value = md5(newpassword1.value);
+            newpassword2.value = md5(newpassword2.value);
+            return true;
+        }
+        return false;
     }
     
     function checknewPassword(){
