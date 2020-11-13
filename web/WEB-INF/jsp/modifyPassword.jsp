@@ -94,7 +94,7 @@
         oldPassword.value = md5(oldPassword.value);
         //必定可以修改成功，修改地址
         <%--top.location.replace("${pageContext.request.contextPath}/user/goToLogin");--%>
-        return true;//修改密码，在这之前要先确保能够跳出iframe
+        return true;
     }
     function checkNumberOrLetter(e){
         //判断是否为数字

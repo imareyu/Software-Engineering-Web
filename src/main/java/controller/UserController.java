@@ -57,6 +57,13 @@ public class UserController {
         user.setUserID(userID);
         user.setUserPassword(Password);
         if("student".equals(shenfen)){
+            User user1 = userService.queryStudentById(userID);
+            if(user1 != null){
+                //userID已经注册
+                model.addAttribute("error","此用户名已被占用");
+                System.out.println("userID被占用");
+                return "stu_teaSignUp";
+            }
             user.setUserType("student");
             userService.addStudentUser(user);
             user = userService.queryStudentById(userID);
@@ -65,6 +72,13 @@ public class UserController {
             return "home";
         }else{
             if("teacher".equals(shenfen)){
+                User user1 = userService.queryTeacherById(userID);
+                if(user1 != null){
+                    //被占用
+                    model.addAttribute("error","此教师用户名已被占用");
+                    System.out.println("userID被占用");
+                    return "stu_teaSignUp";
+                }
                 user.setUserType("teacher");
                 user.setUserName("NULL");
                 userService.addTeacherUser(user);

@@ -81,7 +81,7 @@
     }
 
     function myconfirm() {
-        var UserID = document.getElementById("UserID");
+        var UserID = document.getElementById("input1");
         if(UserID.value.length < 4){
             //用户id最短为4
             alert("用户id最短为4");
