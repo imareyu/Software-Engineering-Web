@@ -25,7 +25,7 @@
                 <div class="form-group">
                     <label for="input1" class="col-sm-2 control-label">用户名</label>
                     <div class="col-sm-10">
-                        <input style="width: 50%;" maxlength="20" name="userID" class="form-control" id="input1" type="text" required/>
+                        <input style="width: 50%;" maxlength="20" minlength="5" name="userID" class="form-control" id="input1" type="text" required/>
                     </div>
                 </div>
 

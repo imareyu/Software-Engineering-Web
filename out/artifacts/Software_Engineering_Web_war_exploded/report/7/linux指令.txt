@@ -1,2 +1,0 @@
-v,y,p      vim复制粘贴代码指令
-pscp areyu@121.199.47.44:/home/areyu/firstdir/ns3/apAndStas.cc ./              下载到本地
